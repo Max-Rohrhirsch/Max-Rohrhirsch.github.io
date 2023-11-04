@@ -1,0 +1,46 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+
+<!-- ------ SIDE NAVIGATION BAR ----- -->
+<div class="sidenav">
+    <a href="/documentation/extension/docker.html">Basics</a>
+</div>
+
+<!-- ------ MAIN CONTENT ----- -->
+<div class="main">
+<p>
+docker ps
+.dockerignore -> node_modules
+</p>
+<div class="wrapper">
+<pre>
+    <code class="language-docker">
+FROM node:12
+WORKDIR / app
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+EXPOSE 8080
+CMD ["npm", "start"]
+    </code>
+</pre>
+<pre>
+    <code class="language-docker">
+        
+    </code>
+</pre>
+<pre>
+    <code class="language-docker">
+        
+    </code>
+</pre>
+<pre>
+    <code class="language-docker">
+        
+    </code>
+</pre>
+</div>
+
+<div id="includeFooter"></div>

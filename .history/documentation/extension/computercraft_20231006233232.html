@@ -1,0 +1,222 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/extension/computercraft.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Computer craft</h1>
+            <hr>
+            <h2>Pastebin</h2>
+            <out>
+                pastebin get <green>YnZf1HAR</green> startup
+            </out>
+
+            <table>
+                <tr>
+                    <th>pastebin</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>HX460jnx</td>
+                    <td>Optimiced mining turtle</td>
+                </tr>
+                <tr>
+                    <td>HX460jnx</td>
+                    <td>Optimiced mining turtle</td>
+                </tr>
+                <tr>
+                    <td>YtvRxY9j</td>
+                    <td>Self replicating Turtle</td>
+                </tr>
+                <tr>
+                    <td>9iWXU3r1</td>
+                    <td>Farming turtle</td>
+                </tr>
+            </table>
+            <hr>
+
+            <h2>Lua</h2>
+            <pre>
+                <code class="language-lua">
+function fact (n)
+    if n == 0 then
+        return 1
+    else
+        return n * fact(n-1)
+    end
+end
+
+print("enter a number:")
+a = io.read("*number")        -- read a number
+print(fact(a))
+
+
+while( true )
+do
+   print("This loop will run forever.")
+end
+
+for i = 10,1,-1 
+do 
+   print(i) 
+end
+
+array = {"Lua", "Tutorial"}
+for key,value in ipairs(array) 
+do
+    print(key, value)
+end
+
+mytable["wow"] = "Tutorial"
+                </code>
+            </pre>
+            <hr>
+            <out>
+                commands.exec(string command)
+            </out>
+            <out>
+                commands.getBlockPosition()
+            </out>
+            <out>
+                commands.getBlockInfo(number x, number y, number z)
+            </out>
+
+            <h2>Turtle commands</h2>
+            <table>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td>Turtle.carft(number quantity)</td>
+                  <td>Craft items using ingredients anywhere in the turtle's inventory and place results in the active slot. If a quantity is specified, it will craft only up to that many items, otherwise, it will craft as many of the items as possible.</td>
+                </tr>
+                <tr>
+                    <td>turtle.forward() | .back() | .up() | .down()</td>
+                    <td>Movement</td>
+                </tr>
+                <tr>
+                    <td>turtle.turnLeft() | .turnRight()</td>
+                    <td>turning</td>
+                </tr>
+                <tr>
+                    <td>turtle.select(number slot)</td>
+                    <td>Make the turtle select slot slotNum (1 is top left, 16 (9 in 1.33 and earlier) is bottom right)</td>
+                </tr>
+                <tr>
+                    <td>turtle.getSelectedSlot()</td>
+                    <td>Indicates the currently selected inventory slot</td>
+                </tr>
+                <tr>
+                    <td>turtle.getItemCount([number slotNum])</td>
+                    <td>Counts how many items are in the currently selected slot or, if specified, slotNum slot</td>
+                </tr>
+                <tr>
+                    <td>turtle.getItemSpace([number slotNum])</td>
+                    <td>Counts how many remaining items you need to fill the stack in the currently selected slot or, if specified, slotNum slot</td>
+                </tr>
+                <tr>
+                    <td>turtle.getItemDetail([number slotNum])</td>
+                    <td>Returns the ID string, count and damage values of currently selected slot or, if specified, slotNum slot</td>
+                </tr>
+                <tr>
+                    <td>turtle.equipLeft() | .equipRight()</td>
+                    <td>Attempts to equip an item in the current slot to the turtle's side, switching the previously equipped item back into the inventory</td>
+                </tr>
+                <tr>
+                    <td><red>turtle.attack([string toolSide])</red></td>
+                    <td>Attacks</td>
+                </tr>
+                <tr>
+                    <td><red>turtle.dig([string toolSide])</red></td>
+                    <td>Breaks the block. With hoe: tills the dirt.</td>
+                </tr>
+                <tr>
+                    <td><red>turtle.place([string signText])</red></td>
+                    <td>Places a block of the selected slot in front. Engrave signText on signs if provided. Collects water or lava if the currently selected slot is an empty bucket.</td>
+                </tr>
+                <tr>
+                    <td><red>turtle.detect()</red></td>
+                    <td>Detects if there is a block in front. Does not detect mobs.</td>
+                </tr>
+                <tr>
+                    <td><red>turtle.inspect()</red></td>
+                    <td>Returns the ID string and metadata of the block in front of the Turtle</td>
+                </tr>
+                <tr>
+                    <td><red>turtle.compare()</red>></td>
+                    <td>Detects if the block in front is the same as the one in the currently selected slot</td>
+                </tr>
+                <tr>
+                    <td>turtle.compareTo(number slot)</td>
+                    <td>Compare the current selected slot and the given slot to see if the items are the same. Returns true if they are the same, false if not.</td>
+                </tr>
+                <tr>
+                    <td><red>turtle.drop([number count])</red></td>
+                    <td>Drops all items in the selected slot, or specified, drops count items.</td>
+                </tr>
+                <tr>
+                    <td><red>turtle.suck([number amount])</red>></td>
+                    <td>Picks up an item stack of any number, from the ground or an inventory in front of the turtle, then places it in the selected slot. If the turtle can't pick up the item, the function returns false. amount parameter requires ComputerCraft 1.6 or later.</td>
+                </tr>
+                <tr>
+                    <td>turtle.refuel([number quantity])</td>
+                    <td>Refuels</td>
+                </tr>
+                <tr>
+                    <td>turtle.getFuelLevel()</td>
+                    <td>Returns the current fuel level of the turtle, this is the number of blocks the turtle can move.</td>
+                </tr>
+                <tr>
+                    <td>turtle.transferTo(number slot [, number quantity])</td>
+                    <td>	Transfers quantity items from the selected slot to slot. If quantity isn't specified, will attempt to transfer everything in the selected slot to slot.</td>
+                </tr>
+            </table>
+            <hr>
+            <h1>Printer</h1>
+            <hr>
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>printer.newPage()</td>
+                    <td>Starts a new page. Returns true if page got started, false if not.</td>
+                </tr>
+                <tr>
+                    <td>printer.endPage()</td>
+                    <td>Ends the page and prints the page to the output tray. Returns true if page was ended, false if not.</td>
+                </tr>
+                <tr>
+                    <td>printer.write(string text)</td>
+                    <td>Writes text to the paper.</td>
+                </tr>
+                <tr>
+                    <td>printer.setCursorPos(number x, number y)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>printer.getCursorPos()</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>printer.setPageTitle(string title)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>printer.getPaperLevel()</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>printer.getInkLevel()</td>
+                    <td></td>
+                  </tr>
+            </table>
+
+
+<div id="includeFooter"></div>

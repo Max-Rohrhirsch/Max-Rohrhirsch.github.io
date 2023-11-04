@@ -1,0 +1,130 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/chrome.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Chrome extension</h1>
+            <hr>
+
+            <p>
+                You need 4 files:
+                - manifest.json (most important)
+                - index.html (the GUI to interact with extension)
+                - script.js (script in the Extension pop up for comunication)
+                - injected.js (edditing the webpage)
+            </p>
+
+            <h2>manifest.json</h2>
+            <pre>
+                <code class="language-json">
+{
+"name": "Colored Calender",
+"version": "1.2",
+"description": "Colores the background of specific days in your google calender.",
+"manifest_version": 3,
+"permissions": ["scripting", "activeTab","tabs", "storage"],
+"action": {
+    "default_popup": "index.html",
+    "default_title": "myExtension"
+},
+"host_permission": ["https://calendar.google.com/*"],
+"content_scripts": [
+    {
+        "matches": ["https://calendar.google.com/*"],
+        "js": ["inject.js"]
+    }
+]
+,"content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval'; child-src 'self';"
+}
+}
+                </code>
+            </pre>
+
+            <h2>index.html</h2>
+            <pre>
+                <code class="language-html">
+&lt;meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"> &lt;!-- Very important --&gt;
+&lt;script type="text/javascript" src="script.js"></script>
+        
+&lt;div id="add">
+    &lt;form id="form">
+        Von: &lt;input type="date" id="inp1"> &lt;br>
+        Bis: &lt;input type="date" id="inp2"> &lt;br>
+        Color: &lt;input type="text" maxlength="3"  id="inp3"> &lt;br>
+        &lt;button  id="submit">+&lt;/button>
+    &lt;/form>
+&lt;/div>
+                </code>
+            </pre>
+
+            <h2>index.html</h2>
+            <pre>
+                <code class="language-html">
+&lt;meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"> &lt;!-- Very important --&gt;
+&lt;script type="text/javascript" src="script.js"></script>
+        
+&lt;div id="add">
+    &lt;form id="form">
+        Von: &lt;input type="date" id="inp1"> &lt;br>
+        Bis: &lt;input type="date" id="inp2"> &lt;br>
+        Color: &lt;input type="text" maxlength="3"  id="inp3"> &lt;br>
+        &lt;button  id="submit">+&lt;/button>
+    &lt;/form>
+&lt;/div>
+                </code>
+            </pre>
+
+            <h2>script.js</h2>
+            <pre>
+                <code class="language-js">
+document.onreadystatechange = () => { // only when loaded. Otherwise you get an error, when you try to interact with elements, that dont exist
+    if (document.readyState === 'complete') {
+    
+        //Add a Date
+        document.getElementById("submit").addEventListener("click", (e) => {
+            chrome.storage.sync.get(["inputs"], (result) => {       // async syncronise cookies
+                chrome.storage.sync.set({"inputs": 
+                result["inputs"].concat([[
+                    document.getElementById("inp1").value, 
+                    document.getElementById("inp2").value, 
+                    document.getElementById("inp3").value
+                ]])})
+            })
+        })
+    }
+}
+                </code>
+            </pre>
+
+            <h2>inject.js</h2>
+            <pre>
+                <code class="language-js">
+document.onreadystatechange = () => {
+    if (document.readyState === 'complete') {
+
+        // Store data in sync storage
+        chrome.storage.sync.set({"inputs": [['2023-07-27', '2023-08-31', 'cfc'], ['2023-09-5', '2023-09-30', 'cfc'], ['2023-10-01', '2024-01-07', 'fcc']]});
+
+
+
+
+        // read all Dates on change cookies
+        chrome.storage.onChanged.addListener((changes, area) => {
+            if (area == "sync") {
+                ...
+            }
+        })
+    }
+};
+                </code>
+            </pre>
+
+
+<div id="includeFooter"></div>

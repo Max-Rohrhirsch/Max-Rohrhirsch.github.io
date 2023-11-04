@@ -1,0 +1,120 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/regex.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>regEx</h1>
+            <hr>
+            <p>Booleans represent one of two values: <colored>True</colored> or <colored>False</colored>.</p>
+            <hr>
+            <h2>Implementation</h2>
+
+            <pre>
+                <code class="language-python">
+import re
+text = "..."
+pattern = re.compile(r'abc')
+
+matches = pattern.finditer(text)
+
+for match in matches:
+    print(match)
+                </code>
+            </pre>
+
+
+            <table>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>.</td>
+                    <td>Everything but a new line</td>
+                </tr>
+                <tr>
+                    <td>\d</td>
+                    <td>Digits 0 - 9</td>
+                </tr>
+                <tr>
+                    <td>\D</td>
+                    <td>Not a digit</td>
+                </tr>
+                <tr>
+                    <td>\w</td>
+                    <td>(a-z, A-Z,0-9,_)</td>
+                </tr>
+                <tr>
+                    <td>\W</td>
+                    <td>Not a "normal" character</td>
+                </tr>
+                <tr>
+                    <td>\s</td>
+                    <td>Whitespace (space, tab, new line)</td>
+                </tr>
+                <tr>
+                    <td>\S</td>
+                    <td>Not a Whitespace</td>
+                </tr>
+                <tr>
+                    <td>\b</td>
+                    <td>Word Boundary (space bevore)</td>
+                </tr>
+                <tr>
+                    <td>^</td>
+                    <td>Start of string</td>
+                </tr>
+                <tr>
+                    <td>$</td>
+                    <td>End of string</td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <th>Symbols</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>[ ]</td>
+                    <td>Matches character</td>
+                </tr>
+                <tr>
+                    <td>[^ ]</td>
+                    <td>Not in brackets</td>
+                </tr>
+                <tr>
+                    <td>|</td>
+                    <td>Either or</td>
+                </tr>
+                <tr>
+                    <td>{3,4}</td>
+                    <td>Range</td>
+                </tr>
+                <tr>
+                    <td>{3}</td>
+                    <td>Exact</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>0 or more</td>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td>1 or more</td>
+                </tr>
+                <tr>
+                    <td>?</td>
+                    <td>0 or 1</td>
+                </tr>
+            </table>
+            <h2>Examples</h2>
+            <out>Email: <red>\b\w</red><orange>+</orange>@<red>\w</red><orange>+</orange>.<red>\w</red><orange>{3,7}</orange></out>
+            <out>URL: (https:\\)<orange>?</orange>(www\.)<orange>?</orange><red>\w</red><orange>+</orange>\.<red>\w</red><orange>+</orange></out>
+
+<div id="includeFooter"></div>

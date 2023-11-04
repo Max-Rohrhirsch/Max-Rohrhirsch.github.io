@@ -1,0 +1,44 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+    <!-- ------ SIDE NAVIGATION BAR ----- -->
+    <div class="sidenav">
+        <a href="/documentation/languages/python/python.html">Basics</a>
+        <a href="/documentation/languages/python/tkinter.html">Tkinter (GUI)</a>
+    </div>
+
+    <!-- ------ MAIN CONTENT ----- -->
+    <div class="main">
+        <h1>Python</h1>
+        <hr><br>
+        <p>With Tkinter you can easily create a window and all the elements. Dont forget to put the main Loop on the end!!!</p>
+            <pre>
+                <code class="language-python"># Basics
+
+from tkinter import * 
+from tkinter.ttk import * 
+
+root = Tk()
+root.geometry('100x100') 
+ 
+# Create a Button
+btn = Button(root, text = 'Click me !', bd = '5',
+                          command = root.destroy) 
+ 
+# Set the position of button on the top of window.   
+btn.pack(side = 'top')    
+root.mainloop()
+                </code>
+            </pre>
+        <div class="wrapper">
+            <pre>
+                <code class="language-python"># Basics
+
+
+                </code>
+            </pre>
+        </div>
+        <h2>Settings</h2>
+
+
+<div id="includeFooter"></div>

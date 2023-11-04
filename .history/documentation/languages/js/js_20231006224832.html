@@ -1,0 +1,106 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/js/js.html">Basics</a>
+            <a href="/documentation/languages/js/know.html">good to know</a>
+            <a href="/documentation/languages/js/mid.html">mid</a>
+            <button class="dropdown-btn">Special 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/documentation/languages/js/array.html">Array</a>
+                <a href="/documentation/languages/js/build.html">Build in</a>
+                <a href="/documentation/languages/js/exception.html">Exceptions</a>
+                <a href="/documentation/languages/js/file.html">File editing</a>
+                <a href="/documentation/languages/js/file.html">Server</a>
+                <a href="/documentation/languages/js/special.html">special</a>
+            </div>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>JS</h1>
+            <hr>
+
+            <h2>Basics</h2>
+            <pre>
+                <code class="language-js">
+// program to display fibonacci sequence using recursion
+function fibonacci(num) {
+    if(num &lt; 2) {
+        return num;
+    }
+    else {
+        return fibonacci(num-1) + fibonacci(num - 2);
+    }
+}
+
+// take nth term input from the user
+const nTerms = prompt('Enter the number of terms: ');
+
+if(nTerms &lt;=0) {
+    console.log('Enter a positive integer.');
+}
+else {
+    for(let i = 0; i &lt; nTerms; i++) {
+        console.log(fibonacci(i));
+    }
+}
+
+const cars = ["Saab", "Volvo", "BMW"];
+
+Math.random();
+
+
+                </code>
+            </pre>
+
+            <h2>Often used</h2>
+            <pre>
+                <code class="language-js">
+element = document.getElementById("myBtn")
+element = cocument.getElementsByClassName("myBtn")
+
+element.addEventListener("click", function(){ myFunction(p1, p2); });
+                </code>
+            </pre>
+
+
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+        </div>
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

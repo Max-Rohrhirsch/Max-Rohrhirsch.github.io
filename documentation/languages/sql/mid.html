@@ -1,0 +1,44 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/sql/sql.html">Basics</a>
+            <a href="/documentation/languages/sql/mid.html">mid</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>SQL</h1>
+            <hr><br>
+
+            <h2>Distinct</h2>
+            <p>The <red>SELECT DISTINCT</red> statement is used to return only distinct (different) values.</p>
+            <pre>
+                <code class="language-sql">
+SELECT Count(*) AS DistinctCountries
+FROM (SELECT DISTINCT Country FROM Customers);
+                </code>
+            </pre>
+
+            <h2>Exists</h2>
+            <pre>
+                <code class="language-sql">
+SELECT column_name(s)
+FROM table_name
+WHERE EXISTS
+(SELECT column_name FROM table_name WHERE condition);
+                </code>
+            </pre>
+
+            <h2>Between</h2>
+            <pre>
+                <code class="language-sql">
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+                </code>
+            </pre>
+ 
+
+<div id="includeFooter"></div>

@@ -1,0 +1,331 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/css.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>css</h1>
+            <hr><br>
+
+            <h2>Cube</h2>
+            <pre>
+                <code class="language-css">
+.front {transform: translate2(1em);}
+.top {transform: rotatex(90 deg) translate2(1em);}
+// jede seite
+
+.cube {
+    perspective: 1000px;
+    transform: preserve-3d;
+    transform: rotatex(-50deg) rotatey(32deg);
+}
+                </code>
+            </pre>
+
+            <h2>Color</h2>
+            <pre>
+                <code class="language-css">
+background: radial-gradient(red, blue) fixed;
+                </code>
+            </pre>
+
+            <h2>Paralax</h2>
+            <pre>
+                <code class="language-js">
+let text = document.getElementById("text")
+window.addEventListener("scroll", function() {
+    let value = window.scrolly;
+    text.style.top = 50 * value * -0.5 + "%";
+})
+                </code>
+            </pre>
+            <br>
+            <pre>
+                <code class="language-html"><!-- ------ TOP NAVIGATION BAR ----- -->
+
+&lt;nav class="nav1">
+    &lt;div class="dropdown" style="float:left;">
+        &lt;button class="dropbtn">Languages&lt;/button>
+        &lt;div class="dropdown-content" style="left:0;">
+            &lt;a href="sql.html">SQL&lt;/a>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="dropdown" style="float:left;">
+        &lt;button class="dropbtn">Small Language&lt;/button>
+        &lt;div class="dropdown-content" style="left:0;">
+            &lt;a href="bash.html">Bash&lt;/a>
+        &lt;/div>
+    &lt;/div>
+&lt;/nav>
+                </code>
+            </pre>
+            <pre>
+                <code class="language-css">/* ---- DROPDOWN Style ---- */
+.nav1 {
+    position: fixed;
+    background-color: #222;
+    border-bottom: 1px solid black;
+    width: 100%;
+
+    z-index: 2;
+}
+
+.dropbtn {
+    background-color: #222;
+    color: white;
+
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    }
+    
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    }
+    
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+
+    background-color: #222;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    
+    .dropdown-content a {
+    color: White;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    }
+    
+    .dropdown-content a:hover { background-color: #333 }
+    .dropdown:hover .dropdown-content { display: block }
+    .dropdown:hover .dropbtn { background-color: #2c7ead }
+                </code>
+            </pre><br>
+            <h2>Animation</h2>
+            <pre>
+                <code class="language-css">
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}
+    
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+@keyframes example2 {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+                </code>
+            </pre><br>
+            <h2>Responsiveness</h2>
+            <pre>
+                <code class="language-css">
+@media only screen and (max-width: 768px) {
+    /* ... */
+}
+                </code>
+            </pre>
+            <h2>Glow</h2>
+            <pre>
+                <code class="language-css">
+-webkit-box-shadow:0px 0px 43px 0px rgba(45,255,196,0.68);
+-moz-box-shadow: 0px 0px 43px 0px rgba(45,255,196,0.68);
+box-shadow: 0px 0px 43px 0px rgba(45,255,196,0.68);
+                </code>
+            </pre>
+            <pre>
+                <code class="language-html">
+                    // Download this file with your settings:
+                    // https://prismjs.com/
+
+                    &lt;link href="/documentation/prism.css" rel="stylesheet" />
+                    &lt;script src="/documentation/prism.js">&lt;/script>
+                </code>
+            </pre>
+
+
+            <h2>Click dropdown</h2>
+            <pre>
+                <code class="language-css">
+.dropbtn {
+background-color: #3498DB;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+background-color: #2980B9;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+overflow: auto;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+.show {display: block;}
+</code><code class="language-html">
+&lt;div class="dropdown">
+    &lt;button onclick="myFunction()" class="dropbtn">Dropdown&lt;/button>
+    &lt;div id="myDropdown" class="dropdown-content">
+        &lt;a href="#home">Home&lt;/a>
+        &lt;a href="#about">About&lt;/a>
+        &lt;a href="#contact">Contact&lt;/a>
+    &lt;/div>
+&lt;/div>
+</code><code class="language-js">
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+                </code>
+            </pre>
+            <h2>Picture modal</h2>
+            <pre>
+                <code class="language-css">
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+    
+#myImg:hover {opacity: 0.7;}
+    
+    /* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+}
+    
+    /* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+    
+    /* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    padding: 10px 0;
+    height: 150px;
+}
+    
+    /* Add Animation */
+.modal-content, #caption {  
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+    
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+    
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+    
+    /* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    transition: 0.3s;
+}
+    
+.close:hover,
+.close:focus {
+    cursor: pointer;
+}
+                </code>
+                <code class="language-js">
+var modal = document.getElementById("myModal");
+
+
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+                </code>
+            </pre>
+            <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_gallery">Gallery</a>
+            <a href="https://www.w3schools.com/howto/howto_js_autocomplete.asp">Autocomplete</a>
+<div id="includeFooter"></div>

@@ -1,0 +1,161 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/small/rust.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Rust</h1>
+            <hr>
+
+            <out>
+                go run doc.go
+            </out>
+
+            <div class="wrapper">
+            <pre>
+                <code class="language-rust">// Basic
+                    fn main() { 
+                        const PI:f32 = 3.14; 
+                        println!("PI {}",PI); 
+                    }
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">// Datatypes
+
+                    let num: int = -1i8;
+                    let an_integer = 1u32;
+                    let salary:f64 = 35_000.00;
+                    let mut mutable_binding = ;
+
+                    const PI:f32 = 3.14;
+
+                    let name1 = "Hello".to_string();
+                    let name:String = String::from("TutorialsPoint");
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">// if
+                    if num > 0 {
+                        println!("{} is positive",num);
+                     } else if num < 0 {
+                        println!("{} is negative",num);
+                     } else {
+                        println!("{} is neither positive nor negative",num) ;
+                     }
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">// match case
+
+                    let state_code = "MH";
+   let state = match state_code {
+      "MH" => {println!("Found match for MH"); "Maharashtra"},
+      "KL" => "Kerala",
+      "KA" => "Karnadaka",
+      "GA" => "Goa",
+      _ => "Unknown"
+   };
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">// for and while
+                    for x in 1..11{ // 11 is not inclusive
+                        // ...
+                     }
+
+                     while x < 10{
+                        // ...
+                     }
+
+                     loop {
+                        x+=1;
+                        println!("x={}",x);
+                  
+                        if x==15 {
+                           break;
+                        }
+                    }
+
+                    for num in 0..21 {
+
+                    }
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">// Function
+                    fn mutate_no_to_zero(mut param_no: i32, param: String) {
+                        // ...
+                     }
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">// Tuple & Array
+
+                    let tuple:(i32,f64,u8) = (-325,4.9,22);
+
+                    let arr:[i32;4] = [10,20,30,40];
+                    let arr = [10,20,30,40];
+
+                    println!("{:?}",arr);
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">
+
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">
+
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">
+
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">
+
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">
+
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">
+
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">
+
+                </code>
+            </pre>
+        </div>
+            <table>
+                <tr>
+                  <th>Functions</th>
+                </tr>
+                <tr>
+                  <td>.len()</td>
+                </tr>
+                <tr>
+                  <td>.push(...)</td>
+                </tr>
+                <tr>
+                  <td>.contains(...)</td>
+                </tr>
+                <tr>
+                  <td>.replace()</td>
+                </tr>
+            </table>
+        </div>
+<div id="includeFooter"></div>

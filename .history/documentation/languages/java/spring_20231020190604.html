@@ -1,0 +1,191 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/java/java.html">Basics</a>
+            <a href="/documentation/languages/java/swing.html">Swing</a>
+            <a href="/documentation/languages/java/spring.html">Spring Boot</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Spring Boot</h1>
+            <hr><br>
+
+            <p> Installation</br>
+                Install gradle</br>
+                Install Spring tools</br>
+                Set both pathvariables into path (to /bin folder)</br>
+                Install folder from spring initializer</p><br>
+            <div class="half" style="font-size: 15px;">
+<pre>
+    <code class="language-java">// Simple request handeling
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Controller {
+
+    @GetMapping("/")
+    public String getString() {
+        return "index";
+    }
+
+    @GetMapping("/test/{resourceID}")
+    public String getString(@PathVariable("resourceID") String resourceID) {
+        return "Here is the String: " + resourceID;
+    }
+
+    @GetMapping("/test2/{resourceID}")
+    public String getString2(@PathParam("resourceID") String resourceID) {
+        return "Here is the String: " + resourceID;
+    }
+}
+
+// --------------------------
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.SpringApplication;
+
+@SpringBootApplication
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+    </code>
+</pre>
+<pre>
+    <code class="language-java">// Dependenxy Injection
+
+@Component
+public class TextWriter...
+
+// --------------------------
+
+@Autowired
+Textwriter text;
+
+// Auto import
+    </code>
+</pre>
+<pre>
+    <code class="language-java">// Multiple Injection
+
+@Component
+@Qualifier("regular...")
+public class TextWriter...
+
+// --------------------------
+
+@Autowired
+@Qualifier("regular...")
+Textwriter text;
+
+// Auto import & select witch class 
+    </code>
+</pre>
+<pre>
+    <code class="language-java">// Spring database 
+
+// Debendency "Spring Web", "Spring Data JPA", "MySQL Driver", "Lombok"?
+
+// -------------- application.properties ----------------
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver 
+
+spring.datasource.url=jdbc:mysql://localhost:3306/newDB
+spring.datasource.username=root
+spring.datasource.password=1234
+
+spring.jpa.show-sql=true
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl.auto=update
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+// -------------  Student -----------------
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Data
+@Table(name = "STUDENT")
+public class Student {
+    @id
+    @column(name = "MyID")
+    private int id;
+
+    @column(name = "info")
+    private String infos;
+}
+
+
+// -------------- Repository ---------------
+@Repository
+public interface StudentRepository extends JpaRepository&lt;Student, Integer> {}
+
+// -------------- Service ---------------
+@Service
+public class StudentService {
+    @Autowired
+    private StudentRepository studentRepository;
+
+    public Student saveDetails(Student student) {
+        return studentRepository.save(student);
+    }
+}
+    </code>
+</pre>
+</div>
+<pre>
+    <code class="language-java">// Java Database
+import java.sql.*;
+
+String url = "jdbc:mysql://localhost:3306/newDB";
+String username="root";
+String password="1234";
+
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection connection = DriverManager.getConnection(url, username, password);
+    Statement statement = connection.createStatement();
+    ResultSet resultSet = statement.executeQuery("SELECt * FROM student");
+
+    while (resultSet.next()) {
+        System.out.println(resultSet.getInt(1));
+    }
+
+    connection.close();
+} catch (Exception e) {
+    System.out.println(e);
+}
+    </code>
+</pre>
+</div>
+<pre><code class="language-java">
+@Controller
+public class myController {
+    @RequestMapping("/")
+    public String welcome() {
+        return "index";
+    }
+}
+// Create index file in templates
+// dependency "web" "DevTools" "thymleaf"
+
+
+</code>
+    <code class="language-html">// Import Bootstrap
+        &lt;link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        &lt;script src=https://code.jquery.com/jquery-3.2.1.slim.min.js integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">&lt;/script>
+        &lt;script src=https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">&lt;/script>
+        &lt;script src=https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">&lt;/script>
+        
+    </code>
+</pre>
+</div>
+<div id="includeFooter"></div>

@@ -1,0 +1,247 @@
+<html>
+    <head>
+        <title>Documentation</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" lang="en" content="Documentation of many things I learned">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Coding, max">
+        <meta name="author" content="Rohrhirsch Max">
+                
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="/documentation/docStyle.css">
+        <link rel="icon" type="image/x-icon" href="/Bilder/favicon.ico">
+    </head>
+    <body>
+        <!-- ------ TOP NAVIGATION BAR ----- -->
+        <nav class="nav1">
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Languages</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/languages/sql/sql.html">SQL</a>
+                    <a href="/documentation/languages/python/python.html">Python</a>
+                    <a href="/documentation/languages/java/java.html">Java</a>
+                    <a href="/documentation/languages/js/js.html">JS</a>
+                    <a href="/documentation/languages/css/css.html">CSS</a>
+                    <a href="/documentation/languages/c/c.html">C</a>
+                    <a href="/documentation/languages/cpp/cpp.html">C++</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Small Language</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/small/bash/bash.html">Bash</a>
+                    <a href="/documentation/small/rust/rust.html">Rust</a>
+                    <a href="/documentation/small/go/go.html">GO</a>
+                    <a href="/documentation/small/csharp/csharp.html">C#</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">libaries</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/libaries/socket/socket.html">Socket</a>
+                    <a href="/documentation/libaries/tenserflow/tenserflow.html">Tenserflow</a>
+                    <a href="/documentation/libaries/regex/regex.html">Regex</a>
+                    <a href="/documentation/libaries/numpy/numpy.html">Numpy</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Special</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/special/computer/computer.html">Computer</a>
+                    <a href="/documentation/special/logik/logik.html">Logikgates</a>
+                    <a href="/documentation/special/linux/linux.html">Linux</a>
+                    <a href="/documentation/special/arduino/arduino.html">Arduino</a>
+                    <a href="/documentation/special/game/game.html">Game Maker</a>
+                    <a href="/documentation/special/unity/unity.html">Unity</a>
+                    <a href="/documentation/special/os/os.html">OS</a>
+                    <a href="/documentation/special/hacking/hacking.html">Hacking</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Extensions/API</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/extension/chrome/chrome.html">Chrome Extension</a>
+                    <a href="/documentation/extension/discord/discord.html">Discord Bot</a>
+                    <a href="/documentation/extension/computercraft/computercraft.html">Computercraft</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">SCHOOL</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/school/math/math.html">Math</a>
+                    <a href="/documentation/school/physik/physik.html">Physik</a>
+                    <a href="/documentation/school/bwl/bwl.html">BWL</a>
+                    <a href="/documentation/school/it/it.html">IT</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/regex/regex.html">Basics</a>
+            <a href="/documentation/languages/regex/implementation.html">Implementation</a>
+            <a href="/documentation/languages/regex/more.html">More</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>regEx</h1>
+            <hr>
+            <p>Booleans represent one of two values: <colored>True</colored> or <colored>False</colored>.</p>
+            <hr>
+            <h2>Implementation</h2>
+
+            <pre>
+                <code class="language-python">
+import re
+text = "..."
+pattern = re.compile(r'abc')
+
+matches = pattern.finditer(text)
+
+for match in matches:
+    print(match)
+                </code>
+            </pre>
+
+
+            <table>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>.</td>
+                    <td>Everything but a new line</td>
+                </tr>
+                <tr>
+                    <td>\d</td>
+                    <td>Digits 0 - 9</td>
+                </tr>
+                <tr>
+                    <td>\D</td>
+                    <td>Not a digit</td>
+                </tr>
+                <tr>
+                    <td>\w</td>
+                    <td>(a-z, A-Z,0-9,_)</td>
+                </tr>
+                <tr>
+                    <td>\W</td>
+                    <td>Not a "normal" character</td>
+                </tr>
+                <tr>
+                    <td>\s</td>
+                    <td>Whitespace (space, tab, new line)</td>
+                </tr>
+                <tr>
+                    <td>\S</td>
+                    <td>Not a Whitespace</td>
+                </tr>
+                <tr>
+                    <td>\b</td>
+                    <td>Word Boundary (space bevore)</td>
+                </tr>
+                <tr>
+                    <td>^</td>
+                    <td>Start of string</td>
+                </tr>
+                <tr>
+                    <td>$</td>
+                    <td>End of string</td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <th>Symbols</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>[ ]</td>
+                    <td>Matches character</td>
+                </tr>
+                <tr>
+                    <td>[^ ]</td>
+                    <td>Not in brackets</td>
+                </tr>
+                <tr>
+                    <td>|</td>
+                    <td>Either or</td>
+                </tr>
+                <tr>
+                    <td>{3,4}</td>
+                    <td>Range</td>
+                </tr>
+                <tr>
+                    <td>{3}</td>
+                    <td>Exact</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>0 or more</td>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td>1 or more</td>
+                </tr>
+                <tr>
+                    <td>?</td>
+                    <td>0 or 1</td>
+                </tr>
+            </table>
+            <h2>Examples</h2>
+            <out>Email: <red>\b\w</red><orange>+</orange>@<red>\w</red><orange>+</orange>.<red>\w</red><orange>{3,7}</orange></out>
+            <out>URL: (https:\\)<orange>?</orange>(www\.)<orange>?</orange><red>\w</red><orange>+</orange>\.<red>\w</red><orange>+</orange></out>
+
+            <img src="/Bilder/ich 4.jpg" class="modal-hover-opacity" onclick="onClick(this)">
+            
+               <iframe src="https://ide.geeksforgeeks.org/online-python3-compiler/91603b01-1c6e-49d3-af04-aa954c896fea" height="300" width="400"></iframe>
+
+
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+
+
+        </div>
+
+
+
+
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

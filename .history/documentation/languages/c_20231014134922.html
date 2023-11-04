@@ -1,0 +1,87 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/c.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>c</h1>
+            <hr>
+
+            <div class="wrapper">
+            <pre>
+                <code class="language-c">// print/ input
+
+#include  &lt;stdio.h>
+
+printf("My age is: %d", age)
+scanf("%c", &grade);
+                </code>
+            </pre>
+
+            <pre>
+                <code class="language-c">// malloc
+
+int *ptr; //pointer
+ptr = malloc(5 * sizeof(int))
+
+*(ptr + 1) = 20;
+
+free(ptr)
+                </code>
+            </pre>
+            <pre>
+                <code class="language-c">// struct
+
+struct Adresse {
+    char city[200];
+}
+
+struct Adresse myOberkirch;
+myOberkirch.city = "..."
+
+
+typedef struct {
+    char age[200];
+} Person;
+
+Person max;
+max.age = 19;
+                </code>
+            </pre>
+            <pre>
+                <code class="language-c">// Header
+
+// foo.h
+#ifndef FOO_H_   
+#define FOO_H_
+int foo(int x);  
+#endif 
+
+// foo.c
+#include "foo.h" 
+int foo(int x)   
+{
+    return x + 5;
+}
+
+// main.c
+#include <stdio.h>
+#include "foo.h"  
+int main(void)
+{
+    int y = foo(3);  /* Use the function here */
+    printf("%d\n", y);
+    return 0;
+}
+
+// gcc -o my_app main.c foo.c
+                </code>
+            </pre>
+        </div>
+
+
+<div id="includeFooter"></div>

@@ -1,0 +1,30 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/special/hacking.html">Basics</a>
+        </div>
+        
+        
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Hacking</h1>
+            <hr><br>
+            <h2>RSA</h2>
+            <p>p, q = Primzahlen 
+                e = ggT(k, Phi)            //Teilerfremd oder auch eine Primzahl und zwischen 1 und phi(N), häufig 65537 
+                
+                N = p * q 
+                Phi = (p - 1)(q-1) 
+                E * d = 1mod phi(N) 
+                
+                M = nachricht klartext 
+                C = verschlüsselt 
+                
+                Öffentliche (e, N) -> M^e mod N = c 
+                Private (d, N) -> c^d mod N = m </p>
+
+            
+<div id="includeFooter"></div>

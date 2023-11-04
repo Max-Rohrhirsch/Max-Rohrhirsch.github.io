@@ -1,0 +1,123 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/sql/sql.html">Basics</a>
+            <a href="/documentation/languages/sql/mid.html">mid</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>SQL</h1>
+            <hr>
+
+            <h2>Basics</h2>
+            <pre>
+                <code class="language-sql">
+SELECT <green>*</green> <orange>AS</orange> <green>aliasName</green>FROM <green>table</green>
+Where <green>condition</green> -- Selects after beeing grouped
+GROUP BY <green>column</green> 
+HAVING <green>contition</green> -- Selects before beeing grouped
+ORDER BY <green>column</green> <orange>ASC/ DESC</orange>
+LIMIT <green>30</green> -- only first 30 lines
+
+/* Comment */
+                </code>
+            </pre>
+            <p>ASC is from small to big; A - Z (Default)</p>
+            <p>DESC is from big to small; Z - A</p>
+            <hr>
+
+            <h2>Joins</h2>
+            <pre>
+                <code class="language-sql">
+SELECT <green>*</green> FROM <green>table</green>
+JOIN <green>otherTable</green> ON <green>t1.name = t2.name</green>
+Where <green>condition</green>
+GROUP BY <green>column</green> 
+ORDER BY <green>column</green> <orange>ASC/ DESC</orange>
+LIMIT <green>30</green> -- only first 30 lines
+                </code>
+            </pre>
+
+            <table>
+                <tr>
+                  <th>Methode</th>
+                </tr>
+                <tr>
+                  <td>MIN()</td>
+                </tr>
+                <tr>
+                  <td>MAX()</td>
+                </tr>
+                <tr>
+                  <td>COUNT()</td>
+                </tr>
+                <tr>
+                  <td>AVG()</td>
+                </tr>
+                <tr>
+                  <td>SUM()</td>
+                </tr>
+            </table>
+            <hr>
+            <h2>Wildcards</h2>
+            <table>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td>%</td>
+                  <td>Represents zero or more characters</td>
+                </tr>
+                <tr>
+                  <td>_</td>
+                  <td>Represents a single character</td>
+                </tr>
+                <tr>
+                  <td>[]</td>
+                  <td>Represents any single character within the brackets</td>
+                </tr>
+                <tr>
+                  <td>^</td>
+                  <td>Represents any character not in the brackets</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>Represents any single character within the specified range</td>
+                </tr>
+            </table>
+            <out>
+                WHERE CustomerName LIKE 'a%'
+            </out>
+            <hr>
+
+            <h2>Create</h2>
+            <pre>
+                <code class="language-sql">
+CREATE DATABASE databasename;
+DROP DATABASE databasename;
+
+
+CREATE TABLE Persons (
+    PersonID int NOT NULL,
+    LastName varchar(255) UNIQUE,
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255),
+    PRIMARY KEY (PersonID),
+    FOREIGN KEY (PersonID) REFERENCES ORDER(PersonID)
+);
+DROP TABLE table_name;
+
+
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+DELETE FROM table_name WHERE condition;
+                </code>
+            </pre>
+
+<div id="includeFooter"></div>

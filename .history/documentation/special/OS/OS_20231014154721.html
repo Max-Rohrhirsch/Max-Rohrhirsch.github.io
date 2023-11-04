@@ -1,0 +1,370 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+    <!-- ------ SIDE NAVIGATION BAR ----- -->
+    <div class="sidenav">
+        <a href="/documentation/special/OS/OS.html">Basics</a>
+        <a href="/documentation/special/OS/ASM.html">Basics</a>
+    </div>
+
+    <h2>ASM</h2>
+    <div class="wrapper">
+    <pre>
+        <code class="language-asm">; Switch to teletype Mode and print a letter 
+
+mov ah, 0x0e 
+mov al, 'C' 
+int 0x10 
+
+; Array 
+[org 0x7C00] 
+mov al, [Variablename] 
+Variablename: 
+db "String", 0 
+        </code>
+    </pre>
+    <pre>
+        <code class="language-asm">; keyboard input 
+
+Char: 
+    Db 0 
+Mov ah, 0 
+Int 0x16 
+Mov al, [char] 
+
+; buffer 
+Buffer: 
+    Times 10 db 0 
+    Mov bx, buffer 
+    Mov[bx], al 
+    Inc bx 
+
+; read disk 
+Mov ah, 2 
+        </code>
+    </pre>
+    <pre>
+        <code class="language-asm">; Print String
+
+[org 0x7c00] 
+mov ah, 0x0e  
+mov bx, Var1 
+
+printString: 
+    mov al, [bx] 
+    cmp al, 0 
+    je end 
+    int 0x10 
+    inc bx 
+    jmp printString 
+end: 
+
+Var1: 
+    db 'Hello World', 0 
+        </code>
+    </pre>
+    <pre>
+        <code class="language-asm">; Protected mode
+
+GDT_Start: 
+    null_descriptor: 
+        dd 0 
+        dd 0 
+    code_descriptor: 
+        dw 0xffff 
+        dw 0 
+        db 0 
+        db 10011010 
+        db 11001111 
+        db 0 
+
+    data_descriptor: 
+        dw 0xffff 
+        dw 0 
+        db 0 
+        db 10010010 
+        db 11001111 
+        db 0 
+GDT_End: 
+
+GDT_Descriptor: 
+    dw GDT_End - GDT_Start - 1 
+    dd GDT_Start 
+
+CODE_SEG equ code_descriptor - GDT_Starr 
+CODE SEG equ data_descriptor - GDT_Start 
+
+cli 
+lgdt [GDT_Descriptor] 
+
+mov eax, cr0 
+or eax, 1 
+mov cr0, eax 
+
+jmp CODESEG:start_protected_mode 
+
+[bits 32] 
+start_protected_mode: 
+; print colored Text in protected mode 
+mov al, 'A' 
+mov ah, 0x0f 
+mov [0xb8000], ax 
+        </code>
+    </pre>
+    <pre>
+        <code class="language-asm">; Legacy boot
+
+; Always on end of asm code
+jmp $ 
+times 510-($-$$) db 0 
+db 0x55, 0xaa 
+        </code>
+    </pre>
+</div>
+<h1>Advanced Interrupts</h1>
+<hr>
+
+<pre>
+    <code class="language-asm">
+mov al, 13h
+mov ah, 0
+int 10h 
+    </code>
+</pre>
+<h2>INT 10h</h2>
+<table>
+    <tr>
+        <th>Function</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>AH = 0 // Set viedeo mode</td>
+        <td>AL = 00h  // text mode. 40x25. 16 colors. 8 pages. <br>
+            AL = 03h  // text mode. 80x25. 16 colors. 8 pages. <br>
+            AL = 13h  // graphical mode. 40x25. 256 colors. 320x200 pixels. 1 page. 
+        </td>
+    </tr>
+    <tr>
+        <td>AH = 1 // cursor shape</td>
+        <td>CH = cursor start line (bits 0-4) and options (bits 5-7). <br>
+            // bit 5 == 1? cursor not visible <br>
+            CL = bottom cursor line (bits 0-4). 
+        </td>
+    </tr>
+    <tr>
+        <td>AH = 2 // cursor position</td>
+        <td>DH = row.<br>
+            DL = column.<br>
+            BH = page number (0..7)
+        </td>
+    </tr>
+    <tr>
+        <td>AH = 3 // get cursor info</td>
+        <td>input:<br>
+            BH = page number.<br>
+            return:<br>
+            DH = row.<br>
+            DL = column.<br>
+            CH = cursor start line.<br>
+            CL = cursor bottom line. </td>
+    </tr>
+    <tr>
+        <td>AH = 5 // select page</td>
+        <td>AL = new page number (0..7). </td>
+    </tr>
+    <tr>
+        <td>AH = 6, 7 // scroll up, down</td>
+        <td>AL = number of lines by which to scroll (00h = clear entire window). </td>
+    </tr>
+    <tr>
+        <td>AH = 8 // read character</td>
+        <td>BH = page number<br>
+            AL = character.
+        </td>
+    </tr>
+    <tr>
+        <td>AH = 9 // write charachter at cursor position</td>
+        <td>AL = character to display.<br>
+            BH = page number.<br>
+            BL = attribute.<br>
+            CX = number of times to write character. </td>
+    </tr>
+    <tr>
+        <td>AH = 0Ch // change color for a single pixel</td>
+        <td>AL = pixel color<br>
+            CX = column.<br>
+            DX = row. </td>
+    </tr>
+    <tr>
+        <td>AH = 0Dh // get color</td>
+        <td>CX = column.<br>
+            DX = row.<br>
+            AL = pixel color // Output</td>
+    </tr>
+    <tr>
+        <td>AH = 0Eh // output char</td>
+        <td>AL = character to write. </td>
+    </tr>
+    <tr>
+        <td>AH = 13h</td>
+        <td>AL = write mode:
+            bit 0: update cursor after writing;<br>
+            bit 1: string contains attributes.<br>
+           BH = page number.<br>
+           BL = attribute if string contains only characters (bit 1 of AL is zero).<br>
+           CX = number of characters in string (attributes are not counted).<br>
+           DL,DH = column, row at which to start writing.<br>
+           ES:BP points to string to be printed. </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th>Function</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>INT 11h</td>
+        <td>get BIOS equipment list</td>
+    </tr>
+    <tr>
+        <td>INT 12h // get memory size</td>
+        <td>AX = size in kilobytes</td>
+    </tr>
+    <tr>
+        <td>INT 13h, AH = 02h, 03h // read/ write sectors</td>
+        <td>AL = number of sectors to read/write (must be nonzero)<br>
+            CH = cylinder number (0..79).<br>
+            CL = sector number (1..18).<br>
+            basic 8086 and dos interrupts that are currently supported by the emulator Page 6 of 19<br>
+            DH = head number (0..1).<br>
+            DL = drive number (0..3 , for the emulator it depends on quantity of FLOPPY_ files). </td>
+    </tr>
+    <tr>
+        <td>INT 15h, AH = 86h // BIOS wait function</td>
+        <td>CX:DX = interval in microseconds </td>
+    </tr>
+    <tr>
+        <td>INT 16h, AH = 01h // get keystroke from keyboard</td>
+        <td>AL = ASCII character.</td>
+    </tr>
+    <tr>
+        <td>INT 1Ah, AH = 00h // get system time</td>
+        <td>CX:DX = number of clock ticks since midnight.<br>
+            AL = midnight counter, advanced each time midnight passes. </td>
+    </tr>
+    <tr>
+        <td>INT 20h</td>
+        <td>exit to operating system</td>
+    </tr>
+</table>
+<h2>INT 21h // File editing</h2>
+<table>
+    <tr>
+        <th>Function</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>AH = 1</td>
+        <td>read character/ wait until keypress</td>
+    </tr>
+    <tr>
+        <td>AH = 2 // write char to output</td>
+        <td>DL = character to write</td>
+    </tr>
+    <tr>
+        <td>AH = 5 // write char to printer</td>
+        <td>DL = character to print,</td>
+    </tr>
+    <tr>
+        <td>Ah = 2Ah // get system date</td>
+        <td>CX = year (1980-2099). DH = month. DL = day. AL = day of week (00h=Sunday)</td>
+    </tr>
+    <tr>
+        <td>AH = 2Ch // get system time</td>
+        <td>CH = hour. CL = minute. DH = second. DL = 1/100 seconds. </td>
+    </tr>
+    <tr>
+        <td>AH = 39h // make directory</td>
+        <td>org 100h<br>
+            mov dx, offset filepath<br>
+            mov ah, 39h<br>
+            int 21h<br>
+            ret<br>
+            filepath DB "C:\mydir", 0 ; path to be created.<br>
+            end</td>
+    </tr>
+    <tr>
+        <td>AH = 3Dh // open existing file</td>
+        <td>org 100h<br>
+            mov al, 2<br>
+            mov dx, offset filename<br>
+            mov ah, 3dh<br>
+            int 21h<br>
+            jc err<br>
+            mov handle, ax<br>
+            jmp k<br>
+             filename db "myfile.txt", 0<br>
+             handle dw ?<br>
+             err:<br>
+            ; ....<br>
+             k:<br>
+            ret</td>
+    </tr>
+    <tr>
+        <td>AH = 3Eh // close file</td>
+        <td>BX = file handle </td>
+    </tr>
+    <tr>
+        <td>AH = 3Fh // read from file</td>
+        <td>?</td>
+    </tr>
+    <tr>
+        <td>AH = 40h // write to file</td>
+        <td>BX = file handle.<br>
+            CX = number of bytes to write.<br>
+            DS:DX -> data to write. </td>
+    </tr>
+    <tr>
+        <td>AH = 41h // delete file</td>
+        <td>DS:DX -> ASCIZ filename (no wildcards, but see notes). </td>
+    </tr>
+    <tr>
+        <td>AH = 47h // get current directory</td>
+        <td>DL = drive number (00h = default, 01h = A:, etc)<br>
+            DS:SI -> 64-byte buffer for ASCIZ pathname. </td>
+    </tr>
+
+    <tr>
+        <td>AH = 56h</td>
+        <td>DS:DX -> ASCIZ filename of existing file.<br>
+            ES:DI -> ASCIZ new filename. </td>
+    </tr>
+</table>
+<h2>INT 33h</h2>
+<table>
+    <tr>
+        <th>Function</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>AX = 0000 // mouse ininialization</td>
+        <td>MariaAnders</td>
+    </tr>
+    <tr>
+        <td>AX = 0001 // show mouse pointer</td>
+        <td>FranciscoChang</td>
+    </tr>
+    <tr>
+        <td>AX = 0002 // hide mouse</td>
+        <td>RolandMendel</td>
+    </tr>
+    <tr>
+        <td>AX = 0003 // get mouse info</td>
+        <td>if left button is down: BX=1<br>
+            if right button is down: BX=2<br>
+            if both buttons are down: BX=3<br>
+            CX = x<br>
+            DX = y </td>
+    </tr>
+</table>
+
+<div id="includeFooter"></div>

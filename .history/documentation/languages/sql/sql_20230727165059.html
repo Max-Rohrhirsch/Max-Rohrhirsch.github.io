@@ -1,0 +1,238 @@
+<html>
+    <head>
+        <title>Documentation</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" lang="en" content="Documentation of many things I learned">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Coding, max">
+        <meta name="author" content="Rohrhirsch Max">
+                
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="/documentation/docStyle.css">
+        <link rel="icon" type="image/x-icon" href="/Bilder/favicon.ico">
+    </head>
+    <body>
+        <!-- ------ TOP NAVIGATION BAR ----- -->
+        <nav class="nav1">
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Languages</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/languages/sql/sql.html">SQL</a>
+                    <a href="/documentation/languages/python/python.html">Python</a>
+                    <a href="/documentation/languages/java/java.html">Java</a>
+                    <a href="/documentation/languages/js/js.html">JS</a>
+                    <a href="/documentation/languages/css/css.html">CSS</a>
+                    <a href="/documentation/languages/c/c.html">C</a>
+                    <a href="/documentation/languages/cpp/cpp.html">C++</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Small Language</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/small/bash/bash.html">Bash</a>
+                    <a href="/documentation/small/rust/rust.html">Rust</a>
+                    <a href="/documentation/small/go/go.html">GO</a>
+                    <a href="/documentation/small/csharp/csharp.html">C#</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">libaries</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/libaries/socket/socket.html">Socket</a>
+                    <a href="/documentation/libaries/tenserflow/tenserflow.html">Tenserflow</a>
+                    <a href="/documentation/libaries/regex/regex.html">Regex</a>
+                    <a href="/documentation/libaries/numpy/numpy.html">Numpy</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Special</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/special/computer/computer.html">Computer</a>
+                    <a href="/documentation/special/logik/logik.html">Logikgates</a>
+                    <a href="/documentation/special/linux/linux.html">Linux</a>
+                    <a href="/documentation/special/arduino/arduino.html">Arduino</a>
+                    <a href="/documentation/special/game/game.html">Game Maker</a>
+                    <a href="/documentation/special/unity/unity.html">Unity</a>
+                    <a href="/documentation/special/os/os.html">OS</a>
+                    <a href="/documentation/special/hacking/hacking.html">Hacking</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Extensions/API</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/extension/chrome/chrome.html">Chrome Extension</a>
+                    <a href="/documentation/extension/discord/discord.html">Discord Bot</a>
+                    <a href="/documentation/extension/computercraft/computercraft.html">Computercraft</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">SCHOOL</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/school/math/math.html">Math</a>
+                    <a href="/documentation/school/physik/physik.html">Physik</a>
+                    <a href="/documentation/school/bwl/bwl.html">BWL</a>
+                    <a href="/documentation/school/it/it.html">IT</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/sql/sql.html">Basics</a>
+            <a href="/documentation/languages/sql/mid.html">mid</a>
+            <a href="/documentation/languages/sql/server.html">server</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>SQL</h1>
+            <hr>
+
+            <h2>Basics</h2>
+            <pre>
+                <code class="language-sql">
+SELECT <green>*</green> <orange>AS</orange> <green>aliasName</green>FROM <green>table</green>
+Where <green>condition</green> -- Selects after beeing grouped
+GROUP BY <green>column</green> 
+HAVING <green>contition</green> -- Selects before beeing grouped
+ORDER BY <green>column</green> <orange>ASC/ DESC</orange>
+LIMIT <green>30</green> -- only first 30 lines
+
+/* Comment */
+                </code>
+            </pre>
+            <p>ASC is from small to big; A - Z (Default)</p>
+            <p>DESC is from big to small; Z - A</p>
+            <hr>
+
+            <h2>Joins</h2>
+            <pre>
+                <code class="language-sql">
+SELECT <green>*</green> FROM <green>table</green>
+JOIN <green>otherTable</green> ON <green>t1.name = t2.name</green>
+Where <green>condition</green>
+GROUP BY <green>column</green> 
+ORDER BY <green>column</green> <orange>ASC/ DESC</orange>
+LIMIT <green>30</green> -- only first 30 lines
+                </code>
+            </pre>
+
+            <table>
+                <tr>
+                  <th>Methode</th>
+                </tr>
+                <tr>
+                  <td>MIN()</td>
+                </tr>
+                <tr>
+                  <td>MAX()</td>
+                </tr>
+                <tr>
+                  <td>COUNT()</td>
+                </tr>
+                <tr>
+                  <td>AVG()</td>
+                </tr>
+                <tr>
+                  <td>SUM()</td>
+                </tr>
+            </table>
+            <hr>
+            <h2>Wildcards</h2>
+            <table>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td>%</td>
+                  <td>Represents zero or more characters</td>
+                </tr>
+                <tr>
+                  <td>_</td>
+                  <td>Represents a single character</td>
+                </tr>
+                <tr>
+                  <td>[]</td>
+                  <td>Represents any single character within the brackets</td>
+                </tr>
+                <tr>
+                  <td>^</td>
+                  <td>Represents any character not in the brackets</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>Represents any single character within the specified range</td>
+                </tr>
+            </table>
+            <out>
+                WHERE CustomerName LIKE 'a%'
+            </out>
+            <hr>
+
+            <h2>Create</h2>
+            <pre>
+                <code class="language-sql">
+CREATE DATABASE databasename;
+DROP DATABASE databasename;
+
+
+CREATE TABLE Persons (
+    PersonID int NOT NULL,
+    LastName varchar(255) UNIQUE,
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255),
+    PRIMARY KEY (PersonID),
+    FOREIGN KEY (PersonID) REFERENCES ORDER(PersonID)
+);
+DROP TABLE table_name;
+
+
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+DELETE FROM table_name WHERE condition;
+                </code>
+            </pre>
+
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+        </div>
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+<!-- ------ SIDE NAVIGATION BAR ----- -->
+<div class="sidenav">
+    <a href="/documentation/libaries/Git.html">Basics</a>
+</div>
+
+<!-- ------ MAIN CONTENT ----- -->
+<div class="main">
+<h1>Git</h1>
+<br>
+<h2>Setup</h2>
+<a href="https://git-scm.com/download/win">Git installieren</a>
+<p>Login in Github oder Gitlab und erstelle ein Projekt</p>
+<pre>
+    <code class="language-git">
+git config -global user.name "…" 
+
+git config -global user.email … 
+
+git init 
+    </code>
+</pre>
+<br>
+
+<h2>Hochladen</h2>
+<pre>
+    <code class="language-git">
+git add .
+git commit -m "Message"
+git remote add origin https://gitlab....
+git push -u origin master
+    </code>
+</pre>
+<br>
+
+<h2>Weitere nüzliche Commands</h2>
+<pre>
+    <code class="language-git">
+git log 
+git checkout 3f34s5d5 
+git branch 
+git push origin new-branch 
+git pull origin master 
+    </code>
+</pre>
+<div id="includeFooter"></div>

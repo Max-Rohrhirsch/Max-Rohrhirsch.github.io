@@ -1,0 +1,92 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/css.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>css</h1>
+            <hr><br>
+
+            <h2>Cube</h2>
+            <pre>
+                <code class="language-css">
+.front {transform: translate2(1em);}
+.top {transform: rotatex(90 deg) translate2(1em);}
+// jede seite
+
+.cube {
+    perspective: 1000px;
+    transform: preserve-3d;
+    transform: rotatex(-50deg) rotatey(32deg);
+}
+                </code>
+            </pre>
+
+            <h2>Color</h2>
+            <pre>
+                <code class="language-css">
+background: radial-gradient(red, blue) fixed;
+                </code>
+            </pre>
+
+            <h2>Paralax</h2>
+            <pre>
+                <code class="language-js">
+let text = document.getElementById("text")
+window.addEventListener("scroll", function() {
+    let value = window.scrolly;
+    text.style.top = 50 * value * -0.5 + "%";
+})
+                </code>
+            </pre>
+
+
+            <table>
+                <tr>
+                  <th>Company</th>
+                  <th>Contact</th>
+                  <th>Country</th>
+                </tr>
+                <tr>
+                  <td>Alfreds Futterkiste</td>
+                  <td>Maria Anders</td>
+                  <td>Germany</td>
+                </tr>
+                <tr>
+                  <td>Centro comercial Moctezuma</td>
+                  <td>Francisco Chang</td>
+                  <td>Mexico</td>
+                </tr>
+                <tr>
+                  <td>Ernst Handel</td>
+                  <td>Roland Mendel</td>
+                  <td>Austria</td>
+                </tr>
+                <tr>
+                  <td>Island Trading</td>
+                  <td>Helen Bennett</td>
+                  <td>UK</td>
+                </tr>
+                <tr>
+                  <td>Laughing Bacchus Winecellars</td>
+                  <td>Yoshi Tannamuri</td>
+                  <td>Canada</td>
+                </tr>
+                <tr>
+                  <td>Magazzini Alimentari Riuniti</td>
+                  <td>Giovanni Rovelli</td>
+                  <td>Italy</td>
+                </tr>
+            </table>
+
+            <img src="/Bilder/ich 4.jpg" class="modal-hover-opacity" onclick="onClick(this)">
+            
+               <iframe src="https://ide.geeksforgeeks.org/online-css3-compiler/91603b01-1c6e-49d3-af04-aa954c896fea" height="300" width="400"></iframe>
+
+
+<div id="includeFooter"></div>

@@ -1,0 +1,65 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/special/computer/computer.html">Basics</a>
+            <button class="dropdown-btn">Parts 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/documentation/special/computer/simple.html">ALU</a>
+                <a href="/documentation/special/computer/remote.html">Storage</a>
+                <a href="/documentation/special/computer/uhr.html">Commands</a>
+            </div>
+            <a href="/documentation/special/computer/advanced.html">Advanced</a>
+            <a href="/documentation/special/computer/examples.html">Examples</a>
+        </div>
+        
+        
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Computer</h1>
+            <hr>
+            <img src="/Bilder/ALU.png" class="modal-hover-opacity" onclick="onClick(this)">
+            <img src="/Bilder/INC.png" class="modal-hover-opacity" onclick="onClick(this)">
+            <img src="/Bilder/CPU.png" class="modal-hover-opacity" onclick="onClick(this)">
+
+
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+        </div>
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

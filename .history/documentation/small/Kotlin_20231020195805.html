@@ -1,0 +1,75 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+<!-- ------ SIDE NAVIGATION BAR ----- -->
+<div class="sidenav">
+    <a href="/documentation/small/Kotlin.html">Basics</a>
+</div>
+
+<!-- ------ MAIN CONTENT ----- -->
+<div class="main">
+    <out>kotlinc hello.kt -include-runtime -d hello.jar</out>
+<div class="wrapper">
+    <pre>
+        <code class="language-kotlin">// Basic
+
+fun main() {
+    var hello = "Hello"
+    var hello: String = "Hello"
+    println(hello)
+}
+/* */
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">// OOP
+            
+class Humanoid {
+    val name = "Max"
+
+    fun yo() {
+        print(name)
+    }
+}
+
+fun Humanoid.walk() {
+    
+}
+
+data class User(val name: String, val age: Int)
+val person = User("Max", 48)
+
+val (name, age) = person
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">// Function
+            
+            fun double(x: Int) = x * 2
+
+            var lambda: (Int) -> Int = { num -> double(num) }
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">
+            
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">
+            
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">
+            
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">
+            
+        </code>
+    </pre>
+</div>
+</div>
+<div id="includeFooter"></div>

@@ -1,0 +1,98 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/js.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>JS</h1>
+            <hr><br>
+
+            <h2>Basics</h2>
+            <pre>
+                <code class="language-js">
+// program to display fibonacci sequence using recursion
+function fibonacci(num) {
+    if(num &lt; 2) {
+        return num;
+    }
+    else {
+        return fibonacci(num-1) + fibonacci(num - 2);
+    }
+}
+
+// take nth term input from the user
+const nTerms = prompt('Enter the number of terms: ');
+
+if(nTerms &lt;=0) {
+    console.log('Enter a positive integer.');
+}
+else {
+    for(let i = 0; i &lt; nTerms; i++) {
+        console.log(fibonacci(i));
+    }
+}
+
+const cars = ["Saab", "Volvo", "BMW"];
+
+Math.random();
+
+
+                </code>
+            </pre>
+            <pre>
+                <code class="language-js">// For Each
+
+fruits.forEach(myFunction);
+                </code>
+            </pre>
+
+            <h2>Often used</h2>
+            <pre>
+                <code class="language-js">
+element = document.getElementById("myBtn")
+element = cocument.getElementsByClassName("myBtn")
+
+element.addEventListener("click", function(){ myFunction(p1, p2); });
+                </code>
+            </pre>
+            <br>
+            <h2>Node js server</h2>
+            <out>node init</out>
+            <pre>
+                <code class="language-js">// Server
+
+import express from "express";
+import path from "path";
+import fs from "fs";
+
+// settings
+const app = express();
+
+app.get("/", (req, res) => {
+  res.redirect("/Pfadfinder");
+});
+
+app.use(express.static("./views/static"));
+
+fs.readdirSync("./views/startseiten").forEach(page => {
+  app.get(`/${page.split(".")[0]}`, (req, res) => {
+    res.render(`startseiten/${page}`, {
+      loggedIn: req.session.loggedIn,
+    });
+  });
+});
+
+app.use((req, res) => {
+  res.sendFile(path.resolve() + "/views/static/errorpage.html");
+});
+
+app.listen(80);
+                </code>
+            </pre>
+            <out>node server.js</out>
+
+<div id="includeFooter"></div>

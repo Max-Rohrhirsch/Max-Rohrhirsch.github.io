@@ -1,0 +1,151 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/java/java.html">Basics</a>
+            <a href="/documentation/languages/java/swing.html">Swing</a>
+            <a href="/documentation/languages/java/spring.html">Spring</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Spring Boot</h1>
+            <hr><br>
+
+            <p> Installation</br>
+                Install gradle</br>
+                Install Spring tools</br>
+                Set both pathvariables into path (to /bin folder)</br>
+                Install folder from spring initializer</p>
+            <div class="half">
+<pre>
+    <code class="language-java">// Simple request handeling
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Controller {
+    @GetMapping("/api/test/{resourceId}")
+    public String getString(@PathVariable String resourceID) {
+        return "Here is the String: " + resourceID;
+    }
+    @PostMapping("/api/tets")
+    public String getString(D) {
+        return "POST";
+    }
+}
+
+// --------------------------
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.SpringApplication;
+
+@SpringBootApplication
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+    </code>
+</pre>
+<pre>
+    <code class="language-java">// Dependenxy Injection
+
+@Component
+public class TextWriter...
+
+// --------------------------
+
+@Autowired
+Textwriter text;
+
+// Auto import
+    </code>
+</pre>
+<pre>
+    <code class="language-java">// Multiple Injection
+
+@Component
+@Qualifier("regular...")
+public class TextWriter...
+
+// --------------------------
+
+@Autowired
+@Qualifier("regular...")
+Textwriter text;
+
+// Auto import & select witch class 
+    </code>
+</pre>
+<pre>
+    <code class="language-java">// Spring database 
+
+// Debendency "Spring Web", "Spring Data JPA", "MySQL Driver", "Lombok"?
+
+// -------------- application.properties ----------------
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver 
+
+spring.datasource.url=jdbc:mysql://localhost:3306/newDB
+spring.datasource.username=root
+spring.datasource.password=1234
+
+spring.jpa.show-sql=true
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl.auto=update
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+// -------------  Java -----------------
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Data
+@Table(name = "STUDENT")
+public class Student {
+    @id
+    @column(name = "MyID")
+    private int id;
+
+    @column(name = "info")
+    private String infos;
+}
+    </code>
+</pre>
+<pre>
+    <code class="language-java">// Java Database
+import java.sql.*;
+
+String url = "jdbc:mysql://localhost:3306/newDB";
+String username="root";
+String password="1234";
+
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection connection = DriverManager.getConnection(url, username, password);
+    Statement statement = connection.createStatement();
+    ResultSet resultSet = statement.executeQuery("SELECt * FROM student");
+
+    while (resultSet.next()) {
+        System.out.println(resultSet.getInt(1));
+    }
+
+    connection.close();
+} catch (Exception e) {
+    System.out.println(e);
+}
+    </code>
+</pre>
+            </div>
+        </div>
+        
+
+
+
+
+<div id="includeFooter"></div>

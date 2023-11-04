@@ -1,0 +1,81 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/sql/sql.html">Basics</a>
+            <a href="/documentation/languages/sql/mid.html">mid</a>
+            <a href="/documentation/languages/sql/server.html">server</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>SQL</h1>
+            <hr>
+
+            <h2>Distinct</h2>
+            <p>The <red>SELECT DISTINCT</red> statement is used to return only distinct (different) values.</p>
+            <pre>
+                <code class="language-sql">
+SELECT Count(*) AS DistinctCountries
+FROM (SELECT DISTINCT Country FROM Customers);
+                </code>
+            </pre>
+
+            <h2>Exists</h2>
+            <pre>
+                <code class="language-sql">
+SELECT column_name(s)
+FROM table_name
+WHERE EXISTS
+(SELECT column_name FROM table_name WHERE condition);
+                </code>
+            </pre>
+
+            <h2>Between</h2>
+            <pre>
+                <code class="language-sql">
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+                </code>
+            </pre>
+ 
+
+
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+        </div>
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

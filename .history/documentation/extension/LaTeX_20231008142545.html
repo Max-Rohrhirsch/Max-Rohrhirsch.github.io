@@ -1,0 +1,181 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+    <!-- ------ SIDE NAVIGATION BAR ----- -->
+    <div class="sidenav">
+        <a href="/documentation/extension/LaTeX.html">Basics</a>
+    </div>
+
+    <!-- ------ MAIN CONTENT ----- -->
+    <div class="main">
+        <h1>LaTeX</h1>
+        <hr>
+
+
+        <div class="wrapper">
+            <pre><code class="language-latex">% Basic
+\documentclass[12pt]{article}  
+
+\usepackage{hyperref} 
+\usepackage{fullpage} 
+\usepackage[top=2cm, bottom=1cm]{geometry} 
+\usepackage{graphicx} 
+\usepackage{xcolor} 
+
+\begin{document}  
+    % ...
+\end{document}
+            </code></pre>
+            <pre><code class="language-latex">% Title
+                
+\title{Seminararbeit 2023}
+\author{Max Rohrhirsch}
+\maketitle 
+            </code></pre>
+            <pre><code class="language-latex">% Math
+            
+${(x + 1) = (x-y)^{5 + 1}}$ vs (x + 1)
+$${A_2(x) = x^2 + y}$$
+$$a_0, a_1, a_2, \ldots, a_{100}$$
+
+% Greek letters
+$$\pi$$
+$$\alpha$$
+
+% Trig functions
+$$\sin x$$
+$$\sqrt{3}$$
+$$\frac{2}{4}$$
+
+% Arrays 
+$\{1, 2, 3\}$
+\$
+            </code></pre>
+            <pre><code class="language-latex">% Tables
+
+\begin{tabular}{|l||p{2cm}|c|c|c|}
+\hline
+$x$ & 1 & 2 & 3 & 4 \\ \hline
+$f(x)$ & 10 & 11 & 12 & 13 \\ \hline
+\end{tabular}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c}
+        x & 1\\
+        y & 2
+    \end{tabular}
+    \caption{My caption}
+    \label{tab:my_label}
+\end{table}
+            </code></pre>
+            <pre><code class="language-latex">% List
+                
+\begin{enumerate} \setcounter{enumi}{5}
+    \item first
+    \item second
+    \item third
+    \begin{enumerate}
+        \item jes
+        \item sjdf
+        \item dfsdf
+    \end{enumerate}
+\end{enumerate}
+            </code></pre>
+            <pre><code class="language-latex">% Formatting
+                
+\textit{Text Italiciezed} 
+
+\textbf{Text Bold} 
+
+\texttt{Text Typewrite} 
+
+\url{https://www.overleaf.com}
+
+\href{https://www.overleaf.com}{My website}
+
+\vspace{1cm}
+            </code></pre>
+            <pre><code class="language-latex">% Float
+             
+\begin{flushleft}
+    This line is left
+\end{flushleft}
+
+\begin{flushright}
+    This is Right
+\end{flushright}
+
+\begin{center}
+    Centered Text
+\end{center}
+            
+            </code></pre>
+            <pre><code class="language-latex">% Color
+
+\color{red}
+    Text
+\color{white}
+            </code></pre>
+            <pre><code class="language-latex">% Section
+                
+\tableofcontents
+
+\section{H1 title}
+    \subsection{H2 title}
+        \subsubsection{}
+\section{H1 2title}
+            </code></pre>
+            <pre><code class="language-latex">% Image
+                
+\includegraphics[scale=0.4]{frog.jpg}
+            </code></pre>
+            <pre><code class="language-latex">% Function
+                
+\def\eq1{y=...}
+% ...
+
+$$\eq1$$
+            </code></pre>
+            <pre><code class="language-latex">% Own command
+                
+\newcommand{\set}[1]{\setlength\itemsep{#1 cm}}
+% ...
+
+\set{1.2}
+            </code></pre>
+            <pre><code class="language-latex">% Usefull 
+                
+\setcounter{page}{5} 
+
+\usepackage[sfdefault]{roboto} 
+
+\begingroup 
+    This is the Thin version 
+\endgroup 
+            </code></pre>
+            <pre><code class="language-latex">% Quote
+                
+Quelle: \cite{latexcompanion,knuthwebsite} 
+
+%Sets the bibliography style to UNSRT and imports the  
+%bibliography file "sample.bib". 
+\bibliographystyle{unsrt} 
+\bibliography{sample} 
+
+% ------------------
+
+@article{einstein, 
+    author =       "Albert Einstein", 
+    title =        "MyTitle", 
+    url       = "http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html" ,
+    pages =        "891--921", 
+    year      = "1993", 
+    publisher = "Addison-Wesley", 
+    year =         "1905", 
+} 
+            </code></pre>
+        </div>
+        
+    </div>      
+<div id="includeFooter"></div>

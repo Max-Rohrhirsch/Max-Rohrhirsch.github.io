@@ -1,0 +1,385 @@
+<html>
+    <head>
+        <title>Documentation</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" lang="en" content="Documentation of many things I learned">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Coding, max">
+        <meta name="author" content="Rohrhirsch Max">
+                
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="/documentation/docStyle.css">
+        <link rel="icon" type="image/x-icon" href="/Bilder/favicon.ico">
+    </head>
+    <body>
+        <!-- ------ TOP NAVIGATION BAR ----- -->
+        <nav class="nav1">
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Languages</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/languages/sql/sql.html">SQL</a>
+                    <a href="/documentation/languages/python/python.html">Python</a>
+                    <a href="/documentation/languages/java/java.html">Java</a>
+                    <a href="/documentation/languages/js/js.html">JS</a>
+                    <a href="/documentation/languages/css/css.html">CSS</a>
+                    <a href="/documentation/languages/c/c.html">C</a>
+                    <a href="/documentation/languages/cpp/cpp.html">C++</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Small Language</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/small/bash/bash.html">Bash</a>
+                    <a href="/documentation/small/rust/rust.html">Rust</a>
+                    <a href="/documentation/small/go/go.html">GO</a>
+                    <a href="/documentation/small/csharp/csharp.html">C#</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">libaries</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/libaries/socket/socket.html">Socket</a>
+                    <a href="/documentation/libaries/tenserflow/tenserflow.html">Tenserflow</a>
+                    <a href="/documentation/libaries/regex/regex.html">Regex</a>
+                    <a href="/documentation/libaries/numpy/numpy.html">Numpy</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Special</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/special/computer/computer.html">Computer</a>
+                    <a href="/documentation/special/logik/logik.html">Logikgates</a>
+                    <a href="/documentation/special/linux/linux.html">Linux</a>
+                    <a href="/documentation/special/arduino/arduino.html">Arduino</a>
+                    <a href="/documentation/special/game/game.html">Game Maker</a>
+                    <a href="/documentation/special/unity/unity.html">Unity</a>
+                    <a href="/documentation/special/os/os.html">OS</a>
+                    <a href="/documentation/special/hacking/hacking.html">Hacking</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Extensions/API</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/extension/chrome/chrome.html">Chrome Extension</a>
+                    <a href="/documentation/extension/discord/discord.html">Discord Bot</a>
+                    <a href="/documentation/extension/computercraft/computercraft.html">Computercraft</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">SCHOOL</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/school/math/math.html">Math</a>
+                    <a href="/documentation/school/physik/physik.html">Physik</a>
+                    <a href="/documentation/school/bwl/bwl.html">BWL</a>
+                    <a href="/documentation/school/it/it.html">IT</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/special/os/os.html">Basics</a>
+            <button class="dropdown-btn">More 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/documentation/special/os/assembler.html">Assembler</a>
+                <a href="/documentation/special/os/c.html">C</a>
+                <a href="/documentation/special/os/uhr.html">mid</a>
+            </div>
+            <a href="/documentation/special/os/advanced.html">Advanced</a>
+            <a href="/documentation/special/os/examples.html">Examples</a>
+        </div>
+        
+        
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Advanced Interrupts</h1>
+            <hr>
+   
+            <pre>
+                <code class="language-asm">
+mov al, 13h
+mov ah, 0
+int 10h 
+                </code>
+            </pre>
+            <h2>INT 10h</h2>
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>AH = 0 // Set viedeo mode</td>
+                    <td>AL = 00h  // text mode. 40x25. 16 colors. 8 pages. <br>
+                        AL = 03h  // text mode. 80x25. 16 colors. 8 pages. <br>
+                        AL = 13h  // graphical mode. 40x25. 256 colors. 320x200 pixels. 1 page. 
+                    </td>
+                </tr>
+                <tr>
+                    <td>AH = 1 // cursor shape</td>
+                    <td>CH = cursor start line (bits 0-4) and options (bits 5-7). <br>
+                        // bit 5 == 1? cursor not visible <br>
+                        CL = bottom cursor line (bits 0-4). 
+                    </td>
+                </tr>
+                <tr>
+                    <td>AH = 2 // cursor position</td>
+                    <td>DH = row.<br>
+                        DL = column.<br>
+                        BH = page number (0..7)
+                    </td>
+                </tr>
+                <tr>
+                    <td>AH = 3 // get cursor info</td>
+                    <td>input:<br>
+                        BH = page number.<br>
+                        return:<br>
+                        DH = row.<br>
+                        DL = column.<br>
+                        CH = cursor start line.<br>
+                        CL = cursor bottom line. </td>
+                </tr>
+                <tr>
+                    <td>AH = 5 // select page</td>
+                    <td>AL = new page number (0..7). </td>
+                </tr>
+                <tr>
+                    <td>AH = 6, 7 // scroll up, down</td>
+                    <td>AL = number of lines by which to scroll (00h = clear entire window). </td>
+                </tr>
+                <tr>
+                    <td>AH = 8 // read character</td>
+                    <td>BH = page number<br>
+                        AL = character.
+                    </td>
+                </tr>
+                <tr>
+                    <td>AH = 9 // write charachter at cursor position</td>
+                    <td>AL = character to display.<br>
+                        BH = page number.<br>
+                        BL = attribute.<br>
+                        CX = number of times to write character. </td>
+                </tr>
+                <tr>
+                    <td>AH = 0Ch // change color for a single pixel</td>
+                    <td>AL = pixel color<br>
+                        CX = column.<br>
+                        DX = row. </td>
+                </tr>
+                <tr>
+                    <td>AH = 0Dh // get color</td>
+                    <td>CX = column.<br>
+                        DX = row.<br>
+                        AL = pixel color // Output</td>
+                </tr>
+                <tr>
+                    <td>AH = 0Eh // output char</td>
+                    <td>AL = character to write. </td>
+                </tr>
+                <tr>
+                    <td>AH = 13h</td>
+                    <td>AL = write mode:
+                        bit 0: update cursor after writing;<br>
+                        bit 1: string contains attributes.<br>
+                       BH = page number.<br>
+                       BL = attribute if string contains only characters (bit 1 of AL is zero).<br>
+                       CX = number of characters in string (attributes are not counted).<br>
+                       DL,DH = column, row at which to start writing.<br>
+                       ES:BP points to string to be printed. </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>INT 11h</td>
+                    <td>get BIOS equipment list</td>
+                </tr>
+                <tr>
+                    <td>INT 12h // get memory size</td>
+                    <td>AX = size in kilobytes</td>
+                </tr>
+                <tr>
+                    <td>INT 13h, AH = 02h, 03h // read/ write sectors</td>
+                    <td>AL = number of sectors to read/write (must be nonzero)<br>
+                        CH = cylinder number (0..79).<br>
+                        CL = sector number (1..18).<br>
+                        basic 8086 and dos interrupts that are currently supported by the emulator Page 6 of 19<br>
+                        DH = head number (0..1).<br>
+                        DL = drive number (0..3 , for the emulator it depends on quantity of FLOPPY_ files). </td>
+                </tr>
+                <tr>
+                    <td>INT 15h, AH = 86h // BIOS wait function</td>
+                    <td>CX:DX = interval in microseconds </td>
+                </tr>
+                <tr>
+                    <td>INT 16h, AH = 01h // get keystroke from keyboard</td>
+                    <td>AL = ASCII character.</td>
+                </tr>
+                <tr>
+                    <td>INT 1Ah, AH = 00h // get system time</td>
+                    <td>CX:DX = number of clock ticks since midnight.<br>
+                        AL = midnight counter, advanced each time midnight passes. </td>
+                </tr>
+                <tr>
+                    <td>INT 20h</td>
+                    <td>exit to operating system</td>
+                </tr>
+            </table>
+            <h2>INT 21h // File editing</h2>
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>AH = 1</td>
+                    <td>read character/ wait until keypress</td>
+                </tr>
+                <tr>
+                    <td>AH = 2 // write char to output</td>
+                    <td>DL = character to write</td>
+                </tr>
+                <tr>
+                    <td>AH = 5 // write char to printer</td>
+                    <td>DL = character to print,</td>
+                </tr>
+                <tr>
+                    <td>Ah = 2Ah // get system date</td>
+                    <td>CX = year (1980-2099). DH = month. DL = day. AL = day of week (00h=Sunday)</td>
+                </tr>
+                <tr>
+                    <td>AH = 2Ch // get system time</td>
+                    <td>CH = hour. CL = minute. DH = second. DL = 1/100 seconds. </td>
+                </tr>
+                <tr>
+                    <td>AH = 39h // make directory</td>
+                    <td>org 100h<br>
+                        mov dx, offset filepath<br>
+                        mov ah, 39h<br>
+                        int 21h<br>
+                        ret<br>
+                        filepath DB "C:\mydir", 0 ; path to be created.<br>
+                        end</td>
+                </tr>
+                <tr>
+                    <td>AH = 3Dh // open existing file</td>
+                    <td>org 100h<br>
+                        mov al, 2<br>
+                        mov dx, offset filename<br>
+                        mov ah, 3dh<br>
+                        int 21h<br>
+                        jc err<br>
+                        mov handle, ax<br>
+                        jmp k<br>
+                         filename db "myfile.txt", 0<br>
+                         handle dw ?<br>
+                         err:<br>
+                        ; ....<br>
+                         k:<br>
+                        ret</td>
+                </tr>
+                <tr>
+                    <td>AH = 3Eh // close file</td>
+                    <td>BX = file handle </td>
+                </tr>
+                <tr>
+                    <td>AH = 3Fh // read from file</td>
+                    <td>?</td>
+                </tr>
+                <tr>
+                    <td>AH = 40h // write to file</td>
+                    <td>BX = file handle.<br>
+                        CX = number of bytes to write.<br>
+                        DS:DX -> data to write. </td>
+                </tr>
+                <tr>
+                    <td>AH = 41h // delete file</td>
+                    <td>DS:DX -> ASCIZ filename (no wildcards, but see notes). </td>
+                </tr>
+                <tr>
+                    <td>AH = 47h // get current directory</td>
+                    <td>DL = drive number (00h = default, 01h = A:, etc)<br>
+                        DS:SI -> 64-byte buffer for ASCIZ pathname. </td>
+                </tr>
+
+                <tr>
+                    <td>AH = 56h</td>
+                    <td>DS:DX -> ASCIZ filename of existing file.<br>
+                        ES:DI -> ASCIZ new filename. </td>
+                </tr>
+            </table>
+            <h2>INT 33h</h2>
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>AX = 0000 // mouse ininialization</td>
+                    <td>MariaAnders</td>
+                </tr>
+                <tr>
+                    <td>AX = 0001 // show mouse pointer</td>
+                    <td>FranciscoChang</td>
+                </tr>
+                <tr>
+                    <td>AX = 0002 // hide mouse</td>
+                    <td>RolandMendel</td>
+                </tr>
+                <tr>
+                    <td>AX = 0003 // get mouse info</td>
+                    <td>if left button is down: BX=1<br>
+                        if right button is down: BX=2<br>
+                        if both buttons are down: BX=3<br>
+                        CX = x<br>
+                        DX = y </td>
+                </tr>
+            </table>
+
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+        </div>
+
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

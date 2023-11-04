@@ -1,0 +1,82 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/extension/discord/discord.html">Basics</a>
+            <a href="/documentation/extension/discord/special.html">special</a>
+            <a href="/documentation/extension/discord/more.html">more</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Discord Bot</h1>
+            <hr>
+      
+            <pre>
+                <code class="language-js">
+// Require the necessary discord.js classes
+const { Client, Intents } = require('discord.js');
+const { token } = require('./config.json');
+
+// Create a new client instance
+const client = new Client({ intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES"] });
+
+// When the client is ready, run this code (only once)
+client.once('ready', () => {
+    console.log('Ready!');
+});
+
+client.on('messageCreate', async message => {
+    if(message.content === '!ping'){
+      message.channel.send("pong.")
+    }
+
+
+
+});
+// Login to Discord with your client's token
+client.login(token);
+                  
+                </code>
+            </pre>
+
+
+      
+
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+        </div>
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

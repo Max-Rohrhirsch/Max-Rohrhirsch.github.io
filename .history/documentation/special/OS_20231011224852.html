@@ -1,0 +1,124 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+    <!-- ------ SIDE NAVIGATION BAR ----- -->
+    <div class="sidenav">
+        <a href="/documentation/special/OS.html">Basics</a>
+    </div>
+
+    <h2>ASM</h2>
+    <div class="wrapper">
+    <pre>
+        <code class="language-asm">; Switch to teletype Mode and print a letter 
+
+mov ah, 0x0e 
+mov al, 'C' 
+int 0x10 
+
+; Array 
+[org 0x7C00] 
+mov al, [Variablename] 
+Variablename: 
+db "String", 0 
+        </code>
+    </pre>
+    <pre>
+        <code class="language-asm">; keyboard input 
+
+Char: 
+    Db 0 
+Mov ah, 0 
+Int 0x16 
+Mov al, [char] 
+
+; buffer 
+Buffer: 
+    Times 10 db 0 
+    Mov bx, buffer 
+    Mov[bx], al 
+    Inc bx 
+
+; read disk 
+Mov ah, 2 
+        </code>
+    </pre>
+    <pre>
+        <code class="language-asm">; Print String
+
+[org 0x7c00] 
+mov ah, 0x0e  
+mov bx, Var1 
+
+printString: 
+    mov al, [bx] 
+    cmp al, 0 
+    je end 
+    int 0x10 
+    inc bx 
+    jmp printString 
+end: 
+
+Var1: 
+    db 'Hello World', 0 
+        </code>
+    </pre>
+    <pre>
+        <code class="language-asm">; Protected mode
+
+GDT_Start: 
+    null_descriptor: 
+        dd 0 
+        dd 0 
+    code_descriptor: 
+        dw 0xffff 
+        dw 0 
+        db 0 
+        db 10011010 
+        db 11001111 
+        db 0 
+
+    data_descriptor: 
+        dw 0xffff 
+        dw 0 
+        db 0 
+        db 10010010 
+        db 11001111 
+        db 0 
+GDT_End: 
+
+GDT_Descriptor: 
+    dw GDT_End - GDT_Start - 1 
+    dd GDT_Start 
+
+CODE_SEG equ code_descriptor - GDT_Starr 
+CODE SEG equ data_descriptor - GDT_Start 
+
+cli 
+lgdt [GDT_Descriptor] 
+
+mov eax, cr0 
+or eax, 1 
+mov cr0, eax 
+
+jmp CODESEG:start_protected_mode 
+
+[bits 32] 
+start_protected_mode: 
+; print colored Text in protected mode 
+mov al, 'A' 
+mov ah, 0x0f 
+mov [0xb8000], ax 
+        </code>
+    </pre>
+    <pre>
+        <code class="language-asm">; Legacy boot
+
+; Always on end of asm code
+jmp $ 
+times 510-($-$$) db 0 
+db 0x55, 0xaa 
+        </code>
+    </pre>
+</div>
+
+
+<div id="includeFooter"></div>

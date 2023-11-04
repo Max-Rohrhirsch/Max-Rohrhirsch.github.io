@@ -1,0 +1,96 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/special/hacking.html">Basics</a>
+        </div>
+        
+        
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Hacking</h1>
+            <hr><br>
+            <h2>RSA</h2>
+            <p>p, q = Primzahlen 
+                e = ggT(k, Phi)            //Teilerfremd oder auch eine Primzahl und zwischen 1 und phi(N), häufig 65537 
+                
+                N = p * q 
+                Phi = (p - 1)(q-1) 
+                E * d = 1mod phi(N) 
+                
+                M = nachricht klartext 
+                C = verschlüsselt 
+                
+                Öffentliche (e, N) -> M^e mod N = c 
+                Private (d, N) -> c^d mod N = m </p>
+<pre>
+    <code class="language-python">
+import random
+
+def is_prime(num):
+    if num <= 1:
+        return False
+    if num <= 3:
+        return True
+    if num % 2 == 0 or num % 3 == 0:
+        return False
+    i = 5
+    while i * i <= num:
+        if num % i == 0 or num % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def mod_inverse(a, m):
+    m0, x0, x1 = m, 0, 1
+    while a > 1:
+        q = a // m
+        m, a = a % m, m
+        x0, x1 = x1 - q * x0, x0
+    return x1 % m0
+
+def generate_keypair(bits):
+    p, q = 0, 0
+    while not is_prime(p):
+        p = random.getrandbits(bits)
+    while not is_prime(q) or p == q:
+        q = random.getrandbits(bits)
+    n = p * q
+    phi = (p - 1) * (q - 1)
+    e = 65537  # Commonly used public exponent
+    d = mod_inverse(e, phi)
+    return ((n, e), (n, d))
+
+def encrypt(public_key, plaintext):
+    n, e = public_key
+    encrypted = [pow(ord(char), e, n) for char in plaintext]
+    return encrypted
+
+def decrypt(private_key, ciphertext):
+    n, d = private_key
+    decrypted = [chr(pow(char, d, n)) for char in ciphertext]
+    return ''.join(decrypted)
+
+if __name__ == '__main__':
+    bits = 1024  # Choose an appropriate key size
+    public_key, private_key = generate_keypair(bits)
+
+    message = "Hello, RSA Encryption!"
+    encrypted_message = encrypt(public_key, message)
+    decrypted_message = decrypt(private_key, encrypted_message)
+
+    print(f"Original message: {message}")
+    print(f"Encrypted message: {encrypted_message}")
+    print(f"Decrypted message: {decrypted_message}")
+    </code>
+</pre>
+
+            
+<div id="includeFooter"></div>

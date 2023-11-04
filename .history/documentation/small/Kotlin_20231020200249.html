@@ -1,0 +1,112 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+<!-- ------ SIDE NAVIGATION BAR ----- -->
+<div class="sidenav">
+    <a href="/documentation/small/Kotlin.html">Basics</a>
+</div>
+
+<!-- ------ MAIN CONTENT ----- -->
+<div class="main">
+    <out>kotlinc hello.kt -include-runtime -d hello.jar</out>
+<div class="wrapper">
+    <pre>
+        <code class="language-kotlin">// Basic
+
+fun main() {
+    var hello = "Hello"
+    var hello: String = "Hello"
+    println(hello)
+}
+/* */
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">// OOP
+            
+class Humanoid {
+    val name = "Max"
+
+    fun yo() {
+        print(name)
+    }
+}
+
+fun Humanoid.walk() {
+    
+}
+
+data class User(val name: String, val age: Int)
+val person = User("Max", 48)
+
+val (name, age) = person
+
+class MyChildClass: MyParentClass() {
+
+}
+
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">// Function
+            
+fun double(x: Int) = x * 2
+
+var lambda: (Int) -> Int = { num -> double(num) }
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">// if
+if (condition1) {
+    // block of code to be executed if condition1 is true
+} else if (condition2) {
+    // block of code to be executed if the condition1 is false and condition2 is true
+} else {
+    // block of code to be executed if the condition1 is false and condition2 is false
+}
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">// switch case
+
+val result = when (day) {
+    1 -> "Monday"
+    2 -> "Tuesday"
+    3 -> "Wednesday"
+    4 -> "Thursday"
+    5 -> "Friday"
+    6 -> "Saturday"
+    7 -> "Sunday"
+    else -> "Invalid day."
+}
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">// loops
+while (condition) {
+    // code block to be executed
+}
+
+do {
+    // code block to be executed
+}
+while (condition);
+
+for (x in cars) {
+    println(x)
+}
+
+for (nums in 5..15) {
+    println(nums)
+} 
+        </code>
+    </pre>
+    <pre>
+        <code class="language-kotlin">// Arrays
+            
+val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
+        </code>
+    </pre>
+</div>
+</div>
+<div id="includeFooter"></div>

@@ -1,0 +1,357 @@
+<html>
+    <head>
+        <title>Documentation</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" lang="en" content="Documentation of many things I learned">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Coding, max">
+        <meta name="author" content="Rohrhirsch Max">
+                
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link href="prism.css" rel="stylesheet" />
+        <link href="/home/max/Schreibtisch/Finished/Portfolio/documentation/prism.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="/documentation/docStyle.css">
+        <link rel="stylesheet" href="/home/max/Schreibtisch/Finished/Portfolio/documentation/docStyle.css">
+        <link rel="icon" type="image/x-icon" href="/Bilder/favicon.ico">
+    </head>
+    <body>
+        <!-- ------ TOP NAVIGATION BAR ----- -->
+        <nav class="nav1">
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Languages</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/languages/sql/sql.html">SQL</a>
+                    <a href="/documentation/languages/python/python.html">Python</a>
+                    <a href="/documentation/languages/java/java.html">Java</a>
+                    <a href="/documentation/languages/js/js.html">JS</a>
+                    <a href="/documentation/languages/css/css.html">CSS</a>
+                    <a href="/documentation/languages/c/c.html">C</a>
+                    <a href="/documentation/languages/cpp/cpp.html">C++</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Small Language</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/small/bash/bash.html">Bash</a>
+                    <a href="/documentation/small/rust/rust.html">Rust</a>
+                    <a href="/documentation/small/go/go.html">GO</a>
+                    <a href="/documentation/small/csharp/csharp.html">C#</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">libaries</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/libaries/socket/socket.html">Socket</a>
+                    <a href="/documentation/libaries/tenserflow/tenserflow.html">Tenserflow</a>
+                    <a href="/documentation/libaries/regex/regex.html">Regex</a>
+                    <a href="/documentation/libaries/numpy/numpy.html">Numpy</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Special</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/special/computer/computer.html">Computer</a>
+                    <a href="/documentation/special/logik/logik.html">Logikgates</a>
+                    <a href="/documentation/special/linux/linux.html">Linux</a>
+                    <a href="/documentation/special/arduino/arduino.html">Arduino</a>
+                    <a href="/documentation/special/game/game.html">Game Maker</a>
+                    <a href="/documentation/special/unity/unity.html">Unity</a>
+                    <a href="/documentation/special/os/os.html">OS</a>
+                    <a href="/documentation/special/hacking/hacking.html">Hacking</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Extensions/API</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/extension/chrome/chrome.html">Chrome Extension</a>
+                    <a href="/documentation/extension/discord/discord.html">Discord Bot</a>
+                    <a href="/documentation/extension/computercraft/computercraft.html">Computercraft</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">SCHOOL</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/school/math/math.html">Math</a>
+                    <a href="/documentation/school/physik/physik.html">Physik</a>
+                    <a href="/documentation/school/bwl/bwl.html">BWL</a>
+                    <a href="/documentation/school/it/it.html">IT</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/python/python.html">Basics</a>
+            <a href="/documentation/languages/python/know.html">good to know</a>
+            <a href="/documentation/languages/python/mid.html">mid</a>
+            <button class="dropdown-btn">Special 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/documentation/languages/python/array.html">Array</a>
+                <a href="/documentation/languages/python/build.html">Build in</a>
+                <a href="/documentation/languages/python/exception.html">Exceptions</a>
+                <a href="/documentation/languages/python/file.html">File editing</a>
+                <a href="/documentation/languages/python/inlign.html">Inline</a>
+            </div>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Java</h1>
+            <hr>
+
+            <h2>Basics</h2>
+            <div class="wrapper">
+<pre><code class="language-java">// Basic class
+
+public class ClassName {
+    public static void main(String[] args){
+        System.out.println("Hello World");
+    }
+}
+</code></pre>
+<pre><code class="language-java">// Vererbung
+    
+class Mitarbeiter extends Person {
+    /* ... */
+}
+</code></pre>
+<pre><code class="language-java">// Abstract
+
+abstract class Animal {
+    // Abstract method (does not have a body)
+    public abstract void animalSound();
+}
+</code></pre>
+<pre><code class="language-java">/* Interfaces
+   An interface is a completely 
+   "abstract class" that is used to
+   group related methods with empty bodies*/
+
+interface Animal {
+    public void animalSound(); 
+    public void run(); 
+}
+</code></pre>
+<pre><code class="language-java">// Polymorphism
+    
+Animal myDog = new Dog();
+</code></pre>
+<pre><code class="language-java">// Nested classes
+
+class OuterC {
+    int x = 10;
+    
+    class InnerC {
+        int y = 5;
+    }
+}
+// ...
+OuterC myOuter = new OuterC();
+OuterC.InnerC myInner = myOuter.new InnerC();
+
+</code></pre>
+<pre><code class="language-java">// Enum
+
+enum Level {
+    LOW,
+    MEDIUM,
+    HIGH
+}
+Level myVar = Level.MEDIUM;
+</code></pre>
+<pre><code class="language-java">// Exceptions
+
+try {   
+    //  Block of code to try
+} catch(Exception e) {
+    //  Block of code to handle errors
+} 
+</code></pre>
+<pre><code class="language-java">// Type casting
+
+int myInt = (int) myDouble;
+</code></pre>
+</div><br>
+
+<hr>
+<h2>With imports</h2>
+
+<div class="half">
+<pre><code class="language-java">// Inputs
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);  // Create a Scanner object
+    
+        String userName = sc.nextLine();  // Read user input
+        System.out.println("Username is: " + userName);  
+    }
+}
+</code></pre>
+<pre><code class="language-java">// Array Lists
+
+import java.util.ArrayList; 
+
+ArrayList &lt;String> cars = new ArrayList &lt;String>(); 
+
+cars.add("Volvo");
+cars.get(0);
+cars.set(0, "Opel");
+cars.remove(0);
+cars.size();
+
+Stack&lt;String> stack = new Stack&lt;();
+stack.search("apple") 
+</code></pre>
+<pre><code class="language-java">// Dictionaries/ HashMap
+
+import java.util.HashMap; 
+
+HashMap&lt;String, String> capitalCities = new HashMap&lt;String, String>();
+
+capitalCities.put("England", "London");
+capitalCities.get("England");
+capitalCities.remove("England");
+
+</code></pre>
+<pre><code class="language-java">// Threads
+
+public class Main extends Thread {
+
+    public static void main(String[] args) {
+
+        Main thread = new Main();
+        thread.start();
+    }
+
+    public void run() {
+        // ...
+    }
+}
+</code></pre>
+<pre><code class="language-java">// File handling
+
+import java.io.File; 
+import java.util.Scanner;
+
+File myObj = new File("filename.txt"); 
+Scanner myReader = new Scanner(myObj);
+
+while (myReader.hasNextLine()) {
+    String data = myReader.nextLine();
+    System.out.println(data);
+}
+myReader.close();
+myObj.delete()
+
+/* ----------------------------------- */
+
+import java.io.FileWriter; 
+
+FileWriter myWriter = new FileWriter("filename.txt");
+myWriter.write("Files in Java might be tricky, but it is fun enough!");
+myWriter.close();
+
+
+</code></pre>
+<pre><code class="language-java">// One liners
+ 
+import java.util.function.Consumer;
+
+Consumer&lt;Integer> method = (n) -> { System.out.println(n); };
+numbers.forEach( method );
+
+// Or you write
+numbers.forEach( (n) -> { System.out.println(n); } );
+
+// Multiple Each Item in a List by 2
+IntStream.range(1, 10).map(i -> i * 2);
+
+// Sum a List of Numbers
+IntStream.range(1, 1000).sum();
+
+// If one liner
+name = condition ? "then" : "else";
+
+//for loop
+for (type elementName : arrayName) {
+    // ...
+}
+</code></pre>
+<pre><code class="language-java">// Generics
+
+public static &lt;T extends Number> void myFunction(T number){
+    // ...    
+}
+</code></pre>
+<pre><code class="language-java">// args and quarks
+
+public void useKwargs(String... parameters) {
+    for (String param : parameters) {
+        System.out.println( param );
+    }
+}
+</code></pre>
+<pre><code class="language-java">// time
+
+import java.time.LocalDateTime;
+
+LocalDateTime myObj = LocalDateTime.now();    // -> 2023-10-06T17:54:36.019837
+
+DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+String formattedDate = myDateObj.format(myFormatObj);
+
+SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+Date date1 = format.parse(time1);
+Date date2 = format.parse(time2);
+long difference = date2.getTime() - date1.getTime(); 
+</code></pre>
+</div>
+            </div>
+            <script src="/home/max/Schreibtisch/Finished/Portfolio/documentation/prism.js"></script>
+            <script src="prism.js"></script>
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+        </div>
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,215 @@
+<html>
+    <head>
+        <title>Documentation</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" lang="en" content="Documentation of many things I learned">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Coding, max">
+        <meta name="author" content="Rohrhirsch Max">
+                
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="/documentation/docStyle.css">
+        <link rel="icon" type="image/x-icon" href="/Bilder/favicon.ico">
+    </head>
+    <body>
+        <!-- ------ TOP NAVIGATION BAR ----- -->
+        <nav class="nav1">
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Languages</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/languages/sql/sql.html">SQL</a>
+                    <a href="/documentation/languages/python/python.html">Python</a>
+                    <a href="/documentation/languages/java/java.html">Java</a>
+                    <a href="/documentation/languages/js/js.html">JS</a>
+                    <a href="/documentation/languages/css/css.html">CSS</a>
+                    <a href="/documentation/languages/c/c.html">C</a>
+                    <a href="/documentation/languages/cpp/cpp.html">C++</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Small Language</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/small/bash/bash.html">Bash</a>
+                    <a href="/documentation/small/rust/rust.html">Rust</a>
+                    <a href="/documentation/small/go/go.html">GO</a>
+                    <a href="/documentation/small/csharp/csharp.html">C#</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">libaries</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/libaries/socket/socket.html">Socket</a>
+                    <a href="/documentation/libaries/tenserflow/tenserflow.html">Tenserflow</a>
+                    <a href="/documentation/libaries/regex/regex.html">Regex</a>
+                    <a href="/documentation/libaries/numpy/numpy.html">Numpy</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Special</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/special/computer/computer.html">Computer</a>
+                    <a href="/documentation/special/logik/logik.html">Logikgates</a>
+                    <a href="/documentation/special/linux/linux.html">Linux</a>
+                    <a href="/documentation/special/arduino/arduino.html">Arduino</a>
+                    <a href="/documentation/special/game/game.html">Game Maker</a>
+                    <a href="/documentation/special/unity/unity.html">Unity</a>
+                    <a href="/documentation/special/os/os.html">OS</a>
+                    <a href="/documentation/special/hacking/hacking.html">Hacking</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Extensions/API</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/extension/chrome/chrome.html">Chrome Extension</a>
+                    <a href="/documentation/extension/discord/discord.html">Discord Bot</a>
+                    <a href="/documentation/extension/computercraft/computercraft.html">Computercraft</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">SCHOOL</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/school/math/math.html">Math</a>
+                    <a href="/documentation/school/physik/physik.html">Physik</a>
+                    <a href="/documentation/school/bwl/bwl.html">BWL</a>
+                    <a href="/documentation/school/it/it.html">IT</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/special/os/os.html">Basics</a>
+            <button class="dropdown-btn">More 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/documentation/special/os/assembler.html">Assembler</a>
+                <a href="/documentation/special/os/c.html">C</a>
+                <a href="/documentation/special/os/mid.html">mid</a>
+            </div>
+            <a href="/documentation/special/os/advanced.html">Advanced</a>
+            <a href="/documentation/special/os/examples.html">Examples</a>
+        </div>
+        
+        
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>OS/ C</h1>
+            <hr>
+   
+            <h2>assembler in C</h2>
+            <pre>
+                <code class="language-bash">
+SECTION .DATA
+    hello:     db 'Hello world!',10
+    helloLen:  equ $-hello
+
+SECTION .TEXT
+    GLOBAL say_hi
+
+say_hi:
+    mov eax,4            ; write()
+    mov ebx,1            ; STDOUT
+    mov ecx,hello
+    mov edx,helloLen
+    int 80h                 ; Interrupt
+        ret                        ; Return control
+                </code>
+            </pre>
+            <pre>
+                <code class="language-bash">
+/* example.c */
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+    extern say_hi();
+    say_hi();
+}
+                </code>
+            </pre>
+            <pre>
+                <code class="language-bash">
+nasm -f elf64 say_hi.asm say_hi.o
+gcc example.c say_hi.o -o hello
+./hello
+                </code>
+            </pre>
+            <hr>
+            <h2>c from assembly</h2>
+            <pre>
+                <code class="language-bash">
+; Define printf as an external function
+extern	printf
+
+SECTION .DATA
+    msg:	db "Hello world", 0 ; Zero is Null terminator 
+    fmt:    db "%s", 10, 0 ; printf format string follow by a newline(10) and a null terminator(0), "\n",'0'
+
+SECTION .TEXT
+    global main
+    
+main:
+    push rbp ; Push stack
+
+    ; Set up parameters and call the C function
+    mov	rdi,fmt
+    mov	rsi,msg
+    mov	rax,0
+    call printf
+
+    pop	rbp		; Pop stack
+
+    mov	rax,0	; Exit code 0
+    ret			; Return
+                </code>
+            </pre>
+            <pre>
+                <code class="language-bash">
+nasm printf.asm -f elf64 -o printf.o
+gcc printf.o
+./a.out
+                </code>
+            </pre>
+
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+        </div>
+
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

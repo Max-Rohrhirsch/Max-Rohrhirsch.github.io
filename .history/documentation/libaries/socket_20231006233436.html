@@ -1,0 +1,56 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/socket.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Python Sockets</h1>
+            <br>
+            
+            <h2>Server</h2>
+            <pre>
+                <code class="language-python">
+from socket import AF_INET, SOCK_STREAM, socket
+
+mySocket = socket(AF_INET, SOCK_STREAM)
+mySocket.connect((<green>IP</green>, <green>Port</green>))
+
+mySocket.send(bytes('<green>...</green>', 'utf8'))
+
+mySocket.recv(10024).decode('utf8')
+
+mySocket.close()
+                </code>
+            </pre>
+
+            <h2>Client</h2>
+            <pre>
+                <code class="language-python">
+from socket import AF_INET, SOCK_STREAM, socket
+
+mySocket = socket(AF_INET, SOCK_STREAM)
+mySocket.bind(<green>Port</green>)
+mySocket.listen()
+client, addr = mySocket.accept()
+
+mySocket.close()
+                </code>
+            </pre>
+
+            <h2>Threads</h2>
+            <pre>
+                <code class="language-python">
+from threading import Thread
+
+Thread(target = <green>myFunction</green>).start()
+Thread(target = <green>myFunction</green>, args = (<green>client, addr</green>)).start()
+
+.close()
+                </code>
+            </pre>
+ 
+<div id="includeFooter"></div>

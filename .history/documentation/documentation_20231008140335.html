@@ -1,0 +1,125 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="https://chat.openai.com/">ChatGPT</a>
+            <a href="https://github.com/Max-Rohrhirsch/">Github</a>
+            <a href="https://www.w3schools.com">w3schools</a>
+            <a href="https://leetcode.com/">Leetcode</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Main Documentation</h1>
+            <hr><br>
+
+            <h2>Quicksort</h2>
+            <div class="half">
+                <pre><code class="language-python">def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        left = [x for x in arr[1:] if x < pivot]
+        right = [x for x in arr[1:] if x >= pivot]
+        return quicksort(left) + [pivot] + quicksort(right)
+</code></pre>
+                <pre><code class="language-c">#include &lt;stdio.h>
+
+// function to swap elements
+void swap(int *a, int *b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+int partition(int array[], int low, int high) {
+    int pivot = array[high];
+    int i = (low - 1);
+    for (int j = low; j < high; j++) {
+        if (array[j] <= pivot) {
+            i++;</code></pre>
+            </div>
+
+            <hr>
+            <h2>Binarysearch</h2>
+            <div class="half">
+                <pre><code class="language-python">def binarySearch(array, x, low, high):
+    while low <= high:
+        mid = low + (high - low)//2
+        if array[mid] == x:
+            return mid
+        elif array[mid] < x:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+
+array = [3, 4, 5, 6, 7, 8, 9]
+x = 4
+result = binarySearch(array, x, 0, len(array)-1)
+
+</code></pre>
+                <pre><code class="language-c">#include &lt;stdio.h>
+
+int binarySearch(int array[], int x, int low, int high) {
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (array[mid] == x)
+            return mid;
+
+        if (array[mid] < x)
+            low = mid + 1;
+        else
+            high = mid - 1;
+        }
+    return -1;
+}
+
+int main(void) {
+    int array[] = {3, 4, 5, 6, 7, 8, 9};
+    int n = sizeof(array) / sizeof(array[0]);
+    int x = 4;
+    int result = binarySearch(array, x, 0, n - 1);
+
+    if (result == -1)
+        printf("Not found");
+    else
+        printf("Element is found at index %d", result);
+    return 0;
+}</code></pre></div>
+
+            <table>
+                <tr>
+                    <th>Shorcut</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Strg + T</td>
+                    <td>New Tab</td>
+                </tr>
+                <tr>
+                    <td>Strg + W</td>
+                    <td>Delete Tab</td>
+                </tr>
+                <tr>
+                    <td>Strg + L</td>
+                    <td>Fucus Search bar</td>
+                </tr>
+                <tr>
+                    <td>Strg + Shift + T</td>
+                    <td>Reopen closed Tab</td>
+                </tr>
+                <tr>
+                    <td>Alt + Enter</td>
+                    <td>Repair code</td>
+                </tr>
+                <tr>
+                    <td>F2</td>
+                    <td>Jump to Error</td>
+                </tr>
+            </table>
+
+<div id="includeFooter"></div>

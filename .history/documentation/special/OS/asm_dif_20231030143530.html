@@ -1,0 +1,274 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" type="image/x-icon" href="..../Bilder/favicon.ico">
+
+    <link href="/home/max/Schreibtisch/Finished/Portfolio/documentation/prism.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/home/max/Schreibtisch/Finished/Portfolio/documentation/docStyle.css">
+</head>
+
+
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+<!-- ------ SIDE NAVIGATION BAR ----- -->
+<div class="sidenav">
+    <a href="/documentation/special/OS/OS.html">OS</a>
+    <a href="/documentation/special/OS/ASM.html">ASM</a>
+</div>
+
+<div class="main">
+<h2>ASM Dialects</h2>
+<table>
+<tr>
+    <th>NASM</th>
+    <th>GAS</th>
+    <th>ARM</th>
+    <th>MIPS</th>
+</tr>
+<tr>
+    <td>
+section .data<br>
+    message db "Hello, World!",0
+    </td>
+    <td>
+.section .data<br>
+message:<br>
+    .asciz "Hello, World!"
+    </td>
+    <td>
+.data<br>
+    num1  DCB 5
+    </td>
+    <td>
+.data<br>
+    num1:   .byte 5
+    </td>
+</tr>
+<tr>
+    <td>mov dest, src</td>
+    <td>movl src, dest</td>
+    <td>ldr dest, =src</td>
+    <td>move dest, src</td>
+</tr>
+<tr>
+    <td>add dest, src</td>
+    <td>addl src, dest</td>
+    <td>add dest, src</td>
+    <td>add dest, src</td>
+</tr>
+<tr>
+    <td>cmp reg1, reg2</td>
+    <td>cmp %reg1, %reg2</td>
+    <td>cmp, reg1, reg2</td>
+    <td>beq label1</td>
+</tr>
+<tr>
+    <td>jmp label</td>
+    <td>jmp label</td>
+    <td>b label</td>
+    <td>j label</td>
+</tr>
+<tr>
+    <td>call subroutine</td>
+    <td>call subroutine</td>
+    <td>bl subroutine</td>
+    <td>jal subroutine</td>
+</tr>
+<tr>
+    <td>push value</td>
+    <td>pushl $value</td>
+    <td>push {register}</td>
+    <td>sw value, 0(sp)</td>
+</tr>
+<tr>
+    <td>pop dest</td>
+    <td>popl dest</td>
+    <td>pop {register}</td>
+    <td>lw dest, 0(sp)</td>
+</tr>
+<tr>
+    <td>je label</td>
+    <td>je label</td>
+    <td>beq reg1, reg2, label</td>
+    <td>beq reg1, reg2, label</td>
+</tr>
+
+</table>
+</div>
+<hr><br>
+
+<h2>If</h2>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+if (ax == 3) {
+    // do this
+} else if(ax == 4) {
+    // else if
+} else {
+    // else
+}
+</code>
+<code class="language-nasm">
+    mov al, [ax]
+
+    cmp al, 3
+    je label_if
+
+    cmp al, 4
+    je label_if_else
+
+    jmp label_else
+
+label_if:
+    ; ...
+    jmp end_if
+
+label_if_else:
+; ...
+    jmp end_if
+
+label_else:
+; ...
+
+end_if:
+    ; The program continues from here
+    ; ...
+</code>
+</pre>
+</div>
+
+
+<h2>multiple if</h2>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+if (a == 3 || a > 5) {
+    
+}
+</code>
+<code class="language-nasm">
+cmp eax, 3
+je label_true
+
+; Check if a > 5
+cmp eax, 5
+jg label_true
+
+jmp label_end
+
+label_true:
+    ; ...
+
+label_end:
+    ; ...
+</code>
+</pre>
+</div>
+
+
+<h2>while loop</h2>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+while (a != 2) {
+
+}
+</code>
+<code class="language-nasm">
+while_loop:
+    cmp eax, 2
+    je end_while   ; If true, exit the loop
+
+    ; ...
+
+    jmp while_loop
+
+end_while:
+    ; C...
+</code>
+</pre>
+</div>
+
+
+<h2>for loop</h2>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+
+</code>
+<code class="language-nasm">
+
+</code>
+</pre>
+</div>
+
+
+<h2>function and params</h2>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+for (int i=0; i < 10; i++) {
+
+}
+</code>
+<code class="language-nasm">
+    for_loop:
+    ; Condition check (e.g., i < 10)
+    cmp eax, 10
+    jge end_for 
+
+    ; ...
+
+    inc eax
+    jmp for_loop
+
+end_for:
+    ; Code after the for loop
+</code>
+</pre>
+</div>
+
+
+<h2>Objects and classes</h2>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+
+</code>
+<code class="language-nasm">
+
+</code>
+</pre>
+</div>
+
+
+<h2>Information</h2>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+
+</code>
+<code class="language-nasm">
+
+</code>
+</pre>
+</div>
+
+
+<h2>Information</h2>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+
+</code>
+<code class="language-nasm">
+
+</code>
+</pre>
+</div>
+<div id="includeFooter"></div>

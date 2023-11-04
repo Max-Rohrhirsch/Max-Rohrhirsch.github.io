@@ -1,0 +1,309 @@
+:root {
+    --main-special-color: #ee622a;
+    --main-bg-color: #111;
+    transition: 3s;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    min-height: max-content;
+}
+
+
+/* ----------------------------- MAIN STUFF --------------------------------------- */
+red { color: red }
+orange { color: orange }
+green { color: green }
+
+.nav1 {
+    position: fixed;
+    background-color: #222;
+    border-bottom: 1px solid black;
+    width: 100%;
+
+    z-index: 2;
+}
+
+/* ---- DROPDOWN ---- */
+
+.dropbtn {
+    background-color: #222;
+    color: white;
+
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+
+    background-color: #222;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .dropdown-content a {
+    color: White;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover { background-color: #333 }
+  .dropdown:hover .dropdown-content { display: block }
+  .dropdown:hover .dropbtn { background-color: #2c7ead }
+
+
+/* ------------ Site Navigation ----------- */
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+
+    position: fixed;
+    top: 51px;
+    left: 0;
+
+    background-color: #222;
+    overflow-x: hidden;
+    z-index: 1;
+  }
+  
+  .sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+
+    display: block;
+    border: none;
+    background: none;
+
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .sidenav a:hover, .dropdown-btn:hover { background-color: #2c7ead }
+  
+  .active {
+    background-color: green;
+    color: white;
+  }
+  
+  .dropdown-container {
+    display: none;
+    background-color: #333;
+  }
+  
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav { padding-top: 15px }
+    .sidenav a { font-size: 18px }
+  }
+
+
+/* ------------ Main ----------- */
+.main {
+    display: block;
+    position:absolute;
+    top: 51px;
+    left: 200px;
+
+    padding: 50px;
+    font-size: 18px;
+
+    min-height: 100%;
+    width: 80vw;
+}
+
+.main h2 { 
+    font-size: 20px;
+    color: #ee622a;
+}
+
+.main a {
+    color: rgb(44, 172, 65);
+    margin-bottom: 20px;
+    display: block;
+}
+
+img {
+    display: block;
+    margin-top: 20px;
+}
+img:hover {
+    cursor: pointer;
+}
+
+
+
+/* ------------ CODE ----------- */
+
+out {
+    display: block;
+    width: calc(100% - 40px);
+    background-color: #333;
+
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.wrapper {
+    display: grid;
+    font-size: 18px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.wrapper pre {
+    height: calc(100% - 50px);
+}
+
+.half {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.half pre {
+    height: calc(100% - 50px);
+}
+
+/* ------------ Table ----------- */
+
+table {
+    width: calc(100% );
+    border: 1px solid #777;
+    margin-top: 50px;
+    border-collapse:collapse;
+}
+
+th {
+    border: 1px solid #777;
+    background-color: #333;
+    padding: 10px;
+
+}
+
+td {
+    border: 1px solid #777;
+    padding: 5px;
+    height: 40px;
+}
+
+
+/* ------------ Buttons ----------- */
+
+.pre, .next {
+    display: inline-block;
+    margin-top: 10px;
+}
+.pre:hover, .next:hover { cursor: pointer }
+
+.pre { float: left }
+.next { float: right }
+
+
+
+
+
+/* ------------ Image ----------- */
+.modal {
+    z-index:2;
+    display:none;
+    padding-top:10px;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.8)
+}
+    
+.modal-content {
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+    
+    
+.modal-hover-opacity {
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+    
+.modal-hover-opacity:hover {
+    opacity:0.60;
+    filter:alpha(opacity=60);
+}
+    
+    
+.close {
+    text-decoration:none;
+
+    position: fixed;
+    right:20px;
+    top: 20px;
+
+    font-size:24px;
+    font-weight:bold;
+    color:white;
+    cursor: pointer;
+}
+
+img {
+    width: 500px;
+    display: block;
+}
+
+.modal-content, #caption {   
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+    
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+    
+@media only screen and (max-width: 1300px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .half {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+@media only screen and (max-width: 1000px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

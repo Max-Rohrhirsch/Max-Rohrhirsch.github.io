@@ -1,0 +1,108 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/special/unity/unity.html">Basics</a>
+            <button class="dropdown-btn">Special 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                
+                <a href="/documentation/special/unity/camera.html">Camera</a>
+                <a href="/documentation/special/unity/audio.html">Audio</a>
+                <a href="/documentation/special/unity/destroy.html">destroy</a>
+                <a href="/documentation/special/unity/inventory.html">Inventory</a>
+                <a href="/documentation/special/unity/map.html">Map</a>
+                <a href="/documentation/special/unity/pathfinding.html">Pathfinding</a>
+                <a href="/documentation/special/unity/dungeon.html">Dungeon spawn</a>
+                <a href="/documentation/special/unity/drag.html">Drag</a>
+                <a href="/documentation/special/unity/multiplayer.html">Multiplayer</a>
+            </div>
+            <a href="/documentation/special/unity/perlin.html">Perlin Noise</a>
+            <a href="/documentation/special/unity/first.html">Fist Person</a>
+            <a href="/documentation/special/unity/ground.html">Ground</a>
+            <a href="/documentation/special/unity/guns.html">Guns</a>
+        </div>
+        
+        
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Unity</h1>
+            <hr>
+
+            <h2>Basics</h2>
+            <pre>
+                <code class="language-cshrap">
+Debug.Log("...") // print
+
+
+// Edit components
+//Drag the Component in the variable
+public Rigidbody rb;
+rb.useGravity = false;
+
+// Force
+rb.AddForce(x, y, z);
+
+//Input key
+Input.GetKey("A")
+
+//disable components
+public ... ...; //tag the object
+void OnCollisionEnter(Collision info) {
+    if (info.collider.tag == "...") {
+        moven.enabled = false;
+    }
+}
+
+// Position
+public ...;
+Player.position.z;
+
+// Go to a Methode
+using UnityEngine.sceneManagment;
+FindObjectOfType&lt;GameManager>().EndGame()
+
+// random
+Random.Range(1, 7);
+
+// Save 
+PlayerPrefs.SetInt("name", number)
+PlayerPrefs.GetInt("name", Devault)
+
+// Better Movement
+hori = Input.GetAxisRaw("Horizontal");
+verti = Input.GetAxisRaw("Vertical");
+rb.AddForce(speed * hori, 0, 0);
+                </code>
+            </pre>
+
+            <h2>Perlin Noise</h2>
+            <pre>
+                <code>
+for X
+    for z
+        Vector3 pos = new Vector3(x * offset, generateNoise(x, z, scalle) * Height, z * offset);
+        GameObject block = ...;
+        block.transform.SetParent(this.transform);
+                </code>
+            </pre>
+
+            <h2>Shoot</h2>
+            <pre>
+                <code>
+void Shoot() {
+    RaycastHit hit;
+    if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)) {
+        Taret target = hit.transform.GetComponent&lt;Target>();
+        if(target != null) {
+            target.TakeDamage(damage);
+        }
+    }
+}
+                </code>
+            </pre>
+
+<div id="includeFooter"></div>

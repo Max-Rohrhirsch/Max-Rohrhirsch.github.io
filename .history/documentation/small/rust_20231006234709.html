@@ -1,0 +1,70 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/small/rust.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Rust</h1>
+            <hr>
+
+            <out>
+                go run doc.go
+            </out>
+
+            <h2>Basics</h2>
+
+            <pre>
+                <code class="language-rust">
+mod klassenname; // import
+
+myClass::myFunction(); // call a function
+
+<orange>pub</orange> fn name() {
+    println!("...");
+}
+fn main() {...} // main function
+
+println!("Number: {}", 1);
+println!("Name: {name}", name = "...");
+println!("Age: {%d}", 1);
+
+let <orange>mut</orange> name = "...";
+
+const ID: i32 = ...;
+let myString = String::from("hello");
+                </code>
+            </pre>
+
+            <pre>
+                <code class="language-rust">
+let array: [i32; 5] = [...];
+
+loop {...} // infinite loop
+while <green>...</green> {...}
+for x in ... {...}
+                </code>
+            </pre>
+
+            <table>
+                <tr>
+                  <th>Functions</th>
+                </tr>
+                <tr>
+                  <td>.len()</td>
+                </tr>
+                <tr>
+                  <td>.push(...)</td>
+                </tr>
+                <tr>
+                  <td>.contains(...)</td>
+                </tr>
+                <tr>
+                  <td>.replace()</td>
+                </tr>
+            </table>
+
+<div id="includeFooter"></div>

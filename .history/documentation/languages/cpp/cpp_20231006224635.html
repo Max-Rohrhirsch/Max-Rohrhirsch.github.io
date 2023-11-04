@@ -1,0 +1,97 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/cpp/cpp.html">Basics</a>
+            <a href="/documentation/languages/cpp/know.html">good to know</a>
+            <a href="/documentation/languages/cpp/mid.html">mid</a>
+            <button class="dropdown-btn">Special 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/documentation/languages/cpp/array.html">Array</a>
+                <a href="/documentation/languages/cpp/build.html">Build in</a>
+                <a href="/documentation/languages/cpp/exception.html">Exceptions</a>
+                <a href="/documentation/languages/cpp/file.html">File editing</a>
+                <a href="/documentation/languages/cpp/inlign.html">Inline</a>
+            </div>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>c++</h1>
+            <hr>
+
+            <h2>Advantages of cpp 3:</h2>
+            <pre>
+                <code class="language-cpp">
+cout << <green>...</green>;
+
+cin >> x; // Input
+                </code>
+            </pre>
+<p>comments, for, while, catch are as same as in java</p>
+
+
+            <h2>OOP</h2>
+            <pre>
+                <code class="language-cpp">
+class <green>Car</green> {
+    public ...;
+    private ...;
+};
+                </code>
+            </pre>
+
+            <h2>Pointer</h2>
+            <pre>
+                <code class="language-cpp">
+String ptr = &var;
+
+ptr // 0x6f...
+*ptr //value
+                </code>
+            </pre>
+
+      
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+        </div>
+
+
+
+
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

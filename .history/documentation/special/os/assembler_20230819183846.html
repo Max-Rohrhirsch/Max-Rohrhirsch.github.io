@@ -1,0 +1,336 @@
+<html>
+    <head>
+        <title>Documentation</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" lang="en" content="Documentation of many things I learned">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Coding, max">
+        <meta name="author" content="Rohrhirsch Max">
+                
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="/documentation/docStyle.css">
+        <link rel="icon" type="image/x-icon" href="/Bilder/favicon.ico">
+    </head>
+    <body>
+        <!-- ------ TOP NAVIGATION BAR ----- -->
+        <nav class="nav1">
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Languages</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/languages/sql/sql.html">SQL</a>
+                    <a href="/documentation/languages/python/python.html">Python</a>
+                    <a href="/documentation/languages/java/java.html">Java</a>
+                    <a href="/documentation/languages/js/js.html">JS</a>
+                    <a href="/documentation/languages/css/css.html">CSS</a>
+                    <a href="/documentation/languages/c/c.html">C</a>
+                    <a href="/documentation/languages/cpp/cpp.html">C++</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Small Language</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/small/bash/bash.html">Bash</a>
+                    <a href="/documentation/small/rust/rust.html">Rust</a>
+                    <a href="/documentation/small/go/go.html">GO</a>
+                    <a href="/documentation/small/csharp/csharp.html">C#</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">libaries</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/libaries/socket/socket.html">Socket</a>
+                    <a href="/documentation/libaries/tenserflow/tenserflow.html">Tenserflow</a>
+                    <a href="/documentation/libaries/regex/regex.html">Regex</a>
+                    <a href="/documentation/libaries/numpy/numpy.html">Numpy</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Special</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/special/computer/computer.html">Computer</a>
+                    <a href="/documentation/special/logik/logik.html">Logikgates</a>
+                    <a href="/documentation/special/linux/linux.html">Linux</a>
+                    <a href="/documentation/special/arduino/arduino.html">Arduino</a>
+                    <a href="/documentation/special/game/game.html">Game Maker</a>
+                    <a href="/documentation/special/unity/unity.html">Unity</a>
+                    <a href="/documentation/special/os/os.html">OS</a>
+                    <a href="/documentation/special/hacking/hacking.html">Hacking</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Extensions/API</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/extension/chrome/chrome.html">Chrome Extension</a>
+                    <a href="/documentation/extension/discord/discord.html">Discord Bot</a>
+                    <a href="/documentation/extension/computercraft/computercraft.html">Computercraft</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">SCHOOL</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/school/math/math.html">Math</a>
+                    <a href="/documentation/school/physik/physik.html">Physik</a>
+                    <a href="/documentation/school/bwl/bwl.html">BWL</a>
+                    <a href="/documentation/school/it/it.html">IT</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/special/os/os.html">Basics</a>
+            <button class="dropdown-btn">More 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/documentation/special/os/assembler.html">Assembler</a>
+                <a href="/documentation/special/os/c.html">C</a>
+                <a href="/documentation/special/os/mid.html">mid</a>
+            </div>
+            <a href="/documentation/special/os/advanced.html">Advanced</a>
+            <a href="/documentation/special/os/examples.html">Examples</a>
+        </div>
+        
+        
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>OS/ Assembler</h1>
+            <hr>
+   
+            <h2>Registers</h2>
+            <pre>
+                <code class="language-asm">
+General registers
+EAX EBX ECX EDX
+
+Segment registers
+CS DS ES FS GS SS
+
+Index and pointers
+ESI EDI EBP EIP ESP
+                </code>
+            </pre>
+            <img src="https://flint.cs.yale.edu/cs421/papers/x86-asm/x86-registers.png">
+            <pre>
+                <code class="language-asm">
+.data		
+var:		
+    .byte 64	/* Declare a byte, referred to as location var, containing the value 64. */
+    .byte 10	/* Declare a byte with no label, containing the value 10. Its location is var + 1. */
+x:		
+    .short 42	/* Declare a 2-byte value initialized to 42, referred to as location x. */
+y:		
+    .long 30000    	/* Declare a 4-byte value, referred to as location y, initialized to 30000. */
+                </code>
+            </pre>
+            <pre>
+                <code class="language-asm">
+s:		
+    .long 1, 2, 3	/* Declare three 4-byte values, initialized to 1, 2, and 3.
+                       The value at location s + 8 will be 3. */
+barr:		
+    .zero 10	/* Declare 10 bytes starting at location barr, initialized to 0. */
+str:		
+    .string "hello"   	/* Declare 6 bytes starting at the address str initialized to
+                           the ASCII character values for hello followed by a nul (0) byte. */                    
+                </code>
+            </pre>
+
+            <h2>Basic Assambly Methodes</h2>
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>mov ebx, eax</td>
+                    <td>moves data from eax to ebx</td>
+                </tr>
+                <tr>
+                    <td>push eax</td>
+                    <td>push eax on the stack</td>
+                </tr>
+                <tr>
+                    <td>pop eax</td>
+                    <td>pop the top element of the stack into EDI.</td>
+                </tr>
+                <tr>
+                    <td>add 10, eax</td>
+                    <td>adds 10 to eax</td>
+                </tr>
+                <tr>
+                    <td>sub 10 eax</td>
+                    <td>subs 10 from eax</td>
+                </tr>
+                <tr>
+                    <td>inc ax/ dec ax</td>
+                    <td>Increments/ decrements ax</td>
+                </tr>
+                <tr>
+                    <td>imul 10, ax</td>
+                    <td>multiplyes and stores in ax</td>
+                </tr>
+                <tr>
+                    <td>idiv 10, ax</td>
+                    <td>?</td>
+                </tr>
+                <tr>
+                    <td>and, or, xor ax, bx</td>
+                    <td>and, or xors ax and bx and stores in bx</td>
+                </tr>
+                <tr>
+                    <td>not ax</td>
+                    <td>negates ALL bits</td>
+                </tr>
+                <tr>
+                    <td>neg ax</td>
+                    <td>ax is -ax</td>
+                </tr>
+                <tr>
+                    <td>shl, shr 1, ax</td>
+                    <td>shift left/ shift right</td>
+                </tr>
+                <tr>
+                    <td>jmp label</td>
+                    <td>jumps to label</td>
+                </tr>
+                <tr>
+                    <td>cmp ax, bx</td>
+                    <td>compare ax and bx</td>
+                </tr>
+                <tr>
+                    <td>call label</td>
+                    <td>calls function. Followed by a ret</td>
+                </tr>
+
+            </table>
+            <h2>Jump</h2>
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>jmp label</td>
+                    <td>jumps to label</td>
+                </tr>
+                <tr>
+                    <td>je</td>
+                    <td>jump if equal</td>
+                </tr>
+                <tr>
+                    <td>jne</td>
+                    <td>jump if not equal</td>
+                </tr>
+                <tr>
+                    <td>jz</td>
+                    <td>jump if last result is zero</td>
+                </tr>
+                <tr>
+                    <td>jg</td>
+                    <td>jump if greater</td>
+                </tr>
+                <tr>
+                    <td>jge</td>
+                    <td>jump if equal or greater</td>
+                </tr>
+                <tr>
+                    <td>jl</td>
+                    <td>jump if less</td>
+                </tr>
+                <tr>
+                    <td>jle</td>
+                    <td>jump if less or equal</td>
+                </tr>
+            </table>
+            <h2>Example</h2>
+            <pre>
+                <code class="language-asm">
+cmp ax, bx
+je myLabel
+                </code>
+            </pre>
+            <h2>Loops</h2>
+            <pre>
+                <code class="language-asm">
+xor cx,cx   ; cx-register is the counter, set to 0
+loop1:  nop         ; Whatever you wanna do goes here, should not change cx
+        inc cx      ; Increment
+        cmp cx,3    ; Compare cx to the limit
+        jle loop1   ; Loop while less or equal
+                </code>
+            </pre>
+            <pre>
+                <code class="language-asm">
+mov cx,4    ; 4 iterations
+loop1:  nop         ; Whatever you wanna do goes here, should not change cx
+        loop loop1  ; loop instruction decrements cx and jumps to label if not 0
+                </code>
+            </pre>
+            <h2>Bit Syze</h2>
+            <pre>
+                <code class="language-asm">
+db      0x55                ; just the byte 0x55
+db      0x55,0x56,0x57      ; three bytes in succession
+db      'a',0x55            ; character constants are OK
+db      'hello',13,10,'$'   ; so are string constants
+dw      0x1234              ; 0x34 0x12
+dw      'A'                 ; 0x41 0x00 (it's just a number)
+dw      'AB'                ; 0x41 0x42 (character constant)
+dw      'ABC'               ; 0x41 0x42 0x43 0x00 (string)
+dd      0x12345678          ; 0x78 0x56 0x34 0x12
+dq      0x1122334455667788  ; 0x88 0x77 0x66 0x55 0x44 0x33 0x22 0x11
+ddq     0x112233445566778899aabbccddeeff00
+; 0x00 0xff 0xee 0xdd 0xcc 0xbb 0xaa 0x99
+; 0x88 0x77 0x66 0x55 0x44 0x33 0x22 0x11
+do      0x112233445566778899aabbccddeeff00 ; same as previous
+dd      1.234567e20         ; floating-point constant
+dq      1.234567e20         ; double-precision float
+dt      1.234567e20         ; extended-precision float
+                </code>
+            </pre>
+            <out>
+                mov  eax, [ebx]
+            </out>
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+        </div>
+
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

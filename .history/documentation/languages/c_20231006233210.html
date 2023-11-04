@@ -1,0 +1,57 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/languages/c.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>c</h1>
+            <hr>
+
+            <h2>Print</h2>
+            <pre>
+                <code class="language-c">
+#include <stdio.h>
+
+printf("My age is: %d", age)
+scanf("%c", &grade);
+                </code>
+            </pre>
+
+            <h2>malloc</h2>
+            <pre>
+                <code class="language-c">
+int *ptr; //pointer
+ptr = malloc(5 * sizeof(int))
+
+*(ptr + 1) = 20;
+
+free(ptr)
+                </code>
+            </pre>
+
+            <h2>Struct</h2>
+            <pre>
+                <code class="language-c">
+struct Adresse {
+    char city[200];
+}
+
+struct Adresse myOberkirch;
+myOberkirch.city = "..."
+
+
+typedef struct {
+    char age[200];
+} Person;
+
+Person max;
+max.age = 19;
+                </code>
+            </pre>
+
+
+<div id="includeFooter"></div>

@@ -1,0 +1,203 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+    <!-- ------ SIDE NAVIGATION BAR ----- -->
+    <div class="sidenav">
+        <a href="/documentation/special/OS/OS.html">Basics</a>
+        <a href="/documentation/special/OS/ASM.html">Basics</a>
+    </div>
+
+    <h2>Registers</h2>
+            <pre>
+                <code class="language-asm">
+General registers
+EAX EBX ECX EDX
+
+Segment registers
+CS DS ES FS GS SS
+
+Index and pointers
+ESI EDI EBP EIP ESP
+                </code>
+            </pre>
+            <img src="https://flint.cs.yale.edu/cs421/papers/x86-asm/x86-registers.png">
+            <pre>
+                <code class="language-asm">
+.data		
+var:		
+    .byte 64	/* Declare a byte, referred to as location var, containing the value 64. */
+    .byte 10	/* Declare a byte with no label, containing the value 10. Its location is var + 1. */
+x:		
+    .short 42	/* Declare a 2-byte value initialized to 42, referred to as location x. */
+y:		
+    .long 30000    	/* Declare a 4-byte value, referred to as location y, initialized to 30000. */
+                </code>
+            </pre>
+            <pre>
+                <code class="language-asm">
+s:		
+    .long 1, 2, 3	/* Declare three 4-byte values, initialized to 1, 2, and 3.
+                       The value at location s + 8 will be 3. */
+barr:		
+    .zero 10	/* Declare 10 bytes starting at location barr, initialized to 0. */
+str:		
+    .string "hello"   	/* Declare 6 bytes starting at the address str initialized to
+                           the ASCII character values for hello followed by a nul (0) byte. */                    
+                </code>
+            </pre>
+
+            <h2>Basic Assambly Methodes</h2>
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>mov ebx, eax</td>
+                    <td>moves data from eax to ebx</td>
+                </tr>
+                <tr>
+                    <td>push eax</td>
+                    <td>push eax on the stack</td>
+                </tr>
+                <tr>
+                    <td>pop eax</td>
+                    <td>pop the top element of the stack into EDI.</td>
+                </tr>
+                <tr>
+                    <td>add 10, eax</td>
+                    <td>adds 10 to eax</td>
+                </tr>
+                <tr>
+                    <td>sub 10 eax</td>
+                    <td>subs 10 from eax</td>
+                </tr>
+                <tr>
+                    <td>inc ax/ dec ax</td>
+                    <td>Increments/ decrements ax</td>
+                </tr>
+                <tr>
+                    <td>imul 10, ax</td>
+                    <td>multiplyes and stores in ax</td>
+                </tr>
+                <tr>
+                    <td>idiv 10, ax</td>
+                    <td>?</td>
+                </tr>
+                <tr>
+                    <td>and, or, xor ax, bx</td>
+                    <td>and, or xors ax and bx and stores in bx</td>
+                </tr>
+                <tr>
+                    <td>not ax</td>
+                    <td>negates ALL bits</td>
+                </tr>
+                <tr>
+                    <td>neg ax</td>
+                    <td>ax is -ax</td>
+                </tr>
+                <tr>
+                    <td>shl, shr 1, ax</td>
+                    <td>shift left/ shift right</td>
+                </tr>
+                <tr>
+                    <td>jmp label</td>
+                    <td>jumps to label</td>
+                </tr>
+                <tr>
+                    <td>cmp ax, bx</td>
+                    <td>compare ax and bx</td>
+                </tr>
+                <tr>
+                    <td>call label</td>
+                    <td>calls function. Followed by a ret</td>
+                </tr>
+
+            </table>
+            <h2>Jump</h2>
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>jmp label</td>
+                    <td>jumps to label</td>
+                </tr>
+                <tr>
+                    <td>je</td>
+                    <td>jump if equal</td>
+                </tr>
+                <tr>
+                    <td>jne</td>
+                    <td>jump if not equal</td>
+                </tr>
+                <tr>
+                    <td>jz</td>
+                    <td>jump if last result is zero</td>
+                </tr>
+                <tr>
+                    <td>jg</td>
+                    <td>jump if greater</td>
+                </tr>
+                <tr>
+                    <td>jge</td>
+                    <td>jump if equal or greater</td>
+                </tr>
+                <tr>
+                    <td>jl</td>
+                    <td>jump if less</td>
+                </tr>
+                <tr>
+                    <td>jle</td>
+                    <td>jump if less or equal</td>
+                </tr>
+            </table>
+            <h2>Example</h2>
+            <pre>
+                <code class="language-asm">
+cmp ax, bx
+je myLabel
+                </code>
+            </pre>
+            <h2>Loops</h2>
+            <pre>
+                <code class="language-asm">
+xor cx,cx   ; cx-register is the counter, set to 0
+loop1:  nop         ; Whatever you wanna do goes here, should not change cx
+        inc cx      ; Increment
+        cmp cx,3    ; Compare cx to the limit
+        jle loop1   ; Loop while less or equal
+                </code>
+            </pre>
+            <pre>
+                <code class="language-asm">
+mov cx,4    ; 4 iterations
+loop1:  nop         ; Whatever you wanna do goes here, should not change cx
+        loop loop1  ; loop instruction decrements cx and jumps to label if not 0
+                </code>
+            </pre>
+            <h2>Bit Syze</h2>
+            <pre>
+                <code class="language-asm">
+db      0x55                ; just the byte 0x55
+db      0x55,0x56,0x57      ; three bytes in succession
+db      'a',0x55            ; character constants are OK
+db      'hello',13,10,'$'   ; so are string constants
+dw      0x1234              ; 0x34 0x12
+dw      'A'                 ; 0x41 0x00 (it's just a number)
+dw      'AB'                ; 0x41 0x42 (character constant)
+dw      'ABC'               ; 0x41 0x42 0x43 0x00 (string)
+dd      0x12345678          ; 0x78 0x56 0x34 0x12
+dq      0x1122334455667788  ; 0x88 0x77 0x66 0x55 0x44 0x33 0x22 0x11
+ddq     0x112233445566778899aabbccddeeff00
+; 0x00 0xff 0xee 0xdd 0xcc 0xbb 0xaa 0x99
+; 0x88 0x77 0x66 0x55 0x44 0x33 0x22 0x11
+do      0x112233445566778899aabbccddeeff00 ; same as previous
+dd      1.234567e20         ; floating-point constant
+dq      1.234567e20         ; double-precision float
+dt      1.234567e20         ; extended-precision float
+                </code>
+            </pre>
+
+
+<div id="includeFooter"></div>

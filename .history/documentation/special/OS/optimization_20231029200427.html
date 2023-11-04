@@ -1,0 +1,287 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" type="image/x-icon" href="..../Bilder/favicon.ico">
+
+    <link href="/home/max/Schreibtisch/Finished/Portfolio/documentation/prism.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/home/max/Schreibtisch/Finished/Portfolio/documentation/docStyle.css">
+</head>
+<script src="/home/max/Schreibtisch/Finished/Portfolio/jquery.js"></script> 
+
+
+
+
+
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+<!-- ------ SIDE NAVIGATION BAR ----- -->
+<div class="sidenav">
+    <a href="/documentation/special/OS/OS.html">OS</a>
+    <a href="/documentation/special/OS/ASM.html">ASM</a>
+</div>
+
+<div class="main">
+<h1>Optimizations</h1>
+<hr><br><br>
+
+<h2>Constant Folding</h2>
+<p>Optimization: Evaluate constant expressions at compile-time.</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+int result = 2 + 3;
+</code>
+</pre>
+<pre>
+<code class="language-c">
+int result = 5;
+</code>
+</pre>
+</div>
+
+<h2>Dead Code Elimination</h2>
+<p>Code that is not used is not compiled</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+int x = 5;
+int myFunc()...
+
+</code>
+</pre>
+<pre>
+<code class="language-c">
+// no code
+</code>
+</pre>
+</div>
+
+<h2>Common Subexpression Elimination</h2>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+int result = (x + y) * (x + y);
+</code>
+</pre>
+<pre>
+<code class="language-c">
+int common = x + y;
+int result = common * common;
+</code>
+</pre>
+</div>
+
+<h2>Inlining</h2>
+<p>Optimization: Replace function calls with the actual function body.</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+inline int add(int a, int b) {
+    return a + b;
+}
+int result = add(2, 3);
+</code>
+</pre>
+<pre>
+<code class="language-c">
+result = 2 + 3
+</code>
+</pre>
+</div>
+
+<h2>Strength Reduction</h2>
+<p>Optimization: Replace expensive operations with equivalent but cheaper ones.</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+for (int i = 0; i < n; i++) {
+    result += 2 * i;
+}
+</code>
+</pre>
+<pre>
+<code class="language-c">
+for (int i = 0; i < n; i++) {
+    result += i << 1;
+}
+</code>
+</pre>
+</div>
+
+<h2>Constant Propagation</h2>
+<p>Optimization: Replace variables with their constant values when possible.</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+const int x = 42;
+int y = x + 10;
+</code>
+</pre>
+<pre>
+<code class="language-c">
+int y = 52;
+</code>
+</pre>
+</div>
+
+<h2>Branch Prediction Optimization</h2>
+<p>Optimization: Reorder code to improve branch prediction.</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+    if (likely_condition) {
+        // Code executed more frequently
+    } else {
+        // Code executed less frequently
+    }
+</code>
+</pre>
+</div>
+
+
+
+<br><br>
+<h1>Loops</h1><hr>
+<h2>Loop Unrolling:</h2>
+<p>Optimization: Reduce loop overhead by duplicating loop bodies.</p>
+<div class="wrapper"></div>
+<pre>
+<code class="language-c">
+for (int i = 0; i < 4; i++) {
+    arr[i] = i * 2;
+}
+</code>
+</pre>
+<pre>
+<code class="language-c">
+arr[0] = 0 * 2;
+arr[1] = 1 * 2;
+arr[2] = 2 * 2;
+arr[3] = 3 * 2;
+</code>
+</pre>
+
+
+<h2>Loop Fusion and Fission</h2>
+<p>Loop fusion combines multiple loops into one to reduce overhead. Loop fission splits a loop into multiple loops to improve cache usage or parallelism.</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+for (int i = 0; i < n; i++) {
+    // Loop 1 body
+}
+for (int i = 0; i < n; i++) {
+    // Loop 2 body
+}
+</code>
+</pre>
+<pre>
+<code class="language-c">
+for (int i = 0; i < n; i++) {
+    // Combined Loop body
+}
+</code>
+</pre>
+</div>
+
+
+<h2>Loop-Invariant Code Motion (LICM)</h2>
+<p>Optimization: Move calculations that do not depend on loop variables out of the loop to reduce redundancy.</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+for (int i = 0; i < N; i++) {
+    result[i] = x + y;
+}
+</code>
+</pre>
+<pre>
+<code class="language-c">
+int temp = x + y;
+for (int i = 0; i < N; i++) {
+    result[i] = temp;
+}
+</code>
+</pre>
+</div>
+
+<br><br>
+<h1>Own</h1>
+<hr>
+<h2>Garbage Collector</h2>
+<p>Freeing unused space</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+int a = 3;
+print(a);
+while (true) {}
+</code>
+</pre>
+<pre>
+<code class="language-c">
+int a = 3;
+print(a);
+
+free(a);
+
+while (true) {}
+</code>
+</pre>
+</div>
+
+
+<h2>parallelism</h2>
+<p>Use Multithreading and the GPU</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+
+</code>
+</pre>
+<pre>
+<code class="language-c">
+
+</code>
+</pre>
+</div>
+
+
+<h2>Constant Folding</h2>
+<p>ddddddddddddd</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+
+</code>
+</pre>
+<pre>
+<code class="language-c">
+
+</code>
+</pre>
+</div>
+
+
+<h2>Constant Folding</h2>
+<p>ddddddddddddd</p>
+<div class="wrapper">
+<pre>
+<code class="language-c">
+
+</code>
+</pre>
+<pre>
+<code class="language-c">
+
+</code>
+</pre>
+</div>
+
+
+</div>
+<div id="includeFooter"></div>

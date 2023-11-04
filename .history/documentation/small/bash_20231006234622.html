@@ -1,0 +1,86 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/small/bash.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Bash</h1>
+            <hr>
+            <out>
+                bash.sh
+            </out>
+
+            <h2>Example</h2>
+            <div class="wrapper">
+            <pre>
+                <code class="language-bash"># Simple
+
+name="John"
+echo "Hi $name"  #=> Hi John
+                </code>
+            </pre>
+            <pre>
+                <code class="language-bash"># if
+
+if [[ -z "$string" ]]; then
+    echo "String is empty"
+elif [[ -n "$string" ]]; then
+    echo "String is not empty"
+fi
+                </code>
+            </pre>
+            <pre>
+                <code class="language-bash"># wildcard
+
+wildcard="*.txt"
+options="iv"
+cp -$options $wildcard /tmp
+                </code>
+            </pre>
+            <pre>
+                <code class="language-bash"># Function
+
+get_name() {
+    echo "John"
+}
+get_name
+                </code>
+            </pre>
+            <pre>
+                <code class="language-bash"># for
+
+for i in /etc/rc.*; do
+    echo "$i"
+done
+
+for ((i = 0 ; i &lt; 100 ; i++)); do
+    echo "$i"
+done
+
+for i in {1..5}; do
+    echo "Welcome $i"
+done
+                </code>
+            </pre>
+            <pre>
+                <code class="language-bash"># Array
+
+Fruits = ('Apple' 'Banana' 'Orange')
+                </code>
+            </pre>
+            <pre>
+                <code class="language-bash"># Easy commands
+
+echo $(whoami)       # Outputs commands
+
+read name
+echo $name
+                </code>
+            </pre>
+ </div>
+
+<div id="includeFooter"></div>

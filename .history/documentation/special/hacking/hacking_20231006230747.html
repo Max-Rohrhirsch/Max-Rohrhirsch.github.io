@@ -1,0 +1,68 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/special/hacking/hacking.html">Basics</a>
+            <a href="/documentation/special/hacking/rasberry.html">Rasberry pi</a>
+            <button class="dropdown-btn">Atacks 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/documentation/special/hacking/nmap.html">NMAP</a>
+                <a href="/documentation/special/hacking/mitm.html">MITM</a>
+                <a href="/documentation/special/hacking/cryptografie.html">Cryptografie</a>
+            </div>
+        </div>
+        
+        
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Python</h1>
+            <hr>
+            <p>Booleans represent one of two values: <colored>True</colored> or <colored>False</colored>.</p>
+            <hr>
+            <h2>SQL Injection</h2>
+
+            <out>
+               Userinput:  105 OR 1=1
+            </out>
+            <pre>
+                <code class="language-python">
+SELECT * FROM Users WHERE UserId = 105 OR 1=1;
+                </code>
+            </pre>
+
+             <pre>
+                 <code class="language-python">
+<red>var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
+con.query(sql);</red>
+                 </code>
+             </pre>
+             <p>Instead use:</p>
+             <pre>
+                <code class="language-python">
+<green>
+var sql = "INSERT INTO customers (name, address) VALUES ?";
+var values = [
+    ['John', 'Highway 71'],
+    ['Peter', 'Lowstreet 4'],
+    ['Amy', 'Apple st 652'],
+    ['Hannah', 'Mountain 21']
+];
+con.query(sql, [values]);
+</green>
+                </code>
+            </pre>
+            <hr>
+            <h2>Cross site scripting</h2>
+            <pre>
+                <code class="language-python">
+<red>
+document.getElementByID(...).innerHTML = query
+</red>
+                </code>
+            </pre>
+
+<div id="includeFooter"></div>

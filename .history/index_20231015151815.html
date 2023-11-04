@@ -1,0 +1,260 @@
+<html>
+    <head>
+        <title>My Portfolio</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" lang="en" content="Documentation of many things I learned">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Coding, max">
+        <meta name="author" content="Rohrhirsch Max">
+                
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="/style.css">
+        <link rel="icon" type="image/x-icon" href="/Bilder/favicon.ico">
+    </head>
+    <body>
+        <div class="header">
+            <a href="#home"><colored>HOME</colored></a>
+            <a href="#about">ABOUT</a>
+            <a href="#downloads">DOWNLOAD</a>
+            <a href="/documentation/documentation.html">DOCUMENTATION</a>
+
+            <a class="settings">
+                <span class="icon"><i class="fa fa-gear" style="font-size:20px;"></i></span>
+                <button class="text" onclick='document.querySelector(":root").style.setProperty("--main-special-color", "#ee622a")'></button>
+                <button class="text" onclick='document.querySelector(":root").style.setProperty("--main-special-color", "#2e7f49")'></button>
+                <button class="text" onclick='document.querySelector(":root").style.setProperty("--main-special-color", "#d83131")'></button>
+                <button class="text" onclick='document.querySelector(":root").style.setProperty("--main-special-color", "#194e94")'></button>
+            </a>
+
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Tools</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/languages/sql/sql.html">SQL</a>
+                    <a href="/documentation/languages/python/python.html">Python</a>
+                    <a href="/documentation/languages/java/java.html">Java</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ------ HOME ----- -->
+        <div class="home block" id="home">
+            <h1>
+                Hello,<br>
+                I'm <colored>Max Rohrhirsch</colored> a <br>
+                Software <colored><span id="rotating">Developer</span></colored><br>
+                <button onclick="window.location.href='#about';">About me</button>
+            </h1>
+
+            <img src="/Bilder/Ich bwl.jpg" class="BGIMG">
+            <a id="scroll" href="#about">SCROLL</a>
+        </div>
+
+        <!-- ------ ABOUT ----- -->
+        <div class="about block" id="about">
+            <img src="/Bilder/Ich zeugnis.jpg">
+
+            <div id="info">
+                <h2>Max Rohrhirsch</h2>
+                <h3>Ein <colored>dualer Student</colored> bei <colored>Markant</colored></h3>
+                <p>
+                    I am a student but i still code much, 
+                    excpecialy in Python, modern websites, 
+                    web services and more. 
+                    I also enjoy going out or working on bigger projects. Check out my Portfolio.
+                </p>
+                <table id="table1">
+                    <tr>
+                        <th>Geburtstag</th>
+                        <td>28 März 2004</td>
+                    </tr>
+                    <tr>
+                        <th>Alter</th>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <th>Nationalität</th>
+                        <td>Deutsch</td>
+                    </tr>
+                </table>
+                <table id="table2">
+                    <tr>
+                        <th>E-Mail</th>
+                        <td>max@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <th>Telefon</th>
+                        <td>07802 333455</td>
+                    </tr>
+                    <tr>
+                        <th>Instagram</th>
+                        <td>nope</td>
+                    </tr>
+                </table><br>
+                <button>show CV</button>
+                <button>show certificate</button>
+            </div>
+        </div>
+
+        <!-- ------ EXPERIENCE ----- -->
+        <div class="exper block">
+            <div class="centered">
+                <div class="ed" style="left: 0;">
+                    <h2>Education</h2>
+                    <hr>
+                    <div class="edBlock">
+                        <p>
+                            <date style="margin-top: 0;">2020 – 2023</date><br>    Informatisch-technisches Gymnasium (ITG) Offenburg<br>
+                            <date>2014 – 2020</date><br>    Schwarzwaldschule Appenweier<br>
+                            <date>2010 – 2014</date><br>	Johann-Wölfflin-Schule Oberkirch
+                        </p>
+                    </div>
+                </div>
+                <div class="ed" style="left: 400px;">
+                    <h2>Experience</h2>
+                    <hr>
+                    <div class="edBlock">
+                        <p>
+                            <date style="margin-top: 0;">Betriebssysteme</date><br>	Kali Linux , Windows 7 & 10<br>
+                            <date>Anwendungsprogramme</date><br>MS-Office, GitHub, Unity, VS Code, Atom
+                        </p>
+                    </div>
+                </div>
+                <div class="ed" style="left: 800px;">
+                    <h2>My Skills</h2>
+                    <hr>
+                    <div class="edBlock" style="left: 700px;">
+                        <div id="skill">
+                            Python      <span class="line" style="width: 90%;"></span><br>
+                            Java        <span class="line" style="width: 90%;"></span><br>
+                            HTML/CSS    <span class="line" style="width: 90%;"></span><br>
+                            MySQL       <span class="line" style="width: 80%;"></span><br>
+                            C/C++       <span class="line" style="width: 60%;"></span><br>
+                            Javascript  <span class="line" style="width: 60%;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ------ DOWNLOAD ----- -->
+        <div class="downloads block" id="downloads">
+            <h2><colored>Downloads</colored></h2>
+            <div class="downloadButtons">
+                <button onclick='document.querySelectorAll(".downBlock").forEach(a=>a.style.display = "none");document.getElementById("down1").style.display = "inline-flex";'>new OS</button>
+                <button onclick='document.querySelectorAll(".downBlock").forEach(a=>a.style.display = "none");document.getElementById("down2").style.display = "inline-flex";'>small Python</button>
+                <button onclick='document.querySelectorAll(".downBlock").forEach(a=>a.style.display = "none");document.getElementById("down3").style.display = "inline-flex";'>assistent</button>
+                <button onclick='document.querySelectorAll(".downBlock").forEach(a=>a.style.display = "none");document.getElementById("down4").style.display = "inline-flex";'>Search Engine</button>
+                <button onclick='document.querySelectorAll(".downBlock").forEach(a=>a.style.display = "none");document.getElementById("down5").style.display = "inline-flex";'>Transcoder</button>
+            </div>
+
+            <!-- ----------- Many diverent download blocks ---------- -->
+            <div class="downBlock" id="down1">
+                <div class="download">
+                    <a class="downEl" href="/Bilder/ich 4.jpg" download>
+                        bin/
+                    </a>
+                    <a class="downEl" href="" download>
+                        README.md
+                    </a>
+                </div>
+                <div class="downInfo">
+                    <h2><colored>Repository</colored></h2>
+                    <a>github.com/dddddd/heehhh</a>
+                    <hr>
+                    <h2><colored>Version</colored></h2>
+                    <p>3.4.1</p>
+                </div>
+            </div>
+
+            <div class="downBlock" id="down2">
+                <div class="download">
+                    <a class="downEl" href="/Bilder/ich 4.jpg" download>
+                        home/
+                    </a>
+                    <a class="downEl" href="" download>
+                        README.md2
+                    </a>
+                </div>
+                <div class="downInfo">
+                    <h2><colored>Repository</colored></h2>
+                    <a>github.com/dddddd/heehhh</a>
+                    <hr>
+                    <h2><colored>Version</colored></h2>
+                    <p>3.4.1</p>
+                </div>
+            </div>
+
+            <div class="downBlock" id="down3">
+                <div class="download">
+                    <a class="downEl" href="/Bilder/ich 4.jpg" download>
+                        usr/
+                    </a>
+                    <a class="downEl" href="" download>
+                        README.md3
+                    </a>
+                </div>
+                <div class="downInfo">
+                    <h2><colored>Repository</colored></h2>
+                    <a>github.com/dddddd/heehhh</a>
+                    <hr>
+                    <h2><colored>Version</colored></h2>
+                    <p>3.4.1</p>
+                </div>
+            </div>
+
+            <div class="downBlock" id="down4">
+                <div class="download">
+                    <a class="downEl" href="/Bilder/ich 4.jpg" download>
+                        usr/
+                    </a>
+                    <a class="downEl" href="" download>
+                        README.md4
+                    </a>
+                </div>
+                <div class="downInfo">
+                    <h2><colored>Repository</colored></h2>
+                    <a>github.com/dddddd/heehhh</a>
+                    <hr>
+                    <h2><colored>Version</colored></h2>
+                    <p>3.4.1</p>
+                </div>
+            </div>
+
+            <div class="downBlock" id="down5">
+                <div class="download">
+                    <a class="downEl" href="/Bilder/ich 4.jpg" download>
+                        usr/
+                    </a>
+                    <a class="downEl" href="" download>
+                        README.md5
+                    </a>
+                </div>
+                <div class="downInfo">
+                    <h2><colored>Repository</colored></h2>
+                    <a>github.com/dddddd/heehhh</a>
+                    <hr>
+                    <h2><colored>Version</colored></h2>
+                    <p>3.4.1</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ------ SCRIPT FOR HEADER ----- -->
+        <script>
+            var scrollTrigger = 60;
+
+            window.onscroll = function() {
+                if (window.scrollY >= scrollTrigger || window.pageYOffset >= scrollTrigger) {
+                    document.getElementsByClassName("header")[0].classList.add("active");
+                } else {
+                    document.getElementsByClassName("header")[0].classList.remove("active");
+                }
+            };
+        </script>
+    </body>
+</html>

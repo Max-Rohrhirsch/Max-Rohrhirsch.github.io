@@ -1,0 +1,347 @@
+<html>
+    <head>
+        <title>Documentation</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" lang="en" content="Documentation of many things I learned">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Coding, max">
+        <meta name="author" content="Rohrhirsch Max">
+                
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="/documentation/docStyle.css">
+        <link rel="icon" type="image/x-icon" href="/Bilder/favicon.ico">
+    </head>
+    <body>
+        <!-- ------ TOP NAVIGATION BAR ----- -->
+        <nav class="nav1">
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Languages</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/languages/sql/sql.html">SQL</a>
+                    <a href="/documentation/languages/python/python.html">Python</a>
+                    <a href="/documentation/languages/java/java.html">Java</a>
+                    <a href="/documentation/languages/js/js.html">JS</a>
+                    <a href="/documentation/languages/css/css.html">CSS</a>
+                    <a href="/documentation/languages/c/c.html">C</a>
+                    <a href="/documentation/languages/cpp/cpp.html">C++</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Small Language</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/small/bash/bash.html">Bash</a>
+                    <a href="/documentation/small/rust/rust.html">Rust</a>
+                    <a href="/documentation/small/go/go.html">GO</a>
+                    <a href="/documentation/small/csharp/csharp.html">C#</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">libaries</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/libaries/socket/socket.html">Socket</a>
+                    <a href="/documentation/libaries/tenserflow/tenserflow.html">Tenserflow</a>
+                    <a href="/documentation/libaries/regex/regex.html">Regex</a>
+                    <a href="/documentation/libaries/numpy/numpy.html">Numpy</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Special</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/special/computer/computer.html">Computer</a>
+                    <a href="/documentation/special/logik/logik.html">Logikgates</a>
+                    <a href="/documentation/special/linux/linux.html">Linux</a>
+                    <a href="/documentation/special/arduino/arduino.html">Arduino</a>
+                    <a href="/documentation/special/game/game.html">Game Maker</a>
+                    <a href="/documentation/special/unity/unity.html">Unity</a>
+                    <a href="/documentation/special/os/os.html">OS</a>
+                    <a href="/documentation/special/hacking/hacking.html">Hacking</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Extensions/API</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/extension/chrome/chrome.html">Chrome Extension</a>
+                    <a href="/documentation/extension/discord/discord.html">Discord Bot</a>
+                    <a href="/documentation/extension/computercraft/computercraft.html">Computercraft</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">SCHOOL</button>
+                <div class="dropdown-content" style="left:0;">
+                    <a href="/documentation/school/math/math.html">Math</a>
+                    <a href="/documentation/school/physik/physik.html">Physik</a>
+                    <a href="/documentation/school/bwl/bwl.html">BWL</a>
+                    <a href="/documentation/school/it/it.html">IT</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/special/os/os.html">Basics</a>
+            <button class="dropdown-btn">More 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/documentation/special/os/assembler.html">Assembler</a>
+                <a href="/documentation/special/os/c.html">C</a>
+                <a href="/documentation/special/os/uhr.html">mid</a>
+            </div>
+            <a href="/documentation/special/os/advanced.html">Advanced</a>
+            <a href="/documentation/special/os/examples.html">Examples</a>
+        </div>
+        
+        
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>OS/ Examples</h1>
+            <hr>
+   
+            <h2>Install</h2>
+            <pre>
+                <code class="language-bash">
+; Simple code block 
+; Always on End of code 
+jmp $ 
+times 510-($-$$) db 0 
+db 0x55, 0xaa 
+
+
+; Switch to teletype Mode and print a letter 
+mov ah, 0x0e 
+mov al, 'C' 
+int 0x10 
+ 
+
+; Array 
+[org 0x7C00] 
+mov al, [Variablename] 
+Variablename: 
+db "String", 0 
+
+
+; keyboard input 
+Char: 
+Db 0 
+Mov ah, 0 
+Int 0x16 
+Mov al, [char] 
+
+; buffer 
+Buffer: 
+Times 10 db 0 
+Mov bx, buffer 
+Mov[bx], al 
+Inc bx 
+
+; read disk 
+Mov ah, 2 
+                </code>
+            </pre>
+            <h2>Print string</h2>
+            <pre>
+                <code>
+[org 0x7c00] 
+mov ah, 0x0e  
+mov bx, Var1 
+
+printString: 
+    mov al, [bx] 
+    cmp al, 0 
+    je end 
+    int 0x10 
+    inc bx 
+    jmp printString 
+end: 
+
+Var1: 
+    db 'Hello World', 0 
+
+jmp $ 
+times 510-($-$$) db 0 
+db 0x55, 0xaa 
+                </code>
+            </pre>
+            <h2>protected mode</h2>
+            <pre>
+                <code>
+GDT_Start: 
+    null_descriptor: 
+        dd 0 
+        dd 0 
+    code_descriptor: 
+        dw 0xffff 
+        dw 0 
+        db 0 
+        db 10011010 
+        db 11001111 
+        db 0 
+
+    data_descriptor: 
+        dw 0xffff 
+        dw 0 
+        db 0 
+        db 10010010 
+        db 11001111 
+        db 0   
+GDT_End: 
+
+GDT_Descriptor: 
+    dw GDT_End - GDT_Start - 1 
+    dd GDT_Start 
+
+    CODE_SEG equ code_descriptor - GDT_Starr 
+    CODE SEG equ data_descriptor - GDT_Start  
+
+    cli 
+    lgdt [GDT_Descriptor] 
+    mov eax, cr0 
+    or eax, 1 
+    mov cr0, eax 
+
+    jmp CODESEG:start_protected_mode 
+
+
+[bits 32] 
+start_protected_mode: 
+; print colored Text in protected mode 
+mov al, 'A' 
+mov ah, 0x0f 
+mov [0xb8000], ax 
+                </code>
+            </pre>
+            <pre>
+                <code>
+[org 0x7c00]                         
+KERNEL_LOCATION equ 0x1000 
+mov [BOOT_DISK], dl                  
+
+
+xor ax, ax                           
+mov es, ax 
+mov ds, ax 
+mov bp, 0x8000 
+mov sp, bp 
+
+mov bx, KERNEL_LOCATION 
+mov dh, 2 
+
+mov ah, 0x02 
+mov al, dh  
+mov ch, 0x00 
+mov dh, 0x00 
+mov cl, 0x02 
+mov dl, [BOOT_DISK] 
+int 0x13                ; no error management, do your homework! 
+
+
+mov ah, 0x0 
+mov al, 0x3 
+int 0x10                ; text mode 
+  
+
+CODE_SEG equ GDT_code - GDT_start 
+DATA_SEG equ GDT_data - GDT_start 
+
+cli 
+lgdt [GDT_descriptor] 
+mov eax, cr0 
+or eax, 1 
+mov cr0, eax 
+jmp CODE_SEG:start_protected_mode 
+
+jmp $ 
+
+BOOT_DISK: db 0 
+
+GDT_start: 
+    GDT_null: 
+        dd 0x0 
+        dd 0x0 
+
+    GDT_code: 
+        dw 0xffff 
+        dw 0x0 
+        db 0x0 
+        db 0b10011010 
+        db 0b11001111 
+        db 0x0 
+
+    GDT_data: 
+        dw 0xffff 
+        dw 0x0 
+        db 0x0 
+        db 0b10010010 
+        db 0b11001111 
+        db 0x0 
+
+GDT_end: 
+
+GDT_descriptor: 
+    dw GDT_end - GDT_start - 1 
+    dd GDT_start 
+  
+
+[bits 32] 
+start_protected_mode: 
+    mov ax, DATA_SEG 
+
+    mov ds, ax 
+    mov ss, ax 
+    mov es, ax 
+    mov fs, ax 
+    mov gs, ax 
+    mov ebp, 0x90000 ; 32 bit stack base pointer 
+    mov esp, ebp 
+
+    jmp KERNEL_LOCATION 
+
+  
+
+times 510-($-$$) db 0               
+dw 0xaa55 
+                </code>
+            </pre>
+
+            <a class="pre">Previous</a>
+            <a class="next">Next</a>
+        </div>
+
+        <div id="modal01" class="modal" onclick="this.style.display='none'">
+            <span class="close">X</span>
+            <div class="modal-content">
+              <img id="img01" style="max-width:100%">
+            </div>
+          </div>
+
+
+        <!-- ------ SCRIPT FOR DROPDOWN ----- -->
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+        </script>
+        <script>
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

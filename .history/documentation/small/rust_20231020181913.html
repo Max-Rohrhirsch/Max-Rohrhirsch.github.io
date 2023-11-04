@@ -1,0 +1,105 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/small/rust.html">Basics</a>
+        </div>
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Rust</h1>
+            <hr>
+
+            <out>
+                go run doc.go
+            </out>
+
+            <div class="wrapper">
+            <pre>
+                <code class="language-rust">// Basic
+                    fn main() { 
+                        const PI:f32 = 3.14; 
+                        println!("PI {}",PI); 
+                    }
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">// Datatypes
+
+                    let num: int = -1i8;
+                    let an_integer = 1u32;
+                    let salary:f64 = 35_000.00;
+                    let mut mutable_binding = ;
+
+                    const PI:f32 = 3.14;
+
+                    let name1 = "Hello".to_string();
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">// if
+                    if num > 0 {
+                        println!("{} is positive",num);
+                     } else if num < 0 {
+                        println!("{} is negative",num);
+                     } else {
+                        println!("{} is neither positive nor negative",num) ;
+                     }
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">// match case
+
+                    let state_code = "MH";
+   let state = match state_code {
+      "MH" => {println!("Found match for MH"); "Maharashtra"},
+      "KL" => "Kerala",
+      "KA" => "Karnadaka",
+      "GA" => "Goa",
+      _ => "Unknown"
+   };
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">// for
+                    for x in 1..11{ // 11 is not inclusive
+                        // ...
+                     }
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">
+
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">
+
+                </code>
+            </pre>
+            <pre>
+                <code class="language-rust">
+
+                </code>
+            </pre>
+        </div>
+            <table>
+                <tr>
+                  <th>Functions</th>
+                </tr>
+                <tr>
+                  <td>.len()</td>
+                </tr>
+                <tr>
+                  <td>.push(...)</td>
+                </tr>
+                <tr>
+                  <td>.contains(...)</td>
+                </tr>
+                <tr>
+                  <td>.replace()</td>
+                </tr>
+            </table>
+        </div>
+<div id="includeFooter"></div>

@@ -1,0 +1,48 @@
+<script src="/jquery.js"></script> 
+<div id="includeHeader"></div>
+
+        <!-- ------ SIDE NAVIGATION BAR ----- -->
+        <div class="sidenav">
+            <a href="/documentation/special/hacking/hacking.html">Basics</a>
+            <a href="/documentation/special/hacking/rasberry.html">Rasberry pi</a>
+            <button class="dropdown-btn">Atacks 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/documentation/special/hacking/nmap.html">NMAP</a>
+                <a href="/documentation/special/hacking/mitm.html">MITM</a>
+                <a href="/documentation/special/hacking/cryptografie.html">Cryptografie</a>
+            </div>
+        </div>
+        
+        
+
+        <!-- ------ MAIN CONTENT ----- -->
+        <div class="main">
+            <h1>Python</h1>
+            <hr>
+
+            <table>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>nmap -A [IP]</td>
+                    <td>MAggresive scan</td>
+                </tr>
+                <tr>
+                    <td>nmap -F [IP]</td>
+                    <td>fast scan</td>
+                </tr>
+                <tr>
+                    <td>nmap -o</td>
+                    <td>OS search</td>
+                </tr>
+                <tr>
+                    <td>nmap -sn [IP]/24</td>
+                    <td>mac address</td>
+                </tr>
+            </table>
+
+<div id="includeFooter"></div>
