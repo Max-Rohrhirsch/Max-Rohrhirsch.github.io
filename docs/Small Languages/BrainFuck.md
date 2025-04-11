@@ -11,7 +11,7 @@
 | `[`     | Go to next instruction if cell is not null, or to the matching closing `]` if null |
 | `]`     | Go back to the matching opening `[` if cell is not null, or go to next instruction if null |
 
-<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
 
 ```bf
 Move/ Add

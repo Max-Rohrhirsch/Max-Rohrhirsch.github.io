@@ -72,4 +72,14 @@ htop  // Taskmanager
 ps aux | grep "processname" // find process
 ```
 </div>
-</div>
+
+# Arch installieren
+```bash
+loadkeys de-latin1
+
+archinstall
+
+sudo pacman -S xorg plasma kde-applications sddm nvidia nvidia-utils xf86-input-libinput
+sudo systemctl enable sddm
+sudo systemctl start sddm
+```

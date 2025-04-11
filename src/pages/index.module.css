@@ -1,18 +1,14 @@
-body {
-  overflow: hidden;
-}
-
 .main {
   display: flex;
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
+  height: calc(100vh - 60px);
+  width: 100vw;
   overflow: hidden;
   font-family: Arial, sans-serif;
 }
 
 .imageContainer {
   flex: 1;
-  background-image: url('./ich2.jpg'); /* Ensure the file is in the same directory */
+  background-image: url('./ich2.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -24,7 +20,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 50px;
-  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .title {

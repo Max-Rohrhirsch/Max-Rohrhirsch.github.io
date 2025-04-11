@@ -5,7 +5,7 @@
 kotlinc hello.kt -include-runtime -d hello.jar
 ```
 
-<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
 
 ```kt
 fun main() {

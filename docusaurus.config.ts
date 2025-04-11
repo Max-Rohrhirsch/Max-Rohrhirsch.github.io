@@ -2,18 +2,15 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
   title: 'Documentation',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
-  url: 'https://docs.maxindustries.com',
-  // /C:/DEV/documentation/build/
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Max-Rohrhirsch.github.io/',
+  // url: 'https://Max-Rohrhirsch.github.io',
+  url: 'http://rohrhirsch.tech/',
+  // baseUrl: '/C:/DEV/documentation/build/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -40,7 +37,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Max-Rohrhirsch/Max-Rohrhirsch.github.io',
         },
         blog: {
           showReadingTime: true,
@@ -51,7 +48,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Max-Rohrhirsch/Max-Rohrhirsch.github.io',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
