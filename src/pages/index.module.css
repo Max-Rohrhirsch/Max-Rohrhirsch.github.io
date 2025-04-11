@@ -1,0 +1,59 @@
+body {
+  overflow: hidden;
+}
+
+.main {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.imageContainer {
+  flex: 1;
+  background-image: url('./ich2.jpg'); /* Ensure the file is in the same directory */
+  background-size: cover;
+  background-position: center;
+}
+
+.textContainer {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+}
+
+.title {
+  font-size: 3rem;
+  color: #333333;
+  margin: 0 0 20px 0;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #555555;
+  margin: 0 0 30px 0;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #444444;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.contactLink {
+  font-size: 1.2rem;
+  color: #007acc;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
