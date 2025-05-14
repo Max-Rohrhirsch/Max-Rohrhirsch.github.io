@@ -14,7 +14,7 @@ permissions:
 # Diese Einstellung vermeidet gleichzeitige Deployments
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
