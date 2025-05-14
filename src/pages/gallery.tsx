@@ -39,7 +39,7 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
       description: 'Exploring the stunning volcanic landscapes and waterfalls of Iceland.'
     },
     {
-      src: 'img/island2.jpg',
+      src: '/img/island2.jpg',
       alt: 'Iceland Landscape',
       category: 'travel',
       location: 'Iceland',
@@ -47,7 +47,7 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
       description: 'Exploring the stunning volcanic landscapes and waterfalls of Iceland.'
     },
     {
-      src: 'img/island3.jpg',
+      src: '/img/island3.jpg',
       alt: 'Iceland Landscape',
       category: 'travel',
       location: 'Iceland',
@@ -173,6 +173,22 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
       location: 'England',
       year: '2025',
       description: ''
+    },
+    {
+      src: '/img/island4.jpg',
+      alt: 'Iceland Landscape',
+      category: 'travel',
+      location: 'Iceland',
+      year: '2024',
+      description: 'Exploring the stunning volcanic landscapes and waterfalls of Iceland.'
+    },
+    {
+      src: '/img/island5.jpg',
+      alt: 'Iceland Landscape',
+      category: 'travel',
+      location: 'Iceland',
+      year: '2024',
+      description: 'Exploring the stunning volcanic landscapes and waterfalls of Iceland.'
     },
   ];
   const filteredImages = activeCategory === 'all' 

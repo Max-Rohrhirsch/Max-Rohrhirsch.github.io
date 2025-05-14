@@ -75,7 +75,7 @@ const projects: ProjectData[] = [
     id: 7,
     title: 'Go-Kart',
     description: 'Entwicklung und Bau eines elektrischen Go-Karts',
-    image: '/img/ich2.jpg',
+    image: '/img/Gokart.png',
     technologies: ['Mechanik', 'Elektrotechnik', 'Schweißen', 'Batterietechnik'],
     gallery: ['/img/ich2.jpg', '/img/ich2.jpg', '/img/ich2.jpg'],
     details: 'Mit diesem Projekt habe ich ein elektrisches Go-Kart von Grund auf neu konstruiert und gebaut. Der Rahmen wurde selbst geschweißt, und ich habe ein Batteriesystem mit Motorsteuerung entworfen, das eine gute Balance zwischen Leistung und Laufzeit bietet. Das Go-Kart verfügt über ein regeneratives Bremssystem und eine digitale Anzeige für wichtige Betriebsdaten.'
