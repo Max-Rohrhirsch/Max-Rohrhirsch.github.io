@@ -28,6 +28,7 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
     { id: 'projects', name: 'DIY Projects' }
   ];
 
+  
   const galleryImages: GalleryImage[] = [
     {
       src: 'img/island1.jpg',
