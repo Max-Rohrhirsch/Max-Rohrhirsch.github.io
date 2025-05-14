@@ -8,7 +8,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://Max-Rohrhirsch.github.io',
-  baseUrl: '/documentation/',
+  baseUrl: '/',
   
   // Add custom scripts like Font Awesome
   scripts: [

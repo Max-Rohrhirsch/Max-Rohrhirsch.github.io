@@ -30,7 +30,7 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
 
   const galleryImages: GalleryImage[] = [
     {
-      src: '/img/island1.jpg',
+      src: 'img/island1.jpg',
       alt: 'Iceland Landscape',
       category: 'travel',
       location: 'Iceland',
@@ -38,7 +38,7 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
       description: 'Exploring the stunning volcanic landscapes and waterfalls of Iceland.'
     },
     {
-      src: '/img/island2.jpg',
+      src: 'img/island2.jpg',
       alt: 'Iceland Landscape',
       category: 'travel',
       location: 'Iceland',
@@ -46,7 +46,7 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
       description: 'Exploring the stunning volcanic landscapes and waterfalls of Iceland.'
     },
     {
-      src: '/img/island3.jpg',
+      src: 'img/island3.jpg',
       alt: 'Iceland Landscape',
       category: 'travel',
       location: 'Iceland',
