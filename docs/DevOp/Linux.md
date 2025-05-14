@@ -72,8 +72,89 @@ htop  // Taskmanager
 ps aux | grep "processname" // find process
 ```
 </div>
+</div>
 
-# Arch installieren
+### Systemverwaltung
+```bash
+# System-Update (Debian/Ubuntu)
+sudo apt update
+sudo apt upgrade -y
+
+# System-Update (Fedora/RHEL)
+sudo dnf update -y
+
+# Festplattenbelegung anzeigen
+df -h
+
+# Verzeichnisgröße ermitteln
+du -sh /pfad/zum/verzeichnis
+
+# Systemressourcen überwachen
+top
+```
+
+### Netzwerk
+```bash
+# IP-Konfiguration anzeigen
+ip addr show
+ifconfig -a
+
+# Netzwerkverbindungen anzeigen
+netstat -tuln
+ss -tuln
+
+# DNS-Abfrage
+dig example.com
+nslookup example.com
+
+# Traceroute
+traceroute example.com
+```
+
+### Benutzer und Berechtigungen
+```bash
+# Neuen Benutzer anlegen
+sudo useradd -m username
+sudo passwd username
+
+# Benutzer einer Gruppe hinzufügen
+sudo usermod -aG groupname username
+
+# Dateibesitz ändern
+sudo chown user:group file.txt
+
+# Berechtigungen ändern
+chmod 755 script.sh  # rwx für Besitzer, rx für Gruppe und andere
+```
+
+### Fortgeschrittene Befehle
+```bash
+# Text mit sed bearbeiten
+sed -i 's/alt/neu/g' datei.txt
+
+# Daten mit awk verarbeiten
+awk '{print $1,$3}' datei.txt
+
+# Mit xargs parallele Prozesse starten
+find . -name "*.log" | xargs -P4 gzip
+```
+
+### Prozessverwaltung
+```bash
+# Prozess im Hintergrund starten
+command &
+
+# Jobs anzeigen und verwalten
+jobs
+fg %1  # Job Nr. 1 in Vordergrund holen
+bg %2  # Job Nr. 2 in Hintergrund fortsetzen
+
+# Prozess mit bestimmter Priorität starten
+nice -n 19 command  # Niedrige Priorität
+sudo nice -n -20 command  # Höchste Priorität
+```
+
+### Arch installieren
 ```bash
 loadkeys de-latin1
 

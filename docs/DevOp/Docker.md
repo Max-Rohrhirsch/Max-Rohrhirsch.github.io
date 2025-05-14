@@ -98,7 +98,6 @@ volumes:
 - Definiert benutzerdefinierte Netzwerke, die von mehreren Containern verwendet werden können. Container im selben Netzwerk können miteinander kommunizieren.
 
 #### `depends_on`
-
 - Bestimmt die Reihenfolge, in der die Container gestartet werden. Dies hilft, wenn zum Beispiel ein Service auf einen anderen angewiesen ist (wie eine Datenbank, die vor dem Webserver starten muss).
 
 `docker-compose.prod.yml
@@ -162,4 +161,154 @@ docker-compose logs        # Logs von allen Containers anzeigen
 docker-compose logs --tail=100  # Nur letzten 100 logs
 
 docker-compose ps  # alles anzeigen
+```
+
+### Multi-Stage Builds
+Multi-Stage Builds sind nützlich, um kleine, optimierte Docker-Images zu erstellen, indem Buildtools im ersten Stage verwendet und dann nur die notwendigen Artefakte in das finale Image kopiert werden.
+
+```dockerfile
+# Build-Stage
+FROM maven:3.8-openjdk-11 AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package
+
+# Run-Stage
+FROM openjdk:11-jre-slim
+WORKDIR /app
+COPY --from=build /app/target/my-app.jar .
+CMD ["java", "-jar", "my-app.jar"]
+```
+
+### Docker Networking
+Docker bietet verschiedene Netzwerktypen:
+
+```bash
+# Netzwerk erstellen
+docker network create my-network
+
+# Container mit Netzwerk starten
+docker run --network=my-network --name my-container -d nginx
+
+# Alle Netzwerke anzeigen
+docker network ls
+
+# Netzwerk-Details anzeigen
+docker network inspect my-network
+
+# Container mit mehreren Netzwerken verbinden
+docker network connect another-network my-container
+```
+
+| Netzwerk Typ | Beschreibung |
+|--------------|--------------|
+| bridge | Standard-Netzwerk, isoliert Container vom Host |
+| host | Container teilen sich das Netzwerk mit dem Host |
+| none | Container haben keine Netzwerkverbindung |
+| overlay | Netzwerk über mehrere Docker-Hosts (Swarm) |
+| macvlan | Gibt dem Container eine MAC-Adresse |
+
+### Docker Volumes
+Docker Volumes sind der bevorzugte Mechanismus für dauerhafte Datenspeicherung:
+
+```bash
+# Volume erstellen
+docker volume create my-data
+
+# Volume mit Container verwenden
+docker run -v my-data:/app/data -d myapp
+
+# Alle Volumes anzeigen
+docker volume ls
+
+# Volume-Details anzeigen
+docker volume inspect my-data
+
+# Ungenutzte Volumes löschen
+docker volume prune
+```
+
+### Docker Security Best Practices
+```bash
+# Als nicht-root User ausführen
+FROM node:14-alpine
+RUN addgroup -g 1000 appuser && \
+    adduser -u 1000 -G appuser -s /bin/sh -D appuser
+USER appuser
+WORKDIR /home/appuser/app
+COPY --chown=appuser:appuser . .
+CMD ["node", "app.js"]
+
+# Security Scanning mit Trivy
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
+  aquasec/trivy image myapp:latest
+```
+
+### Docker Swarm
+Docker Swarm ist Docker's native Cluster- und Orchestrierungslösung:
+
+```bash
+# Swarm initialisieren
+docker swarm init --advertise-addr <MANAGER-IP>
+
+# Als Worker beitreten
+docker swarm join --token <TOKEN> <MANAGER-IP>:2377
+
+# Als Manager beitreten
+docker swarm join-token manager
+
+# Service erstellen (repliziert auf mehreren Nodes)
+docker service create --name web --replicas 3 -p 80:80 nginx
+
+# Service skalieren
+docker service scale web=5
+
+# Service aktualisieren
+docker service update --image nginx:1.19 web
+
+# Services anzeigen
+docker service ls
+docker service ps web
+```
+
+### Docker Compose mit Extensions (v2+)
+```yaml
+services:
+  base: &base-service
+    image: python:3.12
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - DEBUG=1
+
+  web:
+    <<: *base-service
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+
+  worker:
+    <<: *base-service
+    command: python manage.py rqworker
+    depends_on:
+      - redis
+
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=secret
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
 ```

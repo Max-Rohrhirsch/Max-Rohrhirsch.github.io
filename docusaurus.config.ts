@@ -7,15 +7,21 @@ const config: Config = {
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
-  // url: 'https://Max-Rohrhirsch.github.io',
-  url: 'http://rohrhirsch.tech/',
-  // baseUrl: '/C:/DEV/documentation/build/',
-  baseUrl: '/',
+  url: 'https://Max-Rohrhirsch.github.io',
+  baseUrl: '/documentation/',
+  
+  // Add custom scripts like Font Awesome
+  scripts: [
+    {
+      src: 'https://kit.fontawesome.com/4f61744fc1.js',
+      crossorigin: 'anonymous',
+    }
+  ],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Max-Rohrhirsch', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'documentation', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -69,7 +75,22 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Docs',
+        },
+        {
+          to: '/about',
+          position: 'left',
+          label: 'Über mich',
+        },
+        {
+          to: '/projects',
+          position: 'left',
+          label: 'Projekte',
+        },
+        {
+          to: '/gallery',
+          position: 'left',
+          label: 'Adventure Gallery',
         }
       ],
     },
