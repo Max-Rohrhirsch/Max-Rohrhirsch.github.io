@@ -136,17 +136,17 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
     },
     {
       src: '/img/klettern_oesterreich.jpg',
-      alt: 'Zugspitze',
+      alt: 'Österreich Klettersteige',
       category: 'climbing',
-      location: 'Germany',
+      location: 'Austria',
       year: '2024',
       description: ''
     },
     {
       src: '/img/klettern_oesterreich2.jpg',
-      alt: 'Zugspitze',
+      alt: 'Österreich Klettersteige',
       category: 'climbing',
-      location: 'Germany',
+      location: 'Austria',
       year: '2024',
       description: ''
     },

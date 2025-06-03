@@ -29,19 +29,19 @@ const projects: ProjectData[] = [
     id: 2,
     title: 'Digitale Riesenuhren',
     description: 'Digitale Uhr mit Arduino und selbstgebauter 7-Segment-Anzeige. Kann mit Fernbedinung an und aus geschalten werden.',
-    image: '/img/DSC09571.jpg',
+    image: '/img/uhr.jpg',
     technologies: ['Arduino', 'C++', 'Elektronik'],
-    gallery: ['/img/DSC09571.jpg', '/img/DSC09571.jpg', '/img/ich2.jpg'],
+    gallery: ['/img/uhr.jpg', '/img/uhr2.jpg'],
     details: 'Dieses Projekt kombiniert Hardware und Software: Ich habe eine übergroße 7-Segment-Anzeige entworfen und gebaut, die von einem Arduino-Mikrocontroller gesteuert wird. Die Uhr zeigt nicht nur die aktuelle Zeit an, sondern verfügt auch über verschiedene Display-Modi und kann über eine App gesteuert werden. Die Gehäuse der Segmente wurden mit einem 3D-Drucker hergestellt und mit selbstentwickelten LED-Streifen ausgestattet.'
   },
   {
     id: 3,
     title: 'UMOC Chat',
     description: 'Chat-Anwendung mit Python-Backend für ein Studienprojekt',
-    image: '/img/PXL_20240911_230537734.jpg',
+    image: '/img/umoc.jpg',
     technologies: ['Python', 'Flask', 'WebSockets', 'Docker'],
     link: 'https://app.umoc.chat',
-    gallery: ['/img/PXL_20240911_230537734.jpg', '/img/ich2.jpg', '/img/ich2.jpg'],
+    gallery: ['/img/umoc.jpg'],
     details: 'UMOC Chat ist eine moderne Messaging-Plattform, die ich als Teil eines Studienprojekts entwickelt habe. Die Anwendung verfügt über ein Python-Backend mit Flask und WebSockets für Echtzeit-Kommunikation. Das Frontend wurde mit React implementiert und bietet eine responsive Benutzeroberfläche. Die gesamte Anwendung ist in Docker-Containern verpackt für einfache Bereitstellung und Skalierbarkeit.'
   },
   {
@@ -59,7 +59,7 @@ const projects: ProjectData[] = [
     description: 'Entwicklung eines Minecraft-ähnlichen Spiels mit C# und Unity',
     image: '/img/Ich zeugnis.jpg',
     technologies: ['C#', 'Unity', 'Shader-Programmierung', '3D-Modellierung'],
-    gallery: ['/img/Ich zeugnis.jpg', '/img/DSC09571.jpg', '/img/ich2.jpg'],
+    gallery: [],
     details: 'Mit C# und Unity habe ich einen eigenen Minecraft-Klon entwickelt, der die grundlegenden Mechaniken des Originals nachbildet. Das Spiel verfügt über ein prozedural generiertes Terrain, Tag-Nacht-Wechsel, ein eigenes Crafting-System und verschiedene Biome. Besonderer Fokus lag auf der Optimierung der Chunk-Generierung und dem effizienten Rendering von Voxel-Daten.'
   },
   {
@@ -77,7 +77,7 @@ const projects: ProjectData[] = [
     description: 'Entwicklung und Bau eines elektrischen Go-Karts',
     image: '/img/Gokart.png',
     technologies: ['Mechanik', 'Elektrotechnik', 'Schweißen', 'Batterietechnik'],
-    gallery: ['/img/ich2.jpg', '/img/ich2.jpg', '/img/ich2.jpg'],
+    gallery: ['/img/Gokart.jpg', '/img/gokart.jpg'],
     details: 'Mit diesem Projekt habe ich ein elektrisches Go-Kart von Grund auf neu konstruiert und gebaut. Der Rahmen wurde selbst geschweißt, und ich habe ein Batteriesystem mit Motorsteuerung entworfen, das eine gute Balance zwischen Leistung und Laufzeit bietet. Das Go-Kart verfügt über ein regeneratives Bremssystem und eine digitale Anzeige für wichtige Betriebsdaten.'
   }
 ];

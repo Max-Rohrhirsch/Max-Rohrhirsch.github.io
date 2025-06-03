@@ -284,8 +284,10 @@
 /* Tech Stack Section */
 .techStackSection {
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%);
   color: white;
+  position: relative;
+  z-index: 1;
 }
 
 .techStackTitle {
@@ -316,10 +318,11 @@
 }
 
 .techCategory {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 0, 0, 0.2); /* Dunklerer Hintergrund für besseren Kontrast im Light Mode */
   border-radius: 12px;
   padding: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .techCategory:hover {
@@ -330,10 +333,11 @@
 .techCategoryTitle {
   font-size: 1.4rem;
   margin-bottom: 1.5rem;
-  color: white;
+  color: white; /* Bleibt weiß, da der Hintergrund jetzt dunkler ist */
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Bessere Lesbarkeit */
 }
 
 .techItems {
@@ -348,6 +352,11 @@
   align-items: center;
   gap: 0.5rem;
   transition: transform 0.3s ease;
+}
+
+.techItem span {
+  color: white; /* Stellt sicher, dass der Text immer weiß ist */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .techItem:hover {

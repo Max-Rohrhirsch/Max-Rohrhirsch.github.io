@@ -73,7 +73,7 @@ export default function Home(): ReactNode {
                             </div>
                         </div>
                         <div className={styles.projectCard}>
-                            <div className={styles.projectImage} style={{backgroundImage: `url(${useBaseUrl('/img/PXL_20240911_230537734.jpg')})`}}></div>
+                            <div className={styles.projectImage} style={{backgroundImage: `url(${useBaseUrl('/img/uhr.jpg')})`}}></div>
                             <div className={styles.projectContent}>
                                 <h3>Giant Digital Clock</h3>
                                 <p>Arduino-powered oversized 7-segment display</p>
@@ -81,7 +81,7 @@ export default function Home(): ReactNode {
                             </div>
                         </div>
                         <div className={styles.projectCard}>
-                            <div className={styles.projectImage} style={{backgroundImage: `url(${useBaseUrl('/img/PXL_20240911_235435085.jpg')})`}}></div>
+                            <div className={styles.projectImage} style={{backgroundImage: `url(${useBaseUrl('/img/gokart.jpg')})`}}></div>
                             <div className={styles.projectContent}>
                                 <h3>DIY Hovercraft</h3>
                                 <p>Self-built hovercraft from scratch</p>
