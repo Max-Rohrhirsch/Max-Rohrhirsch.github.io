@@ -490,3 +490,40 @@ if (featureFlags.isEnabled('new-payment-process', user)) {
 - **Tool-Überflutung**: Zu viele Tools ohne klare Integration
 - **Langsame Feedback-Schleifen**: Tests, die zu lange dauern
 - **Instabile Tests**: Flaky Tests untergraben das Vertrauen in CI/CD
+
+
+```yaml
+stages:
+  - test
+  - deploy
+  - test_deploy
+
+test:
+    stage: test
+    image: node:18
+    script:
+        - node index.js
+
+deploy:
+    stage: deploy
+    image: docker:latest
+    services:
+        - docker:dind
+    script:
+      - docker build -t $CI_REGISTRY_IMAGE:test .
+      - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+      - docker push $CI_REGISTRY_IMAGE:test
+
+test_deploy:
+    stage: test_deploy
+    image: docker:latest
+    services:
+        - docker:dind
+    script:
+      - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+      - docker pull $CI_REGISTRY_IMAGE:test
+      - docker run --rm $CI_REGISTRY_IMAGE:test node index.js
+      - echo "Test deployment successful"
+      - docker tag $CI_REGISTRY_IMAGE:test $CI_REGISTRY_IMAGE:latest
+      - docker push $CI_REGISTRY_IMAGE:latest
+```

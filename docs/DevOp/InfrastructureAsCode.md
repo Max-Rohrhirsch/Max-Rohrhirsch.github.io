@@ -23,48 +23,30 @@ Terraform ist ein Open-Source-Tool zur Beschreibung und Bereitstellung von Infra
 - **State:** Zustand der verwalteten Infrastruktur
 - **Modules:** Wiederverwendbare Konfigurationskomponenten
 
-#### Beispiel: AWS-Infrastruktur
+Für Azure installiere arurerm und `az login --use-device-code`.
+
+Für Rasberry Pi Setup nutze lieber Ansible.
+
+#### Beispiel: Azure-Infrastruktur
 
 ```hcl
-# Provider-Konfiguration
-provider "aws" {
-  region = "eu-central-1"
-}
-
-# VPC erstellen
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-  
-  tags = {
-    Name = "main-vpc"
-    Environment = "production"
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0"
+    }
   }
 }
 
-# Subnetz erstellen
-resource "aws_subnet" "public" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
-  
-  tags = {
-    Name = "public-subnet"
-  }
+provider "azurerm" {
+  features {}
+  use_azure_cli = true
 }
 
-# EC2-Instanz erstellen
-resource "aws_instance" "web_server" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t2.micro"
-  subnet_id     = aws_subnet.public.id
-  
-  tags = {
-    Name = "WebServer"
-  }
-}
-
-# Ausgabevariablen
-output "instance_ip" {
-  value = aws_instance.web_server.public_ip
+resource "azurerm_resource_group" "hello" {
+  name     = "rg-hello-world"
+  location = "westeurope"
 }
 ```
 

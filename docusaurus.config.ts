@@ -90,8 +90,62 @@ const config: Config = {
           to: '/gallery',
           position: 'left',
           label: 'Adventure Gallery',
+        },
+        {
+          to: '/impressum',
+          position: 'right',
+          label: 'Impressum',
         }
       ],
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Dokumentation',
+          items: [
+            {
+              label: 'Docs',
+              to: '/docs/Überblick',
+            },
+            {
+              label: 'Über mich',
+              to: '/about',
+            },
+            {
+              label: 'Projekte',
+              to: '/projects',
+            },
+          ],
+        },
+        {
+          title: 'Kontakt',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/Max-Rohrhirsch',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/in/max-rohrhirsch-77301a310/',
+            },
+            {
+              label: 'E-Mail',
+              href: 'mailto:max.rohrhirsch2004@gmail.com',
+            },
+          ],
+        },
+        {
+          title: 'Rechtliches',
+          items: [
+            {
+              label: 'Impressum',
+              to: '/impressum',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Max Rohrhirsch. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

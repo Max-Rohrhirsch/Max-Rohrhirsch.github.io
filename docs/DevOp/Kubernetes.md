@@ -443,3 +443,43 @@ kubectl config use-context my-context
 # Namespace im aktuellen Kontext ändern
 kubectl config set-context --current --namespace=my-namespace
 ```
+
+Feature	Docker Compose	Kubernetes
+Neustart nach Crash	Ja, simpel	Ja, plus Healthchecks
+Automatische Skalierung	❌	✅ (CPU/Memory gesteuert)
+Auf mehreren Hosts laufen	❌	✅
+Rolling Updates & Rollbacks	❌	✅
+Self-Healing, Monitoring	❌	✅
+
+
+```bash
+kind create cluster --name my-cluster
+
+kind delete cluster --name my-cluster
+```
+
+| Kategorie | Kind | Beschreibung |
+| --- | --- | --- |
+| **Workloads** | `Pod` | Kleinste Ausführungseinheit |
+|  | `ReplicaSet` | Hält gewünschte Anzahl Pods |
+|  | `Deployment` | Rollouts + Updates von Pods |
+|  | `StatefulSet` | Zustandsbehaftete Pods (z. B. DBs) |
+|  | `DaemonSet` | 1 Pod pro Node |
+|  | `Job` | Einmalige Tasks |
+|  | `CronJob` | Wiederkehrende Jobs (z. B. Backup) |
+| **Services** | `Service` | Zugriff auf Pods (ClusterIP, NodePort) |
+|  | `Ingress` | HTTP-Routing + Domains |
+| **Config** | `ConfigMap` | Key-Value Config-Dateien |
+|  | `Secret` | Gesicherte Daten (z. B. Passwörter) |
+| **Storage** | `PersistentVolume` (PV) | Speicherangebot |
+|  | `PersistentVolumeClaim` (PVC) | Speicheranforderung |
+|  | `StorageClass` | Speicher-Typen (z. B. SSD, HDD) |
+| **Security** | `ServiceAccount` | Identität für Pods |
+|  | `Role` / `ClusterRole` | RBAC: Berechtigungen |
+|  | `RoleBinding` / `ClusterRoleBinding` | Rollenzuweisung |
+| **Networking** | `NetworkPolicy` | Traffic-Regeln für Pods |
+| **Custom** | `CustomResourceDefinition` | Eigene API-Erweiterung |
+| **Namespace** | `Namespace` | Isolation von Ressourcen |
+| **Node Mgmt** | `Node` | Info über Cluster-Knoten |
+|  | `LimitRange`, `ResourceQuota` | Ressourcenbegrenzungen pro Namespace |
+
