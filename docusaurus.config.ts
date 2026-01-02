@@ -29,8 +29,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'de',
-    locales: ['de'],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
   presets: [
@@ -79,12 +79,12 @@ const config: Config = {
         {
           to: '/about',
           position: 'left',
-          label: 'Über mich',
+          label: 'About Me',
         },
         {
           to: '/projects',
           position: 'left',
-          label: 'Projekte',
+          label: 'Projects',
         },
         {
           to: '/gallery',
@@ -94,7 +94,7 @@ const config: Config = {
         {
           to: '/impressum',
           position: 'right',
-          label: 'Impressum',
+          label: 'Imprint',
         }
       ],
     },
@@ -102,24 +102,24 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Dokumentation',
+          title: 'Documentation',
           items: [
             {
               label: 'Docs',
               to: '/docs/Überblick',
             },
             {
-              label: 'Über mich',
+              label: 'About Me',
               to: '/about',
             },
             {
-              label: 'Projekte',
+              label: 'Projects',
               to: '/projects',
             },
           ],
         },
         {
-          title: 'Kontakt',
+          title: 'Contact',
           items: [
             {
               label: 'GitHub',
@@ -136,10 +136,10 @@ const config: Config = {
           ],
         },
         {
-          title: 'Rechtliches',
+          title: 'Legal',
           items: [
             {
-              label: 'Impressum',
+              label: 'Imprint',
               to: '/impressum',
             },
           ],

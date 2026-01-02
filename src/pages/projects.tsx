@@ -17,69 +17,69 @@ interface ProjectData {
 const projects: ProjectData[] = [
   {
     id: 1,
-    title: 'Pfadfinderwebseite',
-    description: 'Administration und Wartung der offiziellen Pfadfinderwebseite',
+    title: 'Scouts Website',
+    description: 'Administration and maintenance of the official scouts website',
     image: '/img/pfadfinder.png',
     technologies: ['WordPress', 'PHP', 'CSS'],
     link: 'https://pfadis.org',
     gallery: ['/img/pfadfinder.png'],
-    details: 'Als aktives Mitglied der Pfadfinder administriere ich unsere offizielle Website pfadis.org. Die Website wird mit WordPress betrieben und bietet Informationen über unsere Aktivitäten, Veranstaltungen und Projekte. Regelmäßige Updates, Plugin-Management und Sicherheitsmaßnahmen gehören zu meinen Aufgaben, ebenso wie die Schulung anderer Mitglieder in der Content-Erstellung.'
+    details: 'As an active member of the scouts, I administer our official website pfadis.org. The website runs on WordPress and provides information about our activities, events, and projects. Regular updates, plugin management, and security measures are part of my responsibilities, as well as training other members in content creation.'
   },
   {
     id: 2,
-    title: 'Digitale Riesenuhren',
-    description: 'Digitale Uhr mit Arduino und selbstgebauter 7-Segment-Anzeige. Kann mit Fernbedinung an und aus geschalten werden.',
+    title: 'Giant Digital Clock',
+    description: 'Digital clock with Arduino and self-built 7-segment display. Can be turned on and off with remote control.',
     image: '/img/uhr.jpg',
-    technologies: ['Arduino', 'C++', 'Elektronik'],
+    technologies: ['Arduino', 'C++', 'Electronics'],
     gallery: ['/img/uhr.jpg', '/img/uhr2.jpg'],
-    details: 'Dieses Projekt kombiniert Hardware und Software: Ich habe eine übergroße 7-Segment-Anzeige entworfen und gebaut, die von einem Arduino-Mikrocontroller gesteuert wird. Die Uhr zeigt nicht nur die aktuelle Zeit an, sondern verfügt auch über verschiedene Display-Modi und kann über eine App gesteuert werden. Die Gehäuse der Segmente wurden mit einem 3D-Drucker hergestellt und mit selbstentwickelten LED-Streifen ausgestattet.'
+    details: 'This project combines hardware and software: I designed and built an oversized 7-segment display controlled by an Arduino microcontroller. The clock not only displays the current time but also has various display modes and can be controlled via an app. The segment housings were made with a 3D printer and equipped with custom LED strips.'
   },
   {
     id: 3,
     title: 'UMOC Chat',
-    description: 'Chat-Anwendung mit Python-Backend für ein Studienprojekt',
+    description: 'Chat application with Python backend for a study project',
     image: '/img/umoc.jpg',
     technologies: ['Python', 'Flask', 'WebSockets', 'Docker'],
     link: 'https://app.umoc.chat',
     gallery: ['/img/umoc.jpg'],
-    details: 'UMOC Chat ist eine moderne Messaging-Plattform, die ich als Teil eines Studienprojekts entwickelt habe. Die Anwendung verfügt über ein Python-Backend mit Flask und WebSockets für Echtzeit-Kommunikation. Das Frontend wurde mit React implementiert und bietet eine responsive Benutzeroberfläche. Die gesamte Anwendung ist in Docker-Containern verpackt für einfache Bereitstellung und Skalierbarkeit.'
+    details: 'UMOC Chat is a modern messaging platform that I developed as part of a study project. The application features a Python backend with Flask and WebSockets for real-time communication. The frontend was implemented with React and offers a responsive user interface. The entire application is packaged in Docker containers for easy deployment and scalability.'
   },
   {
     id: 4,
-    title: 'Compiler mit LLVM',
-    description: 'Entwicklung eines eigenen Compilers mit Python und LLVM',
+    title: 'Compiler with LLVM',
+    description: 'Development of a custom compiler with Python and LLVM',
     image: '/img/compiler.png',
-    technologies: ['Python', 'LLVM', 'Compiler-Technologie', 'Lexer/Parser'],
+    technologies: ['Python', 'LLVM', 'Compiler Technology', 'Lexer/Parser'],
     gallery: [],
-    details: 'In diesem Projekt habe ich einen eigenen Compiler für eine selbst entworfene Programmiersprache entwickelt. Der Compiler nutzt Python für die Frontend-Komponenten (Lexer, Parser, semantische Analyse) und das LLVM-Framework für die Backend-Code-Generierung. Der Compiler übersetzt den Quellcode in LLVM IR und erzeugt daraus ausführbaren Maschinencode für verschiedene Zielplattformen.'
+    details: 'In this project, I developed my own compiler for a custom programming language. The compiler uses Python for frontend components (lexer, parser, semantic analysis) and the LLVM framework for backend code generation. The compiler translates source code into LLVM IR and generates executable machine code for various target platforms.'
   },
   {
     id: 5,
-    title: 'Minecraft-Klon',
-    description: 'Entwicklung eines Minecraft-ähnlichen Spiels mit C# und Unity',
+    title: 'Minecraft Clone',
+    description: 'Development of a Minecraft-like game with C# and Unity',
     image: '/img/minecraft.webp',
-    technologies: ['C#', 'Unity', 'Shader-Programmierung', '3D-Modellierung'],
+    technologies: ['C#', 'Unity', 'Shader Programming', '3D Modeling'],
     gallery: [],
-    details: 'Mit C# und Unity habe ich einen eigenen Minecraft-Klon entwickelt, der die grundlegenden Mechaniken des Originals nachbildet. Das Spiel verfügt über ein prozedural generiertes Terrain, Tag-Nacht-Wechsel, ein eigenes Crafting-System und verschiedene Biome. Besonderer Fokus lag auf der Optimierung der Chunk-Generierung und dem effizienten Rendering von Voxel-Daten.'
+    details: 'With C# and Unity, I developed my own Minecraft clone that replicates the basic mechanics of the original. The game features procedurally generated terrain, day-night cycles, a custom crafting system, and various biomes. Special focus was placed on optimizing chunk generation and efficient rendering of voxel data.'
   },
   {
     id: 6,
     title: 'Hovercraft',
-    description: 'Design und Bau eines funktionstüchtigen Hovercrafts',
+    description: 'Design and construction of a functional hovercraft',
     image: '/img/hovercraft.png',
-    technologies: ['Mechanik', 'Elektronik', 'WIG-Schweißen', 'Motorsteuerung'],
+    technologies: ['Mechanics', 'Electronics', 'TIG Welding', 'Motor Control'],
     gallery: ['/img/hovercraft.png'],
     link: 'https://www.youtube.com/watch?v=xpajz0RjG_A&t=61s',
-    details: 'Eines meiner ambitioniertesten Projekte war der Bau eines voll funktionsfähigen Hovercrafts. Nach umfangreicher Planung habe ich alle Komponenten selbst zusammengebaut und eine elektronische Steuerung implementiert.'
+    details: 'One of my most ambitious projects was building a fully functional hovercraft. After extensive planning, I assembled all components myself and implemented electronic controls.'
   },
   {
     id: 7,
     title: 'Go-Kart',
-    description: 'Entwicklung und Bau eines elektrischen Go-Karts',
+    description: 'Development and construction of an electric go-kart',
     image: '/img/Gokart.png',
-    technologies: ['Mechanik', 'Elektrotechnik', 'Schweißen', 'Batterietechnik'],
+    technologies: ['Mechanics', 'Electrical Engineering', 'Welding', 'Battery Technology'],
     gallery: ['/img/Gokart.jpg', '/img/gokart.jpg'],
-    details: 'Mit diesem Projekt habe ich ein elektrisches Go-Kart von Grund auf neu konstruiert und gebaut. Der Rahmen wurde selbst geschweißt, und ich habe ein Batteriesystem mit Motorsteuerung entworfen, das eine gute Balance zwischen Leistung und Laufzeit bietet. Das Go-Kart verfügt über ein regeneratives Bremssystem und eine digitale Anzeige für wichtige Betriebsdaten.'
+    details: 'With this project, I designed and built an electric go-kart from scratch. The frame was welded by hand, and I designed a battery system with motor control that provides a good balance between performance and runtime. The go-kart features a regenerative braking system and a digital display for important operating data.'
   }
 ];
 
@@ -100,13 +100,13 @@ export default function Projects(): JSX.Element {
 
   return (
     <Layout
-      title="Projekte"
-      description="Übersicht meiner Projekte und Entwicklungen">
+      title="Projects"
+      description="Overview of my projects and developments">
       <header className={styles.projectsHeader}>
         <div className="container">
-          <h1 className={styles.projectsTitle}>Meine Projekte</h1>
+          <h1 className={styles.projectsTitle}>My Projects</h1>
           <p className={styles.projectsSubtitle}>
-            Von Softwareentwicklung über Elektronik bis hin zu mechanischen Konstruktionen
+            From software development to electronics and mechanical constructions
           </p>
         </div>
       </header>
@@ -147,12 +147,12 @@ export default function Projects(): JSX.Element {
 
         <section className={styles.techStackSection}>
           <div className="container">
-            <h2 className={styles.techStackTitle}>Mein Technologie-Stack</h2>
+            <h2 className={styles.techStackTitle}>My Technology Stack</h2>
             
             <div className={styles.techCategories}>
               <div className={styles.techCategory}>
                 <h3 className={styles.techCategoryTitle}>
-                  <i className="fas fa-code"></i> Sprachen
+                  <i className="fas fa-code"></i> Languages
                 </h3>
                 <div className={styles.techItems}>
                   <div className={styles.techItem}>
@@ -184,7 +184,7 @@ export default function Projects(): JSX.Element {
               
               <div className={styles.techCategory}>
                 <h3 className={styles.techCategoryTitle}>
-                  <i className="fas fa-server"></i> Backend & Datenbanken
+                  <i className="fas fa-server"></i> Backend & Databases
                 </h3>
                 <div className={styles.techItems}>
                   <div className={styles.techItem}>
@@ -289,7 +289,7 @@ export default function Projects(): JSX.Element {
                 <img 
                   key={index} 
                   src={image} 
-                  alt={`${activeProject.title} - Bild ${index + 1}`} 
+                  alt={`${activeProject.title} - Image ${index + 1}`} 
                   className={styles.modalImage}
                 />
               ))}
@@ -313,7 +313,7 @@ export default function Projects(): JSX.Element {
                   rel="noopener noreferrer"
                   className={styles.modalLink}
                 >
-                  <i className="fas fa-external-link-alt"></i> Projekt ansehen
+                  <i className="fas fa-external-link-alt"></i> View Project
                 </a>
               </div>
             )}

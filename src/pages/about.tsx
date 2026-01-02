@@ -6,8 +6,8 @@ import styles from './about.module.css';
 export default function About(): JSX.Element {
   return (
     <Layout
-      title="Über mich"
-      description="Max Rohrhirsch - Dualer Student für Angewandte Informatik">
+      title="About Me"
+      description="Max Rohrhirsch - Dual Student for Applied Computer Science">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <div className={styles.profileContainer}>
@@ -17,7 +17,7 @@ export default function About(): JSX.Element {
             </div>
             <div className={styles.profileInfo}>
               <h1 className={styles.heroTitle}>Max Rohrhirsch</h1>
-              <p className={styles.heroSubtitle}>Dualer Student für Angewandte Informatik</p>
+              <p className={styles.heroSubtitle}>Dual Student for Applied Computer Science</p>
               <div className={styles.socialIcons}>
                 <a href="https://github.com/Max-Rohrhirsch" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                   <i className="fab fa-github"></i>
@@ -38,41 +38,41 @@ export default function About(): JSX.Element {
         <section className={styles.section}>
           <div className="container">
             <div className={styles.aboutMe}>
-              <h2 className={styles.sectionTitle}>Über mich</h2>
+              <h2 className={styles.sectionTitle}>About Me</h2>
               <p className={styles.aboutText}>
-                Ich bin ein Tüftler und Abenteurer mit einer Leidenschaft für Technologie und Outdoor-Aktivitäten. 
-                Neben meinem dualen Studium der Angewandten Informatik finde ich Zeit für spannende Projekte wie 
-                den Bau eines eigenen Hovercrafts und eines Go-Karts. In meiner Freizeit bin ich begeisterter 
-                Wanderer und liebe das Bouldern sowie Klettersteige.
+                I am a tinkerer and adventurer with a passion for technology and outdoor activities. 
+                In addition to my dual studies in Applied Computer Science, I find time for exciting projects such as 
+                building my own hovercraft and go-kart. In my free time, I am an avid 
+                hiker and love bouldering and via ferratas.
               </p>
               <div className={styles.hobbiesContainer}>
                 <div className={styles.hobbyCard}>
                   <div className={styles.hobbyIconWrapper}>
                     <i className="fas fa-mountain"></i>
                   </div>
-                  <h3>Klettern & Bouldern</h3>
-                  <p>Regelmäßig in der Kletterhalle und bei gutem Wetter draußen am Fels</p>
+                  <h3>Climbing & Bouldering</h3>
+                  <p>Regular visits to the climbing gym and outdoor rock climbing in good weather</p>
                 </div>
                 <div className={styles.hobbyCard}>
                   <div className={styles.hobbyIconWrapper}>
                     <i className="fas fa-tools"></i>
                   </div>
-                  <h3>Tüfteln & Bauen</h3>
-                  <p>Vom Hovercraft bis zum Go-Kart - ich liebe es, Dinge zu konstruieren</p>
+                  <h3>Tinkering & Building</h3>
+                  <p>From hovercrafts to go-karts - I love building things</p>
                 </div>
                 <div className={styles.hobbyCard}>
                   <div className={styles.hobbyIconWrapper}>
                     <i className="fas fa-hiking"></i>
                   </div>
-                  <h3>Wandern</h3>
-                  <p>Erkundung abgelegener Pfade und beeindruckender Landschaften</p>
+                  <h3>Hiking</h3>
+                  <p>Exploring remote trails and impressive landscapes</p>
                 </div>
                 <div className={styles.hobbyCard}>
                   <div className={styles.hobbyIconWrapper}>
                     <i className="fas fa-campground"></i>
                   </div>
-                  <h3>Pfadfinder</h3>
-                  <p>Aktives Mitglied und Administrator der Pfadfinder-Website</p>
+                  <h3>Scouts</h3>
+                  <p>Active member and administrator of the scouts website</p>
                 </div>
               </div>
             </div>
@@ -81,11 +81,11 @@ export default function About(): JSX.Element {
 
         <section className={clsx(styles.section, styles.skillsSection)}>
           <div className="container">
-            <h2 className={styles.sectionTitle}>Fähigkeiten & Kenntnisse</h2>
+            <h2 className={styles.sectionTitle}>Skills & Knowledge</h2>
             
             <div className={styles.skillCategories}>
               <div className={styles.skillCategory}>
-                <h3 className={styles.skillCategoryTitle}>Programmiersprachen</h3>
+                <h3 className={styles.skillCategoryTitle}>Programming Languages</h3>
                 <div className={styles.skillList}>
                   <div className={styles.skillItem}>
                     <span className={styles.skillName}>Python</span>
@@ -121,7 +121,7 @@ export default function About(): JSX.Element {
               </div>
               
               <div className={styles.skillCategory}>
-                <h3 className={styles.skillCategoryTitle}>Technologien & Frameworks</h3>
+                <h3 className={styles.skillCategoryTitle}>Technologies & Frameworks</h3>
                 <div className={styles.skillList}>
                   <div className={styles.skillItem}>
                     <span className={styles.skillName}>Unity</span>
@@ -157,22 +157,22 @@ export default function About(): JSX.Element {
               </div>
               
               <div className={styles.skillCategory}>
-                <h3 className={styles.skillCategoryTitle}>Sprachen</h3>
+                <h3 className={styles.skillCategoryTitle}>Languages</h3>
                 <div className={styles.skillList}>
                   <div className={styles.skillItem}>
-                    <span className={styles.skillName}>Deutsch</span>
+                    <span className={styles.skillName}>German</span>
                     <div className={styles.skillBar}>
                       <div className={styles.skillLevel} style={{width: '100%'}}></div>
                     </div>
                   </div>
                   <div className={styles.skillItem}>
-                    <span className={styles.skillName}>Englisch</span>
+                    <span className={styles.skillName}>English</span>
                     <div className={styles.skillBar}>
                       <div className={styles.skillLevel} style={{width: '95%'}}></div>
                     </div>
                   </div>
                   <div className={styles.skillItem}>
-                    <span className={styles.skillName}>Polnisch</span>
+                    <span className={styles.skillName}>Polish</span>
                     <div className={styles.skillBar}>
                       <div className={styles.skillLevel} style={{width: '40%'}}></div>
                     </div>
@@ -185,16 +185,16 @@ export default function About(): JSX.Element {
 
         <section className={styles.section}>
           <div className="container">
-            <h2 className={styles.sectionTitle}>Bildungsweg</h2>
+            <h2 className={styles.sectionTitle}>Education</h2>
             <div className={styles.timeline}>
               <div className={styles.timelineItem}>
                 <div className={styles.timelineMarker}></div>
                 <div className={styles.timelineContent}>
-                  <h3 className={styles.timelineTitle}>Duales Studium Angewandte Informatik</h3>
-                  <p className={styles.timelinePeriod}>2023 - Heute</p>
+                  <h3 className={styles.timelineTitle}>Dual Studies in Applied Computer Science</h3>
+                  <p className={styles.timelinePeriod}>2023 - Present</p>
                   <p className={styles.timelineDescription}>
-                    Vertiefung in Softwareentwicklung, Algorithmen und IT-Systeme.
-                    Praktische Erfahrung durch Unternehmenskooperation.
+                    Specialization in software development, algorithms, and IT systems.
+                    Practical experience through company cooperation.
                   </p>
                 </div>
               </div>
@@ -202,10 +202,10 @@ export default function About(): JSX.Element {
               <div className={styles.timelineItem}>
                 <div className={styles.timelineMarker}></div>
                 <div className={styles.timelineContent}>
-                  <h3 className={styles.timelineTitle}>Technisches Gymnasium Offenburg</h3>
+                  <h3 className={styles.timelineTitle}>Technical High School Offenburg</h3>
                   <p className={styles.timelinePeriod}>2020 - 2023</p>
                   <p className={styles.timelineDescription}>
-                    Abitur mit Schwerpunkt Informationstechnik.
+                    High school diploma with focus on Information Technology.
                   </p>
                 </div>
               </div>
@@ -213,11 +213,11 @@ export default function About(): JSX.Element {
               <div className={styles.timelineItem}>
                 <div className={styles.timelineMarker}></div>
                 <div className={styles.timelineContent}>
-                  <h3 className={styles.timelineTitle}>Realschule</h3>
+                  <h3 className={styles.timelineTitle}>Secondary School</h3>
                   <p className={styles.timelinePeriod}>2016 - 2020</p>
                   <p className={styles.timelineDescription}>
-                    Mittlere Reife mit Auszeichnung in Mathematik.
-                    Erste Programmiererfahrungen und Teilnahme an Robotik-AG
+                    Secondary school certificate with honors in Mathematics.
+                    First programming experiences and participation in robotics club
                   </p>
                 </div>
               </div>
@@ -227,49 +227,49 @@ export default function About(): JSX.Element {
 
         <section className={clsx(styles.section, styles.travelSection)}>
           <div className="container">
-            <h2 className={styles.sectionTitle}>Reisen & Abenteuer</h2>
+            <h2 className={styles.sectionTitle}>Travel & Adventure</h2>
             <p className={styles.travelIntro}>
-              Das Reisen ist eine meiner größten Leidenschaften. Von den majestätischen Landschaften Islands 
-              bis zu den Klettersteigen in Österreich - hier sind einige Eindrücke meiner Abenteuer:
+              Traveling is one of my greatest passions. From the majestic landscapes of Iceland 
+              to the via ferratas in Austria - here are some impressions of my adventures:
             </p>
             
             <div className={styles.travelGallery}>
               <div className={styles.travelItem}>
-                <img src="/img/island2.jpg" alt="Island" className={styles.travelImage} />
-                <div className={styles.travelCaption}>Island - 2024</div>
+                <img src="/img/island2.jpg" alt="Iceland" className={styles.travelImage} />
+                <div className={styles.travelCaption}>Iceland - 2024</div>
               </div>
               <div className={styles.travelItem}>
-                <img src="/img/norwegen1.jpg" alt="Norwegen" className={styles.travelImage} />
-                <div className={styles.travelCaption}>Norwegen - 2023</div>
+                <img src="/img/norwegen1.jpg" alt="Norway" className={styles.travelImage} />
+                <div className={styles.travelCaption}>Norway - 2023</div>
               </div>
               <div className={styles.travelItem}>
-                <img src="/img/klettern_oesterreich.jpg" alt="Klettersteig Österreich" className={styles.travelImage} />
-                <div className={styles.travelCaption}>Klettersteig in Österreich - 2024</div>
+                <img src="/img/klettern_oesterreich.jpg" alt="Via Ferrata Austria" className={styles.travelImage} />
+                <div className={styles.travelCaption}>Via Ferrata in Austria - 2024</div>
               </div>
               <div className={styles.travelItem}>
-                <img src="/img/klettern_oesterreich2.jpg" alt="Klettersteig Österreich" className={styles.travelImage} />
-                <div className={styles.travelCaption}>Klettersteig in Österreich - 2024</div>
+                <img src="/img/klettern_oesterreich2.jpg" alt="Via Ferrata Austria" className={styles.travelImage} />
+                <div className={styles.travelCaption}>Via Ferrata in Austria - 2024</div>
               </div>
               <div className={styles.travelItem}>
-                <img src="/img/klettern1.jpg" alt="Bouldern in Frankreich" className={styles.travelImage} />
-                <div className={styles.travelCaption}>Bouldern in Frankreich - 2025</div>
+                <img src="/img/klettern1.jpg" alt="Bouldering in France" className={styles.travelImage} />
+                <div className={styles.travelCaption}>Bouldering in France - 2025</div>
               </div>
               <div className={styles.travelItem}>
-                <img src="/img/fallschirm.png" alt="Fallschirm springen" className={styles.travelImage} />
-                <div className={styles.travelCaption}>Fallschirm springen - 2024</div>
+                <img src="/img/fallschirm.png" alt="Skydiving" className={styles.travelImage} />
+                <div className={styles.travelCaption}>Skydiving - 2024</div>
               </div>
               <div className={styles.travelItem}>
-                <img src="/img/fallschirm2.png" alt="Fallschirm springen" className={styles.travelImage} />
-                <div className={styles.travelCaption}>Fallschirm springen - 2024</div>
+                <img src="/img/fallschirm2.png" alt="Skydiving" className={styles.travelImage} />
+                <div className={styles.travelCaption}>Skydiving - 2024</div>
               </div>
               <div className={styles.travelItem}>
-                <img src="/img/bungee.jpg" alt="Bungee Springen" className={styles.travelImage} />
-                <div className={styles.travelCaption}>Bungee Springen - 2023</div>
+                <img src="/img/bungee.jpg" alt="Bungee Jumping" className={styles.travelImage} />
+                <div className={styles.travelCaption}>Bungee Jumping - 2023</div>
               </div>
             </div>
             
             <div className={styles.travelMoreButton}>
-              <button className={styles.pulsingButton}><a href="/gallery" style={{textDecoration: 'none', color: 'white'}}>Mehr Abenteuer entdecken</a></button>
+              <button className={styles.pulsingButton}><a href="/gallery" style={{textDecoration: 'none', color: 'white'}}>Discover More Adventures</a></button>
             </div>
           </div>
         </section>
