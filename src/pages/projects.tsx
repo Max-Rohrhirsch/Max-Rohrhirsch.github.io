@@ -57,7 +57,7 @@ const projects: ProjectData[] = [
     id: 5,
     title: 'Minecraft-Klon',
     description: 'Entwicklung eines Minecraft-ähnlichen Spiels mit C# und Unity',
-    image: '/img/Ich zeugnis.jpg',
+    image: '/img/minecraft.webp',
     technologies: ['C#', 'Unity', 'Shader-Programmierung', '3D-Modellierung'],
     gallery: [],
     details: 'Mit C# und Unity habe ich einen eigenen Minecraft-Klon entwickelt, der die grundlegenden Mechaniken des Originals nachbildet. Das Spiel verfügt über ein prozedural generiertes Terrain, Tag-Nacht-Wechsel, ein eigenes Crafting-System und verschiedene Biome. Besonderer Fokus lag auf der Optimierung der Chunk-Generierung und dem effizienten Rendering von Voxel-Daten.'
@@ -66,10 +66,11 @@ const projects: ProjectData[] = [
     id: 6,
     title: 'Hovercraft',
     description: 'Design und Bau eines funktionstüchtigen Hovercrafts',
-    image: '/img/ich2.jpg',
-    technologies: ['Mechanik', 'Elektronik', 'CAD', 'Motorsteuerung'],
-    gallery: ['/img/ich2.jpg', '/img/ich2.jpg', '/img/ich2.jpg'],
-    details: 'Eines meiner ambitioniertesten Projekte war der Bau eines voll funktionsfähigen Hovercrafts. Nach umfangreicher Planung und CAD-Modellierung habe ich alle Komponenten selbst zusammengebaut und eine elektronische Steuerung implementiert. Das Hovercraft erreicht eine beachtliche Geschwindigkeit und kann über verschiedene Oberflächen gleiten. Die größte Herausforderung war die Optimierung des Luftkissendesigns für maximale Effizienz.'
+    image: '/img/hovercraft.png',
+    technologies: ['Mechanik', 'Elektronik', 'WIG-Schweißen', 'Motorsteuerung'],
+    gallery: ['/img/hovercraft.png'],
+    link: 'https://www.youtube.com/watch?v=xpajz0RjG_A&t=61s',
+    details: 'Eines meiner ambitioniertesten Projekte war der Bau eines voll funktionsfähigen Hovercrafts. Nach umfangreicher Planung habe ich alle Komponenten selbst zusammengebaut und eine elektronische Steuerung implementiert.'
   },
   {
     id: 7,

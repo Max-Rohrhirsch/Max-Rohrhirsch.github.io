@@ -176,7 +176,7 @@
 }
 
 .modalContent {
-  background-color: var(--ifm-background-color);
+  background-color: #ffffff;
   border-radius: 12px;
   max-width: 900px;
   width: 100%;
@@ -184,6 +184,12 @@
   overflow-y: auto;
   position: relative;
   animation: scaleIn 0.3s forwards;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .modalContent {
+  background-color: var(--ifm-background-color);
+  border-color: var(--ifm-color-emphasis-300);
 }
 
 .modalClose {
@@ -201,12 +207,20 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s ease;
 }
 
+[data-theme='dark'] .modalClose {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .modalClose:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .modalClose:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .modalTitle {
