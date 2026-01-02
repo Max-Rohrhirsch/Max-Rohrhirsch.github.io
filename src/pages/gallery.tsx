@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Layout from '@theme/Layout';
 import styles from './gallery.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 interface GalleryImage {
   src: string;
@@ -12,9 +11,21 @@ interface GalleryImage {
   description?: string;
 }
 
-export default function Gallery(): JSX.Element {  const [activeCategory, setActiveCategory] = useState<string>('all');
+export default function Gallery(): JSX.Element {
+  const [activeCategory, setActiveCategory] = useState<string>('all');
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
+
+  // Helper function to get image URL
+  const getImageUrl = (src: string) => {
+    // If path starts with /, it's already absolute from static folder
+    // Otherwise prepend with baseUrl
+    if (src.startsWith('/')) {
+      return src;
+    }
+    // For relative paths, just return as is - they're relative to the base URL
+    return '/' + src;
+  };
 
   const handleImageLoad = (src: string) => {
     setLoadedImages(prev => ({...prev, [src]: true}));
@@ -30,6 +41,97 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
 
   
   const galleryImages: GalleryImage[] = [
+    {
+      src: 'img/naturx3.png',
+      alt: 'Levi',
+      category: 'travel',
+      location: 'Finnland',
+      year: '2025',
+    },
+    {
+      src: 'img/sonne.png',
+      alt: 'Levi',
+      category: 'travel',
+      location: 'Finnland',
+      year: '2025',
+    },
+    {
+      src: 'img/vilnius.jpg',
+      alt: 'Riga',
+      category: 'travel',
+      location: 'Letland',
+      year: '2025',
+    },
+    {
+      src: 'img/vilnius2.jpg',
+      alt: 'Vilnius',
+      category: 'travel',
+      location: 'Litauen',
+      year: '2025',
+    },
+    {
+      src: 'img/naturx.jpg',
+      alt: 'Naturschutzgebiet',
+      category: 'travel',
+      location: 'Finnland',
+      year: '2025',
+    },
+    {
+      src: 'img/ichx1.jpg',
+      alt: 'Mikkeli',
+      category: 'travel',
+      location: 'Finnland',
+      year: '2025',
+    },
+    {
+      src: 'img/hutte2.png',
+      alt: 'Levi',
+      category: 'travel',
+      location: 'Finnland',
+      year: '2025',
+    },
+    {
+      src: 'img/natur-ich.jpg',
+      alt: 'Finnland',
+      category: 'travel',
+      location: 'Finnland',
+      year: '2025',
+    },
+    {
+      src: 'img/aurora.jpg',
+      alt: 'Levi',
+      category: 'travel',
+      location: 'Finnland',
+      year: '2025',
+    },
+    {
+      src: 'img/aurorax2.jpg',
+      alt: 'Spitzbergen',
+      category: 'travel',
+      location: 'Norwegen',
+      year: '2025',
+    },
+    {
+      src: 'img/hutte.png',
+      alt: 'Levi',
+      category: 'travel',
+      location: 'Finnland',
+      year: '2025',
+    },
+    {
+      src: 'img/ich-kirche.jpg',
+      alt: 'Mikkeli',
+      category: 'travel',
+      location: 'Finnland',
+      year: '2025',
+    },
+    {
+      src: 'img/see.jpg',
+      alt: 'Mikkeli',
+      category: 'travel',
+      location: 'Finnland',
+      year: '2025',
+    },
     {
       src: 'img/island1.jpg',
       alt: 'Iceland Landscape',
@@ -209,7 +311,7 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
     document.body.style.overflow = 'auto';
   }, []);
     // Navigate to next/previous image
-  const navigateImage = (direction: 'next' | 'prev') => {
+  const navigateImage = useCallback((direction: 'next' | 'prev') => {
     if (!selectedImage) return;
     
     const currentIndex = filteredImages.findIndex(
@@ -226,7 +328,7 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
     }
     
     setSelectedImage(filteredImages[newIndex]);
-  };
+  }, [selectedImage, filteredImages]);
   
   // Keyboard navigation for modal
   useEffect(() => {
@@ -248,7 +350,7 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
     
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedImage, filteredImages, closeModal]);
+  }, [selectedImage, navigateImage, closeModal]);
 
   // Count images in each category
   const categoryCounts = categories.map(category => {
@@ -324,7 +426,7 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
               >
                 <div className={styles.imageContainer}>
                   <img
-                    src={useBaseUrl(image.src)}
+                    src={getImageUrl(image.src)}
                     alt={image.alt}
                     className={`${styles.galleryImage} ${loadedImages[image.src] ? styles.loaded : ''}`}
                     onLoad={() => handleImageLoad(image.src)}
@@ -371,7 +473,7 @@ export default function Gallery(): JSX.Element {  const [activeCategory, setActi
                 </button>
                 
                 <img 
-                  src={useBaseUrl(selectedImage.src)} 
+                  src={getImageUrl(selectedImage.src)} 
                   alt={selectedImage.alt} 
                   className={styles.modalImage} 
                 />
