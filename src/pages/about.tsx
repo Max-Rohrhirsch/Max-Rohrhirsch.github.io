@@ -22,10 +22,10 @@ export default function About(): JSX.Element {
                 <a href="https://github.com/Max-Rohrhirsch" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                   <i className="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/max-rohrhirsch-77301a310/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                <a href="https://www.linkedin.com/in/max-rohrhirsch-77301a310/" className={styles.socialIcon}>
                   <i className="fab fa-linkedin"></i>
                 </a>
-                <a href="mailto:max.rohrhirsch2004@gmail.com" className={styles.socialIcon}>
+                <a href="mailto:info@max-rohrhirsch.de" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                   <i className="fas fa-envelope"></i>
                 </a>
               </div>
@@ -50,8 +50,8 @@ export default function About(): JSX.Element {
                   <div className={styles.hobbyIconWrapper}>
                     <i className="fas fa-mountain"></i>
                   </div>
-                  <h3>Climbing & Bouldering</h3>
-                  <p>Regular visits to the climbing gym and outdoor rock climbing in good weather</p>
+                  <h3>Via Ferrata, Bouldering & Alpine Tours</h3>
+                  <p>Indoor bouldering, via ferrata routes, and alpine mountaineering tours</p>
                 </div>
                 <div className={styles.hobbyCard}>
                   <div className={styles.hobbyIconWrapper}>
@@ -72,7 +72,7 @@ export default function About(): JSX.Element {
                     <i className="fas fa-campground"></i>
                   </div>
                   <h3>Scouts</h3>
-                  <p>Active member and administrator of the scouts website</p>
+                  <p>Board member of the scouts and responsible for maintaining and developing the website</p>
                 </div>
               </div>
             </div>
@@ -94,6 +94,12 @@ export default function About(): JSX.Element {
                     </div>
                   </div>
                   <div className={styles.skillItem}>
+                    <span className={styles.skillName}>Kotlin</span>
+                    <div className={styles.skillBar}>
+                      <div className={styles.skillLevel} style={{width: '85%'}}></div>
+                    </div>
+                  </div>
+                  <div className={styles.skillItem}>
                     <span className={styles.skillName}>Java</span>
                     <div className={styles.skillBar}>
                       <div className={styles.skillLevel} style={{width: '85%'}}></div>
@@ -102,19 +108,13 @@ export default function About(): JSX.Element {
                   <div className={styles.skillItem}>
                     <span className={styles.skillName}>C#</span>
                     <div className={styles.skillBar}>
-                      <div className={styles.skillLevel} style={{width: '60%'}}></div>
+                      <div className={styles.skillLevel} style={{width: '50%'}}></div>
                     </div>
                   </div>
                   <div className={styles.skillItem}>
                     <span className={styles.skillName}>JavaScript/TypeScript</span>
                     <div className={styles.skillBar}>
                       <div className={styles.skillLevel} style={{width: '85%'}}></div>
-                    </div>
-                  </div>
-                  <div className={styles.skillItem}>
-                    <span className={styles.skillName}>C/C++</span>
-                    <div className={styles.skillBar}>
-                      <div className={styles.skillLevel} style={{width: '50%'}}></div>
                     </div>
                   </div>
                 </div>
@@ -136,19 +136,13 @@ export default function About(): JSX.Element {
                     </div>
                   </div>
                   <div className={styles.skillItem}>
-                    <span className={styles.skillName}>LLVM</span>
+                    <span className={styles.skillName}>Spring Boot</span>
                     <div className={styles.skillBar}>
                       <div className={styles.skillLevel} style={{width: '50%'}}></div>
                     </div>
                   </div>
                   <div className={styles.skillItem}>
-                    <span className={styles.skillName}>Arduino</span>
-                    <div className={styles.skillBar}>
-                      <div className={styles.skillLevel} style={{width: '80%'}}></div>
-                    </div>
-                  </div>
-                  <div className={styles.skillItem}>
-                    <span className={styles.skillName}>Docker</span>
+                    <span className={styles.skillName}>DevOps (Docker, Linux, Git & Self Hosting)</span>
                     <div className={styles.skillBar}>
                       <div className={styles.skillLevel} style={{width: '75%'}}></div>
                     </div>
@@ -191,10 +185,9 @@ export default function About(): JSX.Element {
                 <div className={styles.timelineMarker}></div>
                 <div className={styles.timelineContent}>
                   <h3 className={styles.timelineTitle}>Dual Studies in Applied Computer Science</h3>
-                  <p className={styles.timelinePeriod}>2023 - Present</p>
+                  <p className={styles.timelinePeriod}>2023 - 2026</p>
                   <p className={styles.timelineDescription}>
-                    Specialization in software development, algorithms, and IT systems.
-                    Practical experience through company cooperation.
+                    Computer science studies combined with industry rotations in software engineering, security, DevOps, and data science.
                   </p>
                 </div>
               </div>
@@ -202,7 +195,8 @@ export default function About(): JSX.Element {
               <div className={styles.timelineItem}>
                 <div className={styles.timelineMarker}></div>
                 <div className={styles.timelineContent}>
-                  <h3 className={styles.timelineTitle}>Technical High School Offenburg</h3>
+                  <h3 className={styles.timelineTitle}>Informationstechnisches Gymnasium, Offenburg
+                (German high school diploma with focus on IT)</h3>
                   <p className={styles.timelinePeriod}>2020 - 2023</p>
                   <p className={styles.timelineDescription}>
                     High school diploma with focus on Information Technology.
@@ -217,7 +211,7 @@ export default function About(): JSX.Element {
                   <p className={styles.timelinePeriod}>2016 - 2020</p>
                   <p className={styles.timelineDescription}>
                     Secondary school certificate with honors in Mathematics.
-                    First programming experiences and participation in robotics club
+                    First programming experiences and participation in robotics club.
                   </p>
                 </div>
               </div>
@@ -252,7 +246,7 @@ export default function About(): JSX.Element {
               </div>
               <div className={styles.travelItem}>
                 <img src="/img/klettern1.jpg" alt="Bouldering in France" className={styles.travelImage} />
-                <div className={styles.travelCaption}>Bouldering in France - 2025</div>
+                <div className={styles.travelCaption}>Via Ferrata in France - 2025</div>
               </div>
               <div className={styles.travelItem}>
                 <img src="/img/fallschirm.png" alt="Skydiving" className={styles.travelImage} />

@@ -20,7 +20,7 @@ const projects: ProjectData[] = [
     title: 'Scouts Website',
     description: 'Administration and maintenance of the official scouts website',
     image: '/img/pfadfinder.png',
-    technologies: ['WordPress', 'PHP', 'CSS'],
+    technologies: ['WordPress', 'HTML', 'CSS'],
     link: 'https://pfadis.org',
     gallery: ['/img/pfadfinder.png'],
     details: 'As an active member of the scouts, I administer our official website pfadis.org. The website runs on WordPress and provides information about our activities, events, and projects. Regular updates, plugin management, and security measures are part of my responsibilities, as well as training other members in content creation.'
@@ -31,8 +31,8 @@ const projects: ProjectData[] = [
     description: 'Digital clock with Arduino and self-built 7-segment display. Can be turned on and off with remote control.',
     image: '/img/uhr.jpg',
     technologies: ['Arduino', 'C++', 'Electronics'],
-    gallery: ['/img/uhr.jpg', '/img/uhr2.jpg'],
-    details: 'This project combines hardware and software: I designed and built an oversized 7-segment display controlled by an Arduino microcontroller. The clock not only displays the current time but also has various display modes and can be controlled via an app. The segment housings were made with a 3D printer and equipped with custom LED strips.'
+    gallery: ['/img/uhr.jpg'],
+    details: 'This project combines hardware and software: I designed and built an oversized 7-segment display controlled by an Arduino microcontroller.'
   },
   {
     id: 3,
@@ -40,9 +40,9 @@ const projects: ProjectData[] = [
     description: 'Chat application with Python backend for a study project',
     image: '/img/umoc.jpg',
     technologies: ['Python', 'Flask', 'WebSockets', 'Docker'],
-    link: 'https://app.umoc.chat',
+    link: 'https://github.com/orgs/DHBW-UMOC/repositories',
     gallery: ['/img/umoc.jpg'],
-    details: 'UMOC Chat is a modern messaging platform that I developed as part of a study project. The application features a Python backend with Flask and WebSockets for real-time communication. The frontend was implemented with React and offers a responsive user interface. The entire application is packaged in Docker containers for easy deployment and scalability.'
+    details: 'UMOC Chat is a funny messaging platform that I developed as part of a study project with other students. The application features a Python backend with Flask and WebSockets for real-time communication. The frontend was implemented with Angular and offers a responsive user interface. The entire application is packaged in Docker containers for easy deployment and scalability. The project is currently offline due to unusual activity, but the full system and architecture were successfully implemented.'
   },
   {
     id: 4,
@@ -50,6 +50,7 @@ const projects: ProjectData[] = [
     description: 'Development of a custom compiler with Python and LLVM',
     image: '/img/compiler.png',
     technologies: ['Python', 'LLVM', 'Compiler Technology', 'Lexer/Parser'],
+    link: 'https://github.com/Max-Rohrhirsch/PyPlus',
     gallery: [],
     details: 'In this project, I developed my own compiler for a custom programming language. The compiler uses Python for frontend components (lexer, parser, semantic analysis) and the LLVM framework for backend code generation. The compiler translates source code into LLVM IR and generates executable machine code for various target platforms.'
   },
@@ -58,9 +59,10 @@ const projects: ProjectData[] = [
     title: 'Minecraft Clone',
     description: 'Development of a Minecraft-like game with C# and Unity',
     image: '/img/minecraft.webp',
-    technologies: ['C#', 'Unity', 'Shader Programming', '3D Modeling'],
+    technologies: ['C#', 'Unity', 'Shader Programming'],
     gallery: [],
-    details: 'With C# and Unity, I developed my own Minecraft clone that replicates the basic mechanics of the original. The game features procedurally generated terrain, day-night cycles, a custom crafting system, and various biomes. Special focus was placed on optimizing chunk generation and efficient rendering of voxel data.'
+    link: 'https://github.com/Max-Rohrhirsch/MinecraftClone.git',
+    details: 'Developed a Minecraft-like game using C# and Unity, focusing on optimized procedural world generation and efficient chunk management. The project explores performance optimization techniques and scalable voxel rendering systems. It is an ongoing project used to experiment with new features and improvements.'
   },
   {
     id: 6,
@@ -70,16 +72,23 @@ const projects: ProjectData[] = [
     technologies: ['Mechanics', 'Electronics', 'TIG Welding', 'Motor Control'],
     gallery: ['/img/hovercraft.png'],
     link: 'https://www.youtube.com/watch?v=xpajz0RjG_A&t=61s',
-    details: 'One of my most ambitious projects was building a fully functional hovercraft. After extensive planning, I assembled all components myself and implemented electronic controls.'
-  },
+    details: 'One of my most ambitious projects was building a fully functional hovercraft. I designed and assembled all components myself, including mechanical construction, electronics, and welding. The project required integrating multiple disciplines such as motor control, power systems, and structural design. While the hovercraft was limited in runtime due to high power consumption, it provided valuable insights into energy management and system design, and was an excellent hands-on learning experience.'  },
   {
     id: 7,
     title: 'Go-Kart',
     description: 'Development and construction of an electric go-kart',
     image: '/img/Gokart.png',
     technologies: ['Mechanics', 'Electrical Engineering', 'Welding', 'Battery Technology'],
-    gallery: ['/img/Gokart.jpg', '/img/gokart.jpg'],
-    details: 'With this project, I designed and built an electric go-kart from scratch. The frame was welded by hand, and I designed a battery system with motor control that provides a good balance between performance and runtime. The go-kart features a regenerative braking system and a digital display for important operating data.'
+    gallery: ['/img/Gokart.jpg', '/img/Gokart.png'],
+    details: 'Designed and built a go-kart from scratch powered by a 6.5 HP combustion engine. The frame was fully welded by hand, and throttle and braking systems were implemented using mechanical cable controls. The kart reaches speeds of up to 60 kmh. Early challenges included wheel failures due to load constraints, which were resolved by redesigning and reinforcing the rear axle with more robust tires. The project is still actively used.'  },
+  {
+    id: 8,
+    title: 'Self Hosted Infrastructure',
+    description: 'Deployment and management of multiple services with authentication and reverse proxy',
+    image: '/img/Raspberry.jpeg',
+    technologies: ['Docker', 'Linux', 'Keycloak', 'Cloudflare', 'Reverse Proxy'],
+    gallery: ['/img/Raspberry.jpeg'],
+    details: 'Designed and deployed a self hosted infrastructure running multiple services using Docker. Implemented centralized authentication with Keycloak, and secure external access via Cloudflare Tunnel. Focus on scalability, maintainability, and security. This Website still runs on my Raspberry Pi.'
   }
 ];
 
@@ -176,8 +185,8 @@ export default function Projects(): JSX.Element {
                     <span>TypeScript</span>
                   </div>
                   <div className={styles.techItem}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />
-                    <span>C</span>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" />
+                    <span>Kotlin</span>
                   </div>
                 </div>
               </div>
@@ -192,20 +201,12 @@ export default function Projects(): JSX.Element {
                     <span>Flask</span>
                   </div>
                   <div className={styles.techItem}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" />
-                    <span>Django</span>
-                  </div>
-                  <div className={styles.techItem}>
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
                     <span>MySQL</span>
                   </div>
                   <div className={styles.techItem}>
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
                     <span>PostgreSQL</span>
-                  </div>
-                  <div className={styles.techItem}>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-                    <span>MongoDB</span>
                   </div>
                 </div>
               </div>
@@ -228,11 +229,11 @@ export default function Projects(): JSX.Element {
                     <span>CSS3</span>
                   </div>
                   <div className={styles.techItem}>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Angular" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" />
                     <span>Angular</span>
                   </div>
                   <div className={styles.techItem}>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" alt="Wordpress CSS" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" alt="Wordpress" />
                     <span>Wordpress</span>
                   </div>
                 </div>

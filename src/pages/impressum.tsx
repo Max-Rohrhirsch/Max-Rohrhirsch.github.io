@@ -21,16 +21,14 @@ export default function Impressum(): JSX.Element {
               <div className={styles.contactInfo}>
                 <p><strong>Max Rohrhirsch</strong></p>
                 <p>Dual Student for Applied Computer Science</p>
-                <p>
-                  E-Mail: <a href="mailto:max.rohrhirsch2004@gmail.com">max.rohrhirsch2004@gmail.com</a>
-                </p>
+                <p>E-Mail: <a href="mailto:info@max-rohrhirsch.de">info@max-rohrhirsch.de</a></p>
               </div>
             </section>
 
             <section className={styles.section}>
               <h2>Contact</h2>
               <div className={styles.contactInfo}>
-                <p>E-Mail: <a href="mailto:max.rohrhirsch2004@gmail.com">max.rohrhirsch2004@gmail.com</a></p>
+                <p>E-Mail: <a href="mailto:info@max-rohrhirsch.de">info@max-rohrhirsch.de</a></p>
                 <p>GitHub: <a href="https://github.com/Max-Rohrhirsch" target="_blank" rel="noopener noreferrer">https://github.com/Max-Rohrhirsch</a></p>
                 <p>LinkedIn: <a href="https://www.linkedin.com/in/max-rohrhirsch-77301a310/" target="_blank" rel="noopener noreferrer">LinkedIn Profil</a></p>
               </div>
@@ -40,7 +38,7 @@ export default function Impressum(): JSX.Element {
               <h2>Responsible for content according to § 55 Abs. 2 RStV</h2>
               <div className={styles.contactInfo}>
                 <p>Max Rohrhirsch</p>
-                <p>E-Mail: <a href="mailto:max.rohrhirsch2004@gmail.com">max.rohrhirsch2004@gmail.com</a></p>
+                <p>E-Mail: <a href="mailto:info@max-rohrhirsch.de">info@max-rohrhirsch.de</a></p>
               </div>
             </section>
 

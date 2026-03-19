@@ -3,14 +3,13 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Documentation',
-  tagline: 'Dinosaurs are cool',
+  title: 'Portfolio',
+  tagline: 'Turning complex ideas into working systems',
   favicon: 'img/favicon.ico',
 
-  url: 'https://Max-Rohrhirsch.github.io',
+  url: 'https://max-rohrhirsch.com',
   baseUrl: '/',
   
-  // Add custom scripts like Font Awesome
   scripts: [
     {
       src: 'https://kit.fontawesome.com/4f61744fc1.js',
@@ -18,16 +17,11 @@ const config: Config = {
     }
   ],
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Max-Rohrhirsch', // Usually your GitHub org/user name.
-  projectName: 'documentation', // Usually your repo name.
+  organizationName: 'Max-Rohrhirsch',
+  projectName: 'documentation',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -39,10 +33,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Max-Rohrhirsch/documentation',
+          editUrl: 'https://github.com/Max-Rohrhirsch/documentation',
         },
         blog: {
           showReadingTime: true,
@@ -50,10 +41,7 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Max-Rohrhirsch/documentation',
+          editUrl: 'https://github.com/Max-Rohrhirsch/documentation',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -67,8 +55,12 @@ const config: Config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+    },
     navbar: {
-      title: 'Documentation',
+      title: 'Home',
       items: [
         {
           type: 'docSidebar',
@@ -85,6 +77,11 @@ const config: Config = {
           to: '/projects',
           position: 'left',
           label: 'Projects',
+        },
+        {
+          to: 'https://blog.max-rohrhirsch.com/',
+          position: 'left',
+          label: 'Blog',
         },
         {
           to: '/gallery',
@@ -145,7 +142,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Max Rohrhirsch. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Max Rohrhirsch.`,
     },
     prism: {
       theme: prismThemes.github,
