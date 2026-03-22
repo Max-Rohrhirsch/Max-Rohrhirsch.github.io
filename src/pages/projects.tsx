@@ -70,7 +70,7 @@ const projects: ProjectData[] = [
     description: 'Design and construction of a functional hovercraft',
     image: '/img/hovercraft.png',
     technologies: ['Mechanics', 'Electronics', 'TIG Welding', 'Motor Control'],
-    gallery: ['/img/hovercraft.png'],
+    gallery: ['/img/hovercraft.png', '/img/Hovercraft_n1.png'],
     link: 'https://www.youtube.com/watch?v=xpajz0RjG_A&t=61s',
     details: 'One of my most ambitious projects was building a fully functional hovercraft. I designed and assembled all components myself, including mechanical construction, electronics, and welding. The project required integrating multiple disciplines such as motor control, power systems, and structural design. While the hovercraft was limited in runtime due to high power consumption, it provided valuable insights into energy management and system design, and was an excellent hands-on learning experience.'  },
   {
@@ -79,7 +79,7 @@ const projects: ProjectData[] = [
     description: 'Development and construction of an electric go-kart',
     image: '/img/Gokart.png',
     technologies: ['Mechanics', 'Electrical Engineering', 'Welding', 'Battery Technology'],
-    gallery: ['/img/Gokart.jpg', '/img/Gokart.png'],
+    gallery: ['/img/Gokart.png', '/img/gokart_n1.png', '/img/gokart_n2.png'],
     details: 'Designed and built a go-kart from scratch powered by a 6.5 HP combustion engine. The frame was fully welded by hand, and throttle and braking systems were implemented using mechanical cable controls. The kart reaches speeds of up to 60 kmh. Early challenges included wheel failures due to load constraints, which were resolved by redesigning and reinforcing the rear axle with more robust tires. The project is still actively used.'  },
   {
     id: 8,
